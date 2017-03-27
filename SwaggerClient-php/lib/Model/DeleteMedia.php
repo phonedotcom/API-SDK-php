@@ -1,6 +1,6 @@
 <?php
 /**
- * ListPhoneNumbers
+ * DeleteMedia
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ListPhoneNumbers Class Doc Comment
+ * DeleteMedia Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ListPhoneNumbers implements ArrayAccess
+class DeleteMedia implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,19 +47,14 @@ class ListPhoneNumbers implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ListPhoneNumbers';
+    protected static $swaggerModelName = 'DeleteMedia';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filters' => '\Swagger\Client\Model\FilterIdNamePhoneNumberArray',
-        'sort' => '\Swagger\Client\Model\SortIdNamePhoneNumber',
-        'total' => 'int',
-        'offset' => 'int',
-        'limit' => 'int',
-        'items' => '\Swagger\Client\Model\PhoneNumberFull[]'
+        'success' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +67,7 @@ class ListPhoneNumbers implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'filters' => 'filters',
-        'sort' => 'sort',
-        'total' => 'total',
-        'offset' => 'offset',
-        'limit' => 'limit',
-        'items' => 'items'
+        'success' => 'success'
     ];
 
 
@@ -86,12 +76,7 @@ class ListPhoneNumbers implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'filters' => 'setFilters',
-        'sort' => 'setSort',
-        'total' => 'setTotal',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit',
-        'items' => 'setItems'
+        'success' => 'setSuccess'
     ];
 
 
@@ -100,12 +85,7 @@ class ListPhoneNumbers implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'filters' => 'getFilters',
-        'sort' => 'getSort',
-        'total' => 'getTotal',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit',
-        'items' => 'getItems'
+        'success' => 'getSuccess'
     ];
 
     public static function attributeMap()
@@ -139,12 +119,7 @@ class ListPhoneNumbers implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['filters'] = isset($data['filters']) ? $data['filters'] : null;
-        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
     }
 
     /**
@@ -173,127 +148,22 @@ class ListPhoneNumbers implements ArrayAccess
 
 
     /**
-     * Gets filters
-     * @return \Swagger\Client\Model\FilterIdNamePhoneNumberArray
+     * Gets success
+     * @return bool
      */
-    public function getFilters()
+    public function getSuccess()
     {
-        return $this->container['filters'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets filters
-     * @param \Swagger\Client\Model\FilterIdNamePhoneNumberArray $filters
+     * Sets success
+     * @param bool $success
      * @return $this
      */
-    public function setFilters($filters)
+    public function setSuccess($success)
     {
-        $this->container['filters'] = $filters;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort
-     * @return \Swagger\Client\Model\SortIdNamePhoneNumber
-     */
-    public function getSort()
-    {
-        return $this->container['sort'];
-    }
-
-    /**
-     * Sets sort
-     * @param \Swagger\Client\Model\SortIdNamePhoneNumber $sort
-     * @return $this
-     */
-    public function setSort($sort)
-    {
-        $this->container['sort'] = $sort;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     * @return int
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     * @param int $total
-     * @return $this
-     */
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets offset
-     * @return int
-     */
-    public function getOffset()
-    {
-        return $this->container['offset'];
-    }
-
-    /**
-     * Sets offset
-     * @param int $offset
-     * @return $this
-     */
-    public function setOffset($offset)
-    {
-        $this->container['offset'] = $offset;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     * @param int $limit
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     * @return \Swagger\Client\Model\PhoneNumberFull[]
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     * @param \Swagger\Client\Model\PhoneNumberFull[] $items Array of Contact Phone Number Objects. See below for details.
-     * @return $this
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
+        $this->container['success'] = $success;
 
         return $this;
     }

@@ -77,12 +77,34 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createAccountMedia
+     * Test case for createAccountMediaFiles
      *
      * Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB).
      *
      */
-    public function testCreateAccountMedia()
+    public function testCreateAccountMediaFiles()
+    {
+
+    }
+
+    /**
+     * Test case for createAccountMediaTts
+     *
+     * Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB).
+     *
+     */
+    public function testCreateAccountMediaTts()
+    {
+
+    }
+
+    /**
+     * Test case for deleteAccountMedia
+     *
+     * Delete an individual media record.
+     *
+     */
+    public function testDeleteAccountMedia()
     {
 
     }
@@ -105,6 +127,17 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testListAccountMedia()
+    {
+
+    }
+
+    /**
+     * Test case for replaceAccountMediaTts
+     *
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB..
+     *
+     */
+    public function testReplaceAccountMediaTts()
     {
 
     }

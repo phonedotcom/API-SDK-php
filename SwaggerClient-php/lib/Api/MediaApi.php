@@ -88,7 +88,115 @@ class MediaApi
     }
 
     /**
-     * Operation createAccountMedia
+     * Operation createAccountMediaFiles
+     *
+     * Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+     *
+     * @param int $account_id Account ID (required)
+     * @param string $json Media extra parameters (optional)
+     * @param \SplFileObject $file Media file (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\MediaFull
+     */
+    public function createAccountMediaFiles($account_id, $json = null, $file = null)
+    {
+        list($response) = $this->createAccountMediaFilesWithHttpInfo($account_id, $json, $file);
+        return $response;
+    }
+
+    /**
+     * Operation createAccountMediaFilesWithHttpInfo
+     *
+     * Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+     *
+     * @param int $account_id Account ID (required)
+     * @param string $json Media extra parameters (optional)
+     * @param \SplFileObject $file Media file (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\MediaFull, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createAccountMediaFilesWithHttpInfo($account_id, $json = null, $file = null)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling createAccountMediaFiles');
+        }
+        // parse inputs
+        $resourcePath = "/accounts/{account_id}/media/files";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data']);
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "account_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // form params
+        if ($json !== null) {
+            $formParams['json'] = $this->apiClient->getSerializer()->toFormValue($json);
+        }
+        // form params
+        if ($file !== null) {
+            // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
+            // See: https://wiki.php.net/rfc/curl-file-upload
+            if (function_exists('curl_file_create')) {
+                $formParams['file'] = curl_file_create($this->apiClient->getSerializer()->toFormValue($file));
+            } else {
+                $formParams['file'] = '@' . $this->apiClient->getSerializer()->toFormValue($file);
+            }
+        }
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['Authorization'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\MediaFull',
+                '/accounts/{account_id}/media/files'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\MediaFull', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\MediaFull', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createAccountMediaTts
      *
      * Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
      *
@@ -97,14 +205,14 @@ class MediaApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\MediaFull
      */
-    public function createAccountMedia($account_id, $data = null)
+    public function createAccountMediaTts($account_id, $data = null)
     {
-        list($response) = $this->createAccountMediaWithHttpInfo($account_id, $data);
+        list($response) = $this->createAccountMediaTtsWithHttpInfo($account_id, $data);
         return $response;
     }
 
     /**
-     * Operation createAccountMediaWithHttpInfo
+     * Operation createAccountMediaTtsWithHttpInfo
      *
      * Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
      *
@@ -113,14 +221,14 @@ class MediaApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\MediaFull, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAccountMediaWithHttpInfo($account_id, $data = null)
+    public function createAccountMediaTtsWithHttpInfo($account_id, $data = null)
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling createAccountMedia');
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling createAccountMediaTts');
         }
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/media";
+        $resourcePath = "/accounts/{account_id}/media/tts";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -168,7 +276,7 @@ class MediaApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\MediaFull',
-                '/accounts/{account_id}/media'
+                '/accounts/{account_id}/media/tts'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\MediaFull', $httpHeader), $statusCode, $httpHeader];
@@ -185,43 +293,43 @@ class MediaApi
     }
 
     /**
-     * Operation getAccountMedia
+     * Operation deleteAccountMedia
      *
-     * Show details of an individual media recording (Greeting or Hold Music)
+     * Delete an individual media record
      *
      * @param int $account_id Account ID (required)
-     * @param int $recording_id Recording ID (required)
+     * @param int $media_id Media ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\MediaFull
+     * @return \Swagger\Client\Model\DeleteMedia
      */
-    public function getAccountMedia($account_id, $recording_id)
+    public function deleteAccountMedia($account_id, $media_id)
     {
-        list($response) = $this->getAccountMediaWithHttpInfo($account_id, $recording_id);
+        list($response) = $this->deleteAccountMediaWithHttpInfo($account_id, $media_id);
         return $response;
     }
 
     /**
-     * Operation getAccountMediaWithHttpInfo
+     * Operation deleteAccountMediaWithHttpInfo
      *
-     * Show details of an individual media recording (Greeting or Hold Music)
+     * Delete an individual media record
      *
      * @param int $account_id Account ID (required)
-     * @param int $recording_id Recording ID (required)
+     * @param int $media_id Media ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\MediaFull, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteMedia, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccountMediaWithHttpInfo($account_id, $recording_id)
+    public function deleteAccountMediaWithHttpInfo($account_id, $media_id)
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling getAccountMedia');
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling deleteAccountMedia');
         }
-        // verify the required parameter 'recording_id' is set
-        if ($recording_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $recording_id when calling getAccountMedia');
+        // verify the required parameter 'media_id' is set
+        if ($media_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $media_id when calling deleteAccountMedia');
         }
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/media/{recording_id}";
+        $resourcePath = "/accounts/{account_id}/media/{media_id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -241,10 +349,114 @@ class MediaApi
             );
         }
         // path params
-        if ($recording_id !== null) {
+        if ($media_id !== null) {
             $resourcePath = str_replace(
-                "{" . "recording_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($recording_id),
+                "{" . "media_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($media_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['Authorization'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\DeleteMedia',
+                '/accounts/{account_id}/media/{media_id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteMedia', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteMedia', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAccountMedia
+     *
+     * Show details of an individual media recording (Greeting or Hold Music)
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $media_id Media ID (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\MediaFull
+     */
+    public function getAccountMedia($account_id, $media_id)
+    {
+        list($response) = $this->getAccountMediaWithHttpInfo($account_id, $media_id);
+        return $response;
+    }
+
+    /**
+     * Operation getAccountMediaWithHttpInfo
+     *
+     * Show details of an individual media recording (Greeting or Hold Music)
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $media_id Media ID (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\MediaFull, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAccountMediaWithHttpInfo($account_id, $media_id)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling getAccountMedia');
+        }
+        // verify the required parameter 'media_id' is set
+        if ($media_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $media_id when calling getAccountMedia');
+        }
+        // parse inputs
+        $resourcePath = "/accounts/{account_id}/media/{media_id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "account_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($media_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "media_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($media_id),
                 $resourcePath
             );
         }
@@ -272,7 +484,7 @@ class MediaApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\MediaFull',
-                '/accounts/{account_id}/media/{recording_id}'
+                '/accounts/{account_id}/media/{media_id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\MediaFull', $httpHeader), $statusCode, $httpHeader];
@@ -426,6 +638,117 @@ class MediaApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ListMedia', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation replaceAccountMediaTts
+     *
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $media_id Media ID (required)
+     * @param \Swagger\Client\Model\CreateMediaParams $data Media data (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\MediaFull
+     */
+    public function replaceAccountMediaTts($account_id, $media_id, $data = null)
+    {
+        list($response) = $this->replaceAccountMediaTtsWithHttpInfo($account_id, $media_id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation replaceAccountMediaTtsWithHttpInfo
+     *
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $media_id Media ID (required)
+     * @param \Swagger\Client\Model\CreateMediaParams $data Media data (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\MediaFull, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function replaceAccountMediaTtsWithHttpInfo($account_id, $media_id, $data = null)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling replaceAccountMediaTts');
+        }
+        // verify the required parameter 'media_id' is set
+        if ($media_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $media_id when calling replaceAccountMediaTts');
+        }
+        // parse inputs
+        $resourcePath = "/accounts/{account_id}/media/{media_id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "account_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($media_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "media_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($media_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['Authorization'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\MediaFull',
+                '/accounts/{account_id}/media/{media_id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\MediaFull', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\MediaFull', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

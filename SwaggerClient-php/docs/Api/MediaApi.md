@@ -4,13 +4,70 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountMedia**](MediaApi.md#createAccountMedia) | **POST** /accounts/{account_id}/media | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
-[**getAccountMedia**](MediaApi.md#getAccountMedia) | **GET** /accounts/{account_id}/media/{recording_id} | Show details of an individual media recording (Greeting or Hold Music)
+[**createAccountMediaFiles**](MediaApi.md#createAccountMediaFiles) | **POST** /accounts/{account_id}/media/files | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+[**createAccountMediaTts**](MediaApi.md#createAccountMediaTts) | **POST** /accounts/{account_id}/media/tts | Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+[**deleteAccountMedia**](MediaApi.md#deleteAccountMedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
+[**getAccountMedia**](MediaApi.md#getAccountMedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 [**listAccountMedia**](MediaApi.md#listAccountMedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
+[**replaceAccountMediaTts**](MediaApi.md#replaceAccountMediaTts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 
 
-# **createAccountMedia**
-> \Swagger\Client\Model\MediaFull createAccountMedia($account_id, $data)
+# **createAccountMediaFiles**
+> \Swagger\Client\Model\MediaFull createAccountMediaFiles($account_id, $json, $file)
+
+Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+
+See Account Media for more info on the properties.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\MediaApi();
+$account_id = 56; // int | Account ID
+$json = "json_example"; // string | Media extra parameters
+$file = "/path/to/file.txt"; // \SplFileObject | Media file
+
+try {
+    $result = $api_instance->createAccountMediaFiles($account_id, $json, $file);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MediaApi->createAccountMediaFiles: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **int**| Account ID |
+ **json** | **string**| Media extra parameters | [optional]
+ **file** | **\SplFileObject**| Media file | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\MediaFull**](../Model/MediaFull.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createAccountMediaTts**
+> \Swagger\Client\Model\MediaFull createAccountMediaTts($account_id, $data)
 
 Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
 
@@ -31,10 +88,10 @@ $account_id = 56; // int | Account ID
 $data = new \Swagger\Client\Model\CreateMediaParams(); // \Swagger\Client\Model\CreateMediaParams | Media data
 
 try {
-    $result = $api_instance->createAccountMedia($account_id, $data);
+    $result = $api_instance->createAccountMediaTts($account_id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MediaApi->createAccountMedia: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MediaApi->createAccountMediaTts: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,8 +118,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **deleteAccountMedia**
+> \Swagger\Client\Model\DeleteMedia deleteAccountMedia($account_id, $media_id)
+
+Delete an individual media record
+
+See Account Media for more info on the properties.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\MediaApi();
+$account_id = 56; // int | Account ID
+$media_id = 56; // int | Media ID
+
+try {
+    $result = $api_instance->deleteAccountMedia($account_id, $media_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MediaApi->deleteAccountMedia: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **int**| Account ID |
+ **media_id** | **int**| Media ID |
+
+### Return type
+
+[**\Swagger\Client\Model\DeleteMedia**](../Model/DeleteMedia.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getAccountMedia**
-> \Swagger\Client\Model\MediaFull getAccountMedia($account_id, $recording_id)
+> \Swagger\Client\Model\MediaFull getAccountMedia($account_id, $media_id)
 
 Show details of an individual media recording (Greeting or Hold Music)
 
@@ -80,10 +189,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorizatio
 
 $api_instance = new Swagger\Client\Api\MediaApi();
 $account_id = 56; // int | Account ID
-$recording_id = 56; // int | Recording ID
+$media_id = 56; // int | Media ID
 
 try {
-    $result = $api_instance->getAccountMedia($account_id, $recording_id);
+    $result = $api_instance->getAccountMedia($account_id, $media_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MediaApi->getAccountMedia: ', $e->getMessage(), PHP_EOL;
@@ -96,7 +205,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **recording_id** | **int**| Recording ID |
+ **media_id** | **int**| Media ID |
 
 ### Return type
 
@@ -165,6 +274,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\ListMedia**](../Model/ListMedia.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **replaceAccountMediaTts**
+> \Swagger\Client\Model\MediaFull replaceAccountMediaTts($account_id, $media_id, $data)
+
+Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+
+See Account Media for more info on the properties.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\MediaApi();
+$account_id = 56; // int | Account ID
+$media_id = 56; // int | Media ID
+$data = new \Swagger\Client\Model\CreateMediaParams(); // \Swagger\Client\Model\CreateMediaParams | Media data
+
+try {
+    $result = $api_instance->replaceAccountMediaTts($account_id, $media_id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MediaApi->replaceAccountMediaTts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **int**| Account ID |
+ **media_id** | **int**| Media ID |
+ **data** | [**\Swagger\Client\Model\CreateMediaParams**](../Model/\Swagger\Client\Model\CreateMediaParams.md)| Media data | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\MediaFull**](../Model/MediaFull.md)
 
 ### Authorization
 
