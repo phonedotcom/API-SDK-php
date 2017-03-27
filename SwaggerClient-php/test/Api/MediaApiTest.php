@@ -132,6 +132,17 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for replaceAccountMediaFiles
+     *
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB..
+     *
+     */
+    public function testReplaceAccountMediaFiles()
+    {
+
+    }
+
+    /**
      * Test case for replaceAccountMediaTts
      *
      * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB..

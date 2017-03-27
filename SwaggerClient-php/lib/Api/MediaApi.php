@@ -647,6 +647,128 @@ class MediaApi
     }
 
     /**
+     * Operation replaceAccountMediaFiles
+     *
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $media_id Media ID (required)
+     * @param string $json Media extra parameters (optional)
+     * @param \SplFileObject $file Media file (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\MediaFull
+     */
+    public function replaceAccountMediaFiles($account_id, $media_id, $json = null, $file = null)
+    {
+        list($response) = $this->replaceAccountMediaFilesWithHttpInfo($account_id, $media_id, $json, $file);
+        return $response;
+    }
+
+    /**
+     * Operation replaceAccountMediaFilesWithHttpInfo
+     *
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $media_id Media ID (required)
+     * @param string $json Media extra parameters (optional)
+     * @param \SplFileObject $file Media file (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\MediaFull, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function replaceAccountMediaFilesWithHttpInfo($account_id, $media_id, $json = null, $file = null)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling replaceAccountMediaFiles');
+        }
+        // verify the required parameter 'media_id' is set
+        if ($media_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $media_id when calling replaceAccountMediaFiles');
+        }
+        // parse inputs
+        $resourcePath = "/accounts/{account_id}/media/files/{media_id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "account_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($media_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "media_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($media_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // form params
+        if ($json !== null) {
+            $formParams['json'] = $this->apiClient->getSerializer()->toFormValue($json);
+        }
+        // form params
+        if ($file !== null) {
+            // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
+            // See: https://wiki.php.net/rfc/curl-file-upload
+            if (function_exists('curl_file_create')) {
+                $formParams['file'] = curl_file_create($this->apiClient->getSerializer()->toFormValue($file));
+            } else {
+                $formParams['file'] = '@' . $this->apiClient->getSerializer()->toFormValue($file);
+            }
+        }
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['Authorization'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\MediaFull',
+                '/accounts/{account_id}/media/files/{media_id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\MediaFull', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\MediaFull', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation replaceAccountMediaTts
      *
      * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
@@ -685,7 +807,7 @@ class MediaApi
             throw new \InvalidArgumentException('Missing the required parameter $media_id when calling replaceAccountMediaTts');
         }
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/media/{media_id}";
+        $resourcePath = "/accounts/{account_id}/media/tts/{media_id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -741,7 +863,7 @@ class MediaApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\MediaFull',
-                '/accounts/{account_id}/media/{media_id}'
+                '/accounts/{account_id}/media/tts/{media_id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\MediaFull', $httpHeader), $statusCode, $httpHeader];
