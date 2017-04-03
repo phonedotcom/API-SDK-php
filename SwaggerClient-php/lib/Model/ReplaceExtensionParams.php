@@ -54,7 +54,8 @@ class ReplaceExtensionParams implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'voicemail_greeting_alternate' => 'object',
+        'voicemail' => '\Swagger\Client\Model\Voicemail',
+        'call_notifications' => '\Swagger\Client\Model\CallNotifications',
         'name_greeting' => 'object',
         'name' => 'string',
         'timezone' => 'string',
@@ -62,21 +63,11 @@ class ReplaceExtensionParams implements ArrayAccess
         'extension' => 'int',
         'enable_outbound_calls' => 'bool',
         'usage_type' => 'string',
-        'voicemail_password' => 'int',
         'full_name' => 'string',
         'enable_call_waiting' => 'bool',
-        'voicemail_greeting_standard' => 'object',
-        'voicemail_greeting_type' => 'string',
         'caller_id' => 'string',
         'local_area_code' => 'int',
-        'voicemail_enabled' => 'bool',
-        'voicemail_greeting_enable_leave_message_prompt' => 'bool',
-        'voicemail_transcription' => 'string',
-        'voicemail_notifications_emails' => 'string[]',
-        'voicemail_notifications_sms' => 'string',
-        'call_notifications_emails' => 'string[]',
-        'call_notifications_sms' => 'string',
-        'route' => 'string[]'
+        'route' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -89,7 +80,8 @@ class ReplaceExtensionParams implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'voicemail_greeting_alternate' => 'voicemail[greeting][alternate]',
+        'voicemail' => 'voicemail',
+        'call_notifications' => 'call_notifications',
         'name_greeting' => 'name_greeting',
         'name' => 'name',
         'timezone' => 'timezone',
@@ -97,20 +89,10 @@ class ReplaceExtensionParams implements ArrayAccess
         'extension' => 'extension',
         'enable_outbound_calls' => 'enable_outbound_calls',
         'usage_type' => 'usage_type',
-        'voicemail_password' => 'voicemail[password]',
         'full_name' => 'full_name',
         'enable_call_waiting' => 'enable_call_waiting',
-        'voicemail_greeting_standard' => 'voicemail[greeting][standard]',
-        'voicemail_greeting_type' => 'voicemail[greeting][type]',
         'caller_id' => 'caller_id',
         'local_area_code' => 'local_area_code',
-        'voicemail_enabled' => 'voicemail[enabled]',
-        'voicemail_greeting_enable_leave_message_prompt' => 'voicemail[greeting][enable_leave_message_prompt]',
-        'voicemail_transcription' => 'voicemail[transcription]',
-        'voicemail_notifications_emails' => 'voicemail[notifications][emails]',
-        'voicemail_notifications_sms' => 'voicemail[notifications][sms]',
-        'call_notifications_emails' => 'call_notifications[emails]',
-        'call_notifications_sms' => 'call_notifications[sms]',
         'route' => 'route'
     ];
 
@@ -120,7 +102,8 @@ class ReplaceExtensionParams implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'voicemail_greeting_alternate' => 'setVoicemailGreetingAlternate',
+        'voicemail' => 'setVoicemail',
+        'call_notifications' => 'setCallNotifications',
         'name_greeting' => 'setNameGreeting',
         'name' => 'setName',
         'timezone' => 'setTimezone',
@@ -128,20 +111,10 @@ class ReplaceExtensionParams implements ArrayAccess
         'extension' => 'setExtension',
         'enable_outbound_calls' => 'setEnableOutboundCalls',
         'usage_type' => 'setUsageType',
-        'voicemail_password' => 'setVoicemailPassword',
         'full_name' => 'setFullName',
         'enable_call_waiting' => 'setEnableCallWaiting',
-        'voicemail_greeting_standard' => 'setVoicemailGreetingStandard',
-        'voicemail_greeting_type' => 'setVoicemailGreetingType',
         'caller_id' => 'setCallerId',
         'local_area_code' => 'setLocalAreaCode',
-        'voicemail_enabled' => 'setVoicemailEnabled',
-        'voicemail_greeting_enable_leave_message_prompt' => 'setVoicemailGreetingEnableLeaveMessagePrompt',
-        'voicemail_transcription' => 'setVoicemailTranscription',
-        'voicemail_notifications_emails' => 'setVoicemailNotificationsEmails',
-        'voicemail_notifications_sms' => 'setVoicemailNotificationsSms',
-        'call_notifications_emails' => 'setCallNotificationsEmails',
-        'call_notifications_sms' => 'setCallNotificationsSms',
         'route' => 'setRoute'
     ];
 
@@ -151,7 +124,8 @@ class ReplaceExtensionParams implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'voicemail_greeting_alternate' => 'getVoicemailGreetingAlternate',
+        'voicemail' => 'getVoicemail',
+        'call_notifications' => 'getCallNotifications',
         'name_greeting' => 'getNameGreeting',
         'name' => 'getName',
         'timezone' => 'getTimezone',
@@ -159,20 +133,10 @@ class ReplaceExtensionParams implements ArrayAccess
         'extension' => 'getExtension',
         'enable_outbound_calls' => 'getEnableOutboundCalls',
         'usage_type' => 'getUsageType',
-        'voicemail_password' => 'getVoicemailPassword',
         'full_name' => 'getFullName',
         'enable_call_waiting' => 'getEnableCallWaiting',
-        'voicemail_greeting_standard' => 'getVoicemailGreetingStandard',
-        'voicemail_greeting_type' => 'getVoicemailGreetingType',
         'caller_id' => 'getCallerId',
         'local_area_code' => 'getLocalAreaCode',
-        'voicemail_enabled' => 'getVoicemailEnabled',
-        'voicemail_greeting_enable_leave_message_prompt' => 'getVoicemailGreetingEnableLeaveMessagePrompt',
-        'voicemail_transcription' => 'getVoicemailTranscription',
-        'voicemail_notifications_emails' => 'getVoicemailNotificationsEmails',
-        'voicemail_notifications_sms' => 'getVoicemailNotificationsSms',
-        'call_notifications_emails' => 'getCallNotificationsEmails',
-        'call_notifications_sms' => 'getCallNotificationsSms',
         'route' => 'getRoute'
     ];
 
@@ -207,7 +171,8 @@ class ReplaceExtensionParams implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['voicemail_greeting_alternate'] = isset($data['voicemail_greeting_alternate']) ? $data['voicemail_greeting_alternate'] : null;
+        $this->container['voicemail'] = isset($data['voicemail']) ? $data['voicemail'] : null;
+        $this->container['call_notifications'] = isset($data['call_notifications']) ? $data['call_notifications'] : null;
         $this->container['name_greeting'] = isset($data['name_greeting']) ? $data['name_greeting'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
@@ -215,20 +180,10 @@ class ReplaceExtensionParams implements ArrayAccess
         $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
         $this->container['enable_outbound_calls'] = isset($data['enable_outbound_calls']) ? $data['enable_outbound_calls'] : null;
         $this->container['usage_type'] = isset($data['usage_type']) ? $data['usage_type'] : null;
-        $this->container['voicemail_password'] = isset($data['voicemail_password']) ? $data['voicemail_password'] : null;
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
         $this->container['enable_call_waiting'] = isset($data['enable_call_waiting']) ? $data['enable_call_waiting'] : null;
-        $this->container['voicemail_greeting_standard'] = isset($data['voicemail_greeting_standard']) ? $data['voicemail_greeting_standard'] : null;
-        $this->container['voicemail_greeting_type'] = isset($data['voicemail_greeting_type']) ? $data['voicemail_greeting_type'] : null;
         $this->container['caller_id'] = isset($data['caller_id']) ? $data['caller_id'] : null;
         $this->container['local_area_code'] = isset($data['local_area_code']) ? $data['local_area_code'] : null;
-        $this->container['voicemail_enabled'] = isset($data['voicemail_enabled']) ? $data['voicemail_enabled'] : null;
-        $this->container['voicemail_greeting_enable_leave_message_prompt'] = isset($data['voicemail_greeting_enable_leave_message_prompt']) ? $data['voicemail_greeting_enable_leave_message_prompt'] : null;
-        $this->container['voicemail_transcription'] = isset($data['voicemail_transcription']) ? $data['voicemail_transcription'] : null;
-        $this->container['voicemail_notifications_emails'] = isset($data['voicemail_notifications_emails']) ? $data['voicemail_notifications_emails'] : null;
-        $this->container['voicemail_notifications_sms'] = isset($data['voicemail_notifications_sms']) ? $data['voicemail_notifications_sms'] : null;
-        $this->container['call_notifications_emails'] = isset($data['call_notifications_emails']) ? $data['call_notifications_emails'] : null;
-        $this->container['call_notifications_sms'] = isset($data['call_notifications_sms']) ? $data['call_notifications_sms'] : null;
         $this->container['route'] = isset($data['route']) ? $data['route'] : null;
     }
 
@@ -258,22 +213,43 @@ class ReplaceExtensionParams implements ArrayAccess
 
 
     /**
-     * Gets voicemail_greeting_alternate
-     * @return object
+     * Gets voicemail
+     * @return \Swagger\Client\Model\Voicemail
      */
-    public function getVoicemailGreetingAlternate()
+    public function getVoicemail()
     {
-        return $this->container['voicemail_greeting_alternate'];
+        return $this->container['voicemail'];
     }
 
     /**
-     * Sets voicemail_greeting_alternate
-     * @param object $voicemail_greeting_alternate Recording lookup object
+     * Sets voicemail
+     * @param \Swagger\Client\Model\Voicemail $voicemail Voicemail object
      * @return $this
      */
-    public function setVoicemailGreetingAlternate($voicemail_greeting_alternate)
+    public function setVoicemail($voicemail)
     {
-        $this->container['voicemail_greeting_alternate'] = $voicemail_greeting_alternate;
+        $this->container['voicemail'] = $voicemail;
+
+        return $this;
+    }
+
+    /**
+     * Gets call_notifications
+     * @return \Swagger\Client\Model\CallNotifications
+     */
+    public function getCallNotifications()
+    {
+        return $this->container['call_notifications'];
+    }
+
+    /**
+     * Sets call_notifications
+     * @param \Swagger\Client\Model\CallNotifications $call_notifications Call Notifications object
+     * @return $this
+     */
+    public function setCallNotifications($call_notifications)
+    {
+        $this->container['call_notifications'] = $call_notifications;
 
         return $this;
     }
@@ -426,27 +402,6 @@ class ReplaceExtensionParams implements ArrayAccess
     }
 
     /**
-     * Gets voicemail_password
-     * @return int
-     */
-    public function getVoicemailPassword()
-    {
-        return $this->container['voicemail_password'];
-    }
-
-    /**
-     * Sets voicemail_password
-     * @param int $voicemail_password Voicemail password
-     * @return $this
-     */
-    public function setVoicemailPassword($voicemail_password)
-    {
-        $this->container['voicemail_password'] = $voicemail_password;
-
-        return $this;
-    }
-
-    /**
      * Gets full_name
      * @return string
      */
@@ -484,48 +439,6 @@ class ReplaceExtensionParams implements ArrayAccess
     public function setEnableCallWaiting($enable_call_waiting)
     {
         $this->container['enable_call_waiting'] = $enable_call_waiting;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_greeting_standard
-     * @return object
-     */
-    public function getVoicemailGreetingStandard()
-    {
-        return $this->container['voicemail_greeting_standard'];
-    }
-
-    /**
-     * Sets voicemail_greeting_standard
-     * @param object $voicemail_greeting_standard Recording lookup object
-     * @return $this
-     */
-    public function setVoicemailGreetingStandard($voicemail_greeting_standard)
-    {
-        $this->container['voicemail_greeting_standard'] = $voicemail_greeting_standard;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_greeting_type
-     * @return string
-     */
-    public function getVoicemailGreetingType()
-    {
-        return $this->container['voicemail_greeting_type'];
-    }
-
-    /**
-     * Sets voicemail_greeting_type
-     * @param string $voicemail_greeting_type Voicemail greeting type
-     * @return $this
-     */
-    public function setVoicemailGreetingType($voicemail_greeting_type)
-    {
-        $this->container['voicemail_greeting_type'] = $voicemail_greeting_type;
 
         return $this;
     }
@@ -573,155 +486,8 @@ class ReplaceExtensionParams implements ArrayAccess
     }
 
     /**
-     * Gets voicemail_enabled
-     * @return bool
-     */
-    public function getVoicemailEnabled()
-    {
-        return $this->container['voicemail_enabled'];
-    }
-
-    /**
-     * Sets voicemail_enabled
-     * @param bool $voicemail_enabled Voicemail enabled
-     * @return $this
-     */
-    public function setVoicemailEnabled($voicemail_enabled)
-    {
-        $this->container['voicemail_enabled'] = $voicemail_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_greeting_enable_leave_message_prompt
-     * @return bool
-     */
-    public function getVoicemailGreetingEnableLeaveMessagePrompt()
-    {
-        return $this->container['voicemail_greeting_enable_leave_message_prompt'];
-    }
-
-    /**
-     * Sets voicemail_greeting_enable_leave_message_prompt
-     * @param bool $voicemail_greeting_enable_leave_message_prompt Use leave message prompt after voicemail
-     * @return $this
-     */
-    public function setVoicemailGreetingEnableLeaveMessagePrompt($voicemail_greeting_enable_leave_message_prompt)
-    {
-        $this->container['voicemail_greeting_enable_leave_message_prompt'] = $voicemail_greeting_enable_leave_message_prompt;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_transcription
-     * @return string
-     */
-    public function getVoicemailTranscription()
-    {
-        return $this->container['voicemail_transcription'];
-    }
-
-    /**
-     * Sets voicemail_transcription
-     * @param string $voicemail_transcription Voicemail transcription type
-     * @return $this
-     */
-    public function setVoicemailTranscription($voicemail_transcription)
-    {
-        $this->container['voicemail_transcription'] = $voicemail_transcription;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_notifications_emails
-     * @return string[]
-     */
-    public function getVoicemailNotificationsEmails()
-    {
-        return $this->container['voicemail_notifications_emails'];
-    }
-
-    /**
-     * Sets voicemail_notifications_emails
-     * @param string[] $voicemail_notifications_emails Email notifications for voicemails. Can be a single email or an array of emails
-     * @return $this
-     */
-    public function setVoicemailNotificationsEmails($voicemail_notifications_emails)
-    {
-        $this->container['voicemail_notifications_emails'] = $voicemail_notifications_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_notifications_sms
-     * @return string
-     */
-    public function getVoicemailNotificationsSms()
-    {
-        return $this->container['voicemail_notifications_sms'];
-    }
-
-    /**
-     * Sets voicemail_notifications_sms
-     * @param string $voicemail_notifications_sms SMS notifications for voicemails
-     * @return $this
-     */
-    public function setVoicemailNotificationsSms($voicemail_notifications_sms)
-    {
-        $this->container['voicemail_notifications_sms'] = $voicemail_notifications_sms;
-
-        return $this;
-    }
-
-    /**
-     * Gets call_notifications_emails
-     * @return string[]
-     */
-    public function getCallNotificationsEmails()
-    {
-        return $this->container['call_notifications_emails'];
-    }
-
-    /**
-     * Sets call_notifications_emails
-     * @param string[] $call_notifications_emails Email notifications for calls. Can be a single email or an array of emails
-     * @return $this
-     */
-    public function setCallNotificationsEmails($call_notifications_emails)
-    {
-        $this->container['call_notifications_emails'] = $call_notifications_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets call_notifications_sms
-     * @return string
-     */
-    public function getCallNotificationsSms()
-    {
-        return $this->container['call_notifications_sms'];
-    }
-
-    /**
-     * Sets call_notifications_sms
-     * @param string $call_notifications_sms SMS notifications for calls
-     * @return $this
-     */
-    public function setCallNotificationsSms($call_notifications_sms)
-    {
-        $this->container['call_notifications_sms'] = $call_notifications_sms;
-
-        return $this;
-    }
-
-    /**
      * Gets route
-     * @return string[]
+     * @return string
      */
     public function getRoute()
     {
@@ -730,7 +496,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets route
-     * @param string[] $route Route object lookup (must belong to this extension)
+     * @param string $route Route object lookup (must belong to this extension)
      * @return $this
      */
     public function setRoute($route)

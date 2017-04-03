@@ -259,6 +259,7 @@ Class | Method | HTTP request | Description
  - [ScheduleSummary](docs/Model/ScheduleSummary.md)
  - [SipAuthentication](docs/Model/SipAuthentication.md)
  - [SmsForwarding](docs/Model/SmsForwarding.md)
+ - [SmsForwardingParams](docs/Model/SmsForwardingParams.md)
  - [SmsFull](docs/Model/SmsFull.md)
  - [SortCallLogs](docs/Model/SortCallLogs.md)
  - [SortId](docs/Model/SortId.md)

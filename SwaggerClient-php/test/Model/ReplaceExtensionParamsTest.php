@@ -83,9 +83,17 @@ class ReplaceExtensionParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "voicemail_greeting_alternate"
+     * Test attribute "voicemail"
      */
-    public function testPropertyVoicemailGreetingAlternate()
+    public function testPropertyVoicemail()
+    {
+
+    }
+
+    /**
+     * Test attribute "call_notifications"
+     */
+    public function testPropertyCallNotifications()
     {
 
     }
@@ -147,14 +155,6 @@ class ReplaceExtensionParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "voicemail_password"
-     */
-    public function testPropertyVoicemailPassword()
-    {
-
-    }
-
-    /**
      * Test attribute "full_name"
      */
     public function testPropertyFullName()
@@ -171,22 +171,6 @@ class ReplaceExtensionParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "voicemail_greeting_standard"
-     */
-    public function testPropertyVoicemailGreetingStandard()
-    {
-
-    }
-
-    /**
-     * Test attribute "voicemail_greeting_type"
-     */
-    public function testPropertyVoicemailGreetingType()
-    {
-
-    }
-
-    /**
      * Test attribute "caller_id"
      */
     public function testPropertyCallerId()
@@ -198,62 +182,6 @@ class ReplaceExtensionParamsTest extends \PHPUnit_Framework_TestCase
      * Test attribute "local_area_code"
      */
     public function testPropertyLocalAreaCode()
-    {
-
-    }
-
-    /**
-     * Test attribute "voicemail_enabled"
-     */
-    public function testPropertyVoicemailEnabled()
-    {
-
-    }
-
-    /**
-     * Test attribute "voicemail_greeting_enable_leave_message_prompt"
-     */
-    public function testPropertyVoicemailGreetingEnableLeaveMessagePrompt()
-    {
-
-    }
-
-    /**
-     * Test attribute "voicemail_transcription"
-     */
-    public function testPropertyVoicemailTranscription()
-    {
-
-    }
-
-    /**
-     * Test attribute "voicemail_notifications_emails"
-     */
-    public function testPropertyVoicemailNotificationsEmails()
-    {
-
-    }
-
-    /**
-     * Test attribute "voicemail_notifications_sms"
-     */
-    public function testPropertyVoicemailNotificationsSms()
-    {
-
-    }
-
-    /**
-     * Test attribute "call_notifications_emails"
-     */
-    public function testPropertyCallNotificationsEmails()
-    {
-
-    }
-
-    /**
-     * Test attribute "call_notifications_sms"
-     */
-    public function testPropertyCallNotificationsSms()
     {
 
     }

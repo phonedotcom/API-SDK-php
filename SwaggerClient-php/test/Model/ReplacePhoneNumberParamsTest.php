@@ -115,41 +115,17 @@ class ReplacePhoneNumberParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "caller_id_name"
+     * Test attribute "caller_id"
      */
-    public function testPropertyCallerIdName()
+    public function testPropertyCallerId()
     {
 
     }
 
     /**
-     * Test attribute "caller_id_type"
+     * Test attribute "sms_forwarding"
      */
-    public function testPropertyCallerIdType()
-    {
-
-    }
-
-    /**
-     * Test attribute "sms_forwarding_type"
-     */
-    public function testPropertySmsForwardingType()
-    {
-
-    }
-
-    /**
-     * Test attribute "sms_forwarding_application"
-     */
-    public function testPropertySmsForwardingApplication()
-    {
-
-    }
-
-    /**
-     * Test attribute "sms_forwarding_extension"
-     */
-    public function testPropertySmsForwardingExtension()
+    public function testPropertySmsForwarding()
     {
 
     }
@@ -163,17 +139,9 @@ class ReplacePhoneNumberParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "call_notifications_emails"
+     * Test attribute "call_notifications"
      */
-    public function testPropertyCallNotificationsEmails()
-    {
-
-    }
-
-    /**
-     * Test attribute "call_notifications_sms"
-     */
-    public function testPropertyCallNotificationsSms()
+    public function testPropertyCallNotifications()
     {
 
     }

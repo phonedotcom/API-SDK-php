@@ -1,6 +1,6 @@
 <?php
 /**
- * CallerIdPhoneNumber
+ * SmsForwardingParams
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * CallerIdPhoneNumber Class Doc Comment
+ * SmsForwardingParams Class Doc Comment
  *
  * @category    Class
- * @description Here are all of the properties you can expect for Caller ID objects:
+ * @description SMS Forwarding Object, or NULL
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CallerIdPhoneNumber implements ArrayAccess
+class SmsForwardingParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,15 +48,16 @@ class CallerIdPhoneNumber implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CallerIdPhoneNumber';
+    protected static $swaggerModelName = 'SmsForwardingParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'extension' => 'int',
+        'application' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -69,8 +70,9 @@ class CallerIdPhoneNumber implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'type' => 'type'
+        'type' => 'type',
+        'extension' => 'extension',
+        'application' => 'application'
     ];
 
 
@@ -79,8 +81,9 @@ class CallerIdPhoneNumber implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'type' => 'setType'
+        'type' => 'setType',
+        'extension' => 'setExtension',
+        'application' => 'setApplication'
     ];
 
 
@@ -89,8 +92,9 @@ class CallerIdPhoneNumber implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'type' => 'getType'
+        'type' => 'getType',
+        'extension' => 'getExtension',
+        'application' => 'getApplication'
     ];
 
     public static function attributeMap()
@@ -124,8 +128,9 @@ class CallerIdPhoneNumber implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
+        $this->container['application'] = isset($data['application']) ? $data['application'] : null;
     }
 
     /**
@@ -137,8 +142,8 @@ class CallerIdPhoneNumber implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['type']) && !preg_match("/business|personal/", $this->container['type'])) {
-            $invalid_properties[] = "invalid value for 'type', must be conform to the pattern /business|personal/.";
+        if (!is_null($this->container['type']) && !preg_match("/extension|application/", $this->container['type'])) {
+            $invalid_properties[] = "invalid value for 'type', must be conform to the pattern /extension|application/.";
         }
 
         return $invalid_properties;
@@ -153,33 +158,12 @@ class CallerIdPhoneNumber implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/business|personal/", $this->container['type'])) {
+        if (!preg_match("/extension|application/", $this->container['type'])) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name Name that this number will be associated with. Must be no longer than 15 characters, and can only contain English letters, numbers, spaces, and commas.
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets type
@@ -192,17 +176,59 @@ class CallerIdPhoneNumber implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type Can be \"business\" or \"personal\"
+     * @param string $type Can be \"extension\" or \"application\"
      * @return $this
      */
     public function setType($type)
     {
 
-        if (!is_null($type) && (!preg_match("/business|personal/", $type))) {
-            throw new \InvalidArgumentException("invalid value for $type when calling CallerIdPhoneNumber., must conform to the pattern /business|personal/.");
+        if (!is_null($type) && (!preg_match("/extension|application/", $type))) {
+            throw new \InvalidArgumentException("invalid value for $type when calling SmsForwardingParams., must conform to the pattern /extension|application/.");
         }
 
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets extension
+     * @return int
+     */
+    public function getExtension()
+    {
+        return $this->container['extension'];
+    }
+
+    /**
+     * Sets extension
+     * @param int $extension Required if type = \"extension\". Extension that messages should be directed to. Output is an Extension Summary Object. Input must be an Extension Lookup Object.
+     * @return $this
+     */
+    public function setExtension($extension)
+    {
+        $this->container['extension'] = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Gets application
+     * @return int
+     */
+    public function getApplication()
+    {
+        return $this->container['application'];
+    }
+
+    /**
+     * Sets application
+     * @param int $application Required if type = \"application\". Application that messages should be directed to. Output is an Application Summary Object. Input must be an Application Lookup Object.
+     * @return $this
+     */
+    public function setApplication($application)
+    {
+        $this->container['application'] = $application;
 
         return $this;
     }

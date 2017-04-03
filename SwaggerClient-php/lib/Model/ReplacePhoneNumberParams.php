@@ -58,14 +58,10 @@ class ReplacePhoneNumberParams implements ArrayAccess
         'name' => 'string',
         'block_incoming' => 'bool',
         'block_anonymous' => 'bool',
-        'caller_id_name' => 'string',
-        'caller_id_type' => 'string',
-        'sms_forwarding_type' => 'string',
-        'sms_forwarding_application' => 'object',
-        'sms_forwarding_extension' => 'object',
+        'caller_id' => '\Swagger\Client\Model\CallerIdPhoneNumber',
+        'sms_forwarding' => '\Swagger\Client\Model\SmsForwardingParams',
         'pool_item' => 'object',
-        'call_notifications_emails' => 'string[]',
-        'call_notifications_sms' => 'string'
+        'call_notifications' => '\Swagger\Client\Model\CallNotifications'
     ];
 
     public static function swaggerTypes()
@@ -82,14 +78,10 @@ class ReplacePhoneNumberParams implements ArrayAccess
         'name' => 'name',
         'block_incoming' => 'block_incoming',
         'block_anonymous' => 'block_anonymous',
-        'caller_id_name' => 'caller_id[name]',
-        'caller_id_type' => 'caller_id[type]',
-        'sms_forwarding_type' => 'sms_forwarding[type]',
-        'sms_forwarding_application' => 'sms_forwarding[application]',
-        'sms_forwarding_extension' => 'sms_forwarding[extension]',
+        'caller_id' => 'caller_id',
+        'sms_forwarding' => 'sms_forwarding',
         'pool_item' => 'pool_item',
-        'call_notifications_emails' => 'call_notifications[emails]',
-        'call_notifications_sms' => 'call_notifications[sms]'
+        'call_notifications' => 'call_notifications'
     ];
 
 
@@ -102,14 +94,10 @@ class ReplacePhoneNumberParams implements ArrayAccess
         'name' => 'setName',
         'block_incoming' => 'setBlockIncoming',
         'block_anonymous' => 'setBlockAnonymous',
-        'caller_id_name' => 'setCallerIdName',
-        'caller_id_type' => 'setCallerIdType',
-        'sms_forwarding_type' => 'setSmsForwardingType',
-        'sms_forwarding_application' => 'setSmsForwardingApplication',
-        'sms_forwarding_extension' => 'setSmsForwardingExtension',
+        'caller_id' => 'setCallerId',
+        'sms_forwarding' => 'setSmsForwarding',
         'pool_item' => 'setPoolItem',
-        'call_notifications_emails' => 'setCallNotificationsEmails',
-        'call_notifications_sms' => 'setCallNotificationsSms'
+        'call_notifications' => 'setCallNotifications'
     ];
 
 
@@ -122,14 +110,10 @@ class ReplacePhoneNumberParams implements ArrayAccess
         'name' => 'getName',
         'block_incoming' => 'getBlockIncoming',
         'block_anonymous' => 'getBlockAnonymous',
-        'caller_id_name' => 'getCallerIdName',
-        'caller_id_type' => 'getCallerIdType',
-        'sms_forwarding_type' => 'getSmsForwardingType',
-        'sms_forwarding_application' => 'getSmsForwardingApplication',
-        'sms_forwarding_extension' => 'getSmsForwardingExtension',
+        'caller_id' => 'getCallerId',
+        'sms_forwarding' => 'getSmsForwarding',
         'pool_item' => 'getPoolItem',
-        'call_notifications_emails' => 'getCallNotificationsEmails',
-        'call_notifications_sms' => 'getCallNotificationsSms'
+        'call_notifications' => 'getCallNotifications'
     ];
 
     public static function attributeMap()
@@ -167,14 +151,10 @@ class ReplacePhoneNumberParams implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['block_incoming'] = isset($data['block_incoming']) ? $data['block_incoming'] : null;
         $this->container['block_anonymous'] = isset($data['block_anonymous']) ? $data['block_anonymous'] : null;
-        $this->container['caller_id_name'] = isset($data['caller_id_name']) ? $data['caller_id_name'] : null;
-        $this->container['caller_id_type'] = isset($data['caller_id_type']) ? $data['caller_id_type'] : null;
-        $this->container['sms_forwarding_type'] = isset($data['sms_forwarding_type']) ? $data['sms_forwarding_type'] : null;
-        $this->container['sms_forwarding_application'] = isset($data['sms_forwarding_application']) ? $data['sms_forwarding_application'] : null;
-        $this->container['sms_forwarding_extension'] = isset($data['sms_forwarding_extension']) ? $data['sms_forwarding_extension'] : null;
+        $this->container['caller_id'] = isset($data['caller_id']) ? $data['caller_id'] : null;
+        $this->container['sms_forwarding'] = isset($data['sms_forwarding']) ? $data['sms_forwarding'] : null;
         $this->container['pool_item'] = isset($data['pool_item']) ? $data['pool_item'] : null;
-        $this->container['call_notifications_emails'] = isset($data['call_notifications_emails']) ? $data['call_notifications_emails'] : null;
-        $this->container['call_notifications_sms'] = isset($data['call_notifications_sms']) ? $data['call_notifications_sms'] : null;
+        $this->container['call_notifications'] = isset($data['call_notifications']) ? $data['call_notifications'] : null;
     }
 
     /**
@@ -287,106 +267,43 @@ class ReplacePhoneNumberParams implements ArrayAccess
     }
 
     /**
-     * Gets caller_id_name
-     * @return string
+     * Gets caller_id
+     * @return \Swagger\Client\Model\CallerIdPhoneNumber
      */
-    public function getCallerIdName()
+    public function getCallerId()
     {
-        return $this->container['caller_id_name'];
+        return $this->container['caller_id'];
     }
 
     /**
-     * Sets caller_id_name
-     * @param string $caller_id_name Caller ID name
+     * Sets caller_id
+     * @param \Swagger\Client\Model\CallerIdPhoneNumber $caller_id Caller ID object
      * @return $this
      */
-    public function setCallerIdName($caller_id_name)
+    public function setCallerId($caller_id)
     {
-        $this->container['caller_id_name'] = $caller_id_name;
+        $this->container['caller_id'] = $caller_id;
 
         return $this;
     }
 
     /**
-     * Gets caller_id_type
-     * @return string
+     * Gets sms_forwarding
+     * @return \Swagger\Client\Model\SmsForwardingParams
      */
-    public function getCallerIdType()
+    public function getSmsForwarding()
     {
-        return $this->container['caller_id_type'];
+        return $this->container['sms_forwarding'];
     }
 
     /**
-     * Sets caller_id_type
-     * @param string $caller_id_type Caller ID type
+     * Sets sms_forwarding
+     * @param \Swagger\Client\Model\SmsForwardingParams $sms_forwarding SMS Forwarding Object, or NULL
      * @return $this
      */
-    public function setCallerIdType($caller_id_type)
+    public function setSmsForwarding($sms_forwarding)
     {
-        $this->container['caller_id_type'] = $caller_id_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets sms_forwarding_type
-     * @return string
-     */
-    public function getSmsForwardingType()
-    {
-        return $this->container['sms_forwarding_type'];
-    }
-
-    /**
-     * Sets sms_forwarding_type
-     * @param string $sms_forwarding_type 'application' or 'extension'
-     * @return $this
-     */
-    public function setSmsForwardingType($sms_forwarding_type)
-    {
-        $this->container['sms_forwarding_type'] = $sms_forwarding_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets sms_forwarding_application
-     * @return object
-     */
-    public function getSmsForwardingApplication()
-    {
-        return $this->container['sms_forwarding_application'];
-    }
-
-    /**
-     * Sets sms_forwarding_application
-     * @param object $sms_forwarding_application Application lookup object
-     * @return $this
-     */
-    public function setSmsForwardingApplication($sms_forwarding_application)
-    {
-        $this->container['sms_forwarding_application'] = $sms_forwarding_application;
-
-        return $this;
-    }
-
-    /**
-     * Gets sms_forwarding_extension
-     * @return object
-     */
-    public function getSmsForwardingExtension()
-    {
-        return $this->container['sms_forwarding_extension'];
-    }
-
-    /**
-     * Sets sms_forwarding_extension
-     * @param object $sms_forwarding_extension Extension lookup object
-     * @return $this
-     */
-    public function setSmsForwardingExtension($sms_forwarding_extension)
-    {
-        $this->container['sms_forwarding_extension'] = $sms_forwarding_extension;
+        $this->container['sms_forwarding'] = $sms_forwarding;
 
         return $this;
     }
@@ -413,43 +330,22 @@ class ReplacePhoneNumberParams implements ArrayAccess
     }
 
     /**
-     * Gets call_notifications_emails
-     * @return string[]
+     * Gets call_notifications
+     * @return \Swagger\Client\Model\CallNotifications
      */
-    public function getCallNotificationsEmails()
+    public function getCallNotifications()
     {
-        return $this->container['call_notifications_emails'];
+        return $this->container['call_notifications'];
     }
 
     /**
-     * Sets call_notifications_emails
-     * @param string[] $call_notifications_emails Call notifications for emails. Can be a single email or an array of emails
+     * Sets call_notifications
+     * @param \Swagger\Client\Model\CallNotifications $call_notifications Call Notifications object
      * @return $this
      */
-    public function setCallNotificationsEmails($call_notifications_emails)
+    public function setCallNotifications($call_notifications)
     {
-        $this->container['call_notifications_emails'] = $call_notifications_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets call_notifications_sms
-     * @return string
-     */
-    public function getCallNotificationsSms()
-    {
-        return $this->container['call_notifications_sms'];
-    }
-
-    /**
-     * Sets call_notifications_sms
-     * @param string $call_notifications_sms Call notification for SMS
-     * @return $this
-     */
-    public function setCallNotificationsSms($call_notifications_sms)
-    {
-        $this->container['call_notifications_sms'] = $call_notifications_sms;
+        $this->container['call_notifications'] = $call_notifications;
 
         return $this;
     }

@@ -54,6 +54,8 @@ class CreateExtensionParams implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'voicemail' => '\Swagger\Client\Model\Voicemail',
+        'call_notifications' => '\Swagger\Client\Model\CallNotifications',
         'caller_id' => 'string',
         'usage_type' => 'string',
         'allows_call_waiting' => 'bool',
@@ -63,20 +65,9 @@ class CreateExtensionParams implements ArrayAccess
         'full_name' => 'string',
         'timezone' => 'string',
         'name_greeting' => 'object',
-        'voicemail_greeting_alternate' => 'object',
         'local_area_code' => 'int',
-        'voicemail_greeting_enable_leave_message_prompt' => 'bool',
-        'voicemail_enabled' => 'bool',
         'enable_outbound_calls' => 'bool',
-        'enable_call_waiting' => 'bool',
-        'voicemail_password' => 'int',
-        'voicemail_greeting_type' => 'string',
-        'voicemail_greeting_standard' => 'object',
-        'voicemail_transcription' => 'string',
-        'voicemail_notifications_emails' => 'string[]',
-        'voicemail_notifications_sms' => 'string',
-        'call_notifications_emails' => 'string[]',
-        'call_notifications_sms' => 'string'
+        'enable_call_waiting' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -89,6 +80,8 @@ class CreateExtensionParams implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'voicemail' => 'voicemail',
+        'call_notifications' => 'call_notifications',
         'caller_id' => 'caller_id',
         'usage_type' => 'usage_type',
         'allows_call_waiting' => 'allows_call_waiting',
@@ -98,20 +91,9 @@ class CreateExtensionParams implements ArrayAccess
         'full_name' => 'full_name',
         'timezone' => 'timezone',
         'name_greeting' => 'name_greeting',
-        'voicemail_greeting_alternate' => 'voicemail[greeting][alternate]',
         'local_area_code' => 'local_area_code',
-        'voicemail_greeting_enable_leave_message_prompt' => 'voicemail[greeting][enable_leave_message_prompt]',
-        'voicemail_enabled' => 'voicemail[enabled]',
         'enable_outbound_calls' => 'enable_outbound_calls',
-        'enable_call_waiting' => 'enable_call_waiting',
-        'voicemail_password' => 'voicemail[password]',
-        'voicemail_greeting_type' => 'voicemail[greeting][type]',
-        'voicemail_greeting_standard' => 'voicemail[greeting][standard]',
-        'voicemail_transcription' => 'voicemail[transcription]',
-        'voicemail_notifications_emails' => 'voicemail[notifications][emails]',
-        'voicemail_notifications_sms' => 'voicemail[notifications][sms]',
-        'call_notifications_emails' => 'call_notifications[emails]',
-        'call_notifications_sms' => 'call_notifications[sms]'
+        'enable_call_waiting' => 'enable_call_waiting'
     ];
 
 
@@ -120,6 +102,8 @@ class CreateExtensionParams implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'voicemail' => 'setVoicemail',
+        'call_notifications' => 'setCallNotifications',
         'caller_id' => 'setCallerId',
         'usage_type' => 'setUsageType',
         'allows_call_waiting' => 'setAllowsCallWaiting',
@@ -129,20 +113,9 @@ class CreateExtensionParams implements ArrayAccess
         'full_name' => 'setFullName',
         'timezone' => 'setTimezone',
         'name_greeting' => 'setNameGreeting',
-        'voicemail_greeting_alternate' => 'setVoicemailGreetingAlternate',
         'local_area_code' => 'setLocalAreaCode',
-        'voicemail_greeting_enable_leave_message_prompt' => 'setVoicemailGreetingEnableLeaveMessagePrompt',
-        'voicemail_enabled' => 'setVoicemailEnabled',
         'enable_outbound_calls' => 'setEnableOutboundCalls',
-        'enable_call_waiting' => 'setEnableCallWaiting',
-        'voicemail_password' => 'setVoicemailPassword',
-        'voicemail_greeting_type' => 'setVoicemailGreetingType',
-        'voicemail_greeting_standard' => 'setVoicemailGreetingStandard',
-        'voicemail_transcription' => 'setVoicemailTranscription',
-        'voicemail_notifications_emails' => 'setVoicemailNotificationsEmails',
-        'voicemail_notifications_sms' => 'setVoicemailNotificationsSms',
-        'call_notifications_emails' => 'setCallNotificationsEmails',
-        'call_notifications_sms' => 'setCallNotificationsSms'
+        'enable_call_waiting' => 'setEnableCallWaiting'
     ];
 
 
@@ -151,6 +124,8 @@ class CreateExtensionParams implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'voicemail' => 'getVoicemail',
+        'call_notifications' => 'getCallNotifications',
         'caller_id' => 'getCallerId',
         'usage_type' => 'getUsageType',
         'allows_call_waiting' => 'getAllowsCallWaiting',
@@ -160,20 +135,9 @@ class CreateExtensionParams implements ArrayAccess
         'full_name' => 'getFullName',
         'timezone' => 'getTimezone',
         'name_greeting' => 'getNameGreeting',
-        'voicemail_greeting_alternate' => 'getVoicemailGreetingAlternate',
         'local_area_code' => 'getLocalAreaCode',
-        'voicemail_greeting_enable_leave_message_prompt' => 'getVoicemailGreetingEnableLeaveMessagePrompt',
-        'voicemail_enabled' => 'getVoicemailEnabled',
         'enable_outbound_calls' => 'getEnableOutboundCalls',
-        'enable_call_waiting' => 'getEnableCallWaiting',
-        'voicemail_password' => 'getVoicemailPassword',
-        'voicemail_greeting_type' => 'getVoicemailGreetingType',
-        'voicemail_greeting_standard' => 'getVoicemailGreetingStandard',
-        'voicemail_transcription' => 'getVoicemailTranscription',
-        'voicemail_notifications_emails' => 'getVoicemailNotificationsEmails',
-        'voicemail_notifications_sms' => 'getVoicemailNotificationsSms',
-        'call_notifications_emails' => 'getCallNotificationsEmails',
-        'call_notifications_sms' => 'getCallNotificationsSms'
+        'enable_call_waiting' => 'getEnableCallWaiting'
     ];
 
     public static function attributeMap()
@@ -207,6 +171,8 @@ class CreateExtensionParams implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['voicemail'] = isset($data['voicemail']) ? $data['voicemail'] : null;
+        $this->container['call_notifications'] = isset($data['call_notifications']) ? $data['call_notifications'] : null;
         $this->container['caller_id'] = isset($data['caller_id']) ? $data['caller_id'] : null;
         $this->container['usage_type'] = isset($data['usage_type']) ? $data['usage_type'] : null;
         $this->container['allows_call_waiting'] = isset($data['allows_call_waiting']) ? $data['allows_call_waiting'] : null;
@@ -216,20 +182,9 @@ class CreateExtensionParams implements ArrayAccess
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
         $this->container['name_greeting'] = isset($data['name_greeting']) ? $data['name_greeting'] : null;
-        $this->container['voicemail_greeting_alternate'] = isset($data['voicemail_greeting_alternate']) ? $data['voicemail_greeting_alternate'] : null;
         $this->container['local_area_code'] = isset($data['local_area_code']) ? $data['local_area_code'] : null;
-        $this->container['voicemail_greeting_enable_leave_message_prompt'] = isset($data['voicemail_greeting_enable_leave_message_prompt']) ? $data['voicemail_greeting_enable_leave_message_prompt'] : null;
-        $this->container['voicemail_enabled'] = isset($data['voicemail_enabled']) ? $data['voicemail_enabled'] : null;
         $this->container['enable_outbound_calls'] = isset($data['enable_outbound_calls']) ? $data['enable_outbound_calls'] : null;
         $this->container['enable_call_waiting'] = isset($data['enable_call_waiting']) ? $data['enable_call_waiting'] : null;
-        $this->container['voicemail_password'] = isset($data['voicemail_password']) ? $data['voicemail_password'] : null;
-        $this->container['voicemail_greeting_type'] = isset($data['voicemail_greeting_type']) ? $data['voicemail_greeting_type'] : null;
-        $this->container['voicemail_greeting_standard'] = isset($data['voicemail_greeting_standard']) ? $data['voicemail_greeting_standard'] : null;
-        $this->container['voicemail_transcription'] = isset($data['voicemail_transcription']) ? $data['voicemail_transcription'] : null;
-        $this->container['voicemail_notifications_emails'] = isset($data['voicemail_notifications_emails']) ? $data['voicemail_notifications_emails'] : null;
-        $this->container['voicemail_notifications_sms'] = isset($data['voicemail_notifications_sms']) ? $data['voicemail_notifications_sms'] : null;
-        $this->container['call_notifications_emails'] = isset($data['call_notifications_emails']) ? $data['call_notifications_emails'] : null;
-        $this->container['call_notifications_sms'] = isset($data['call_notifications_sms']) ? $data['call_notifications_sms'] : null;
     }
 
     /**
@@ -256,6 +211,48 @@ class CreateExtensionParams implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets voicemail
+     * @return \Swagger\Client\Model\Voicemail
+     */
+    public function getVoicemail()
+    {
+        return $this->container['voicemail'];
+    }
+
+    /**
+     * Sets voicemail
+     * @param \Swagger\Client\Model\Voicemail $voicemail Voicemail object
+     * @return $this
+     */
+    public function setVoicemail($voicemail)
+    {
+        $this->container['voicemail'] = $voicemail;
+
+        return $this;
+    }
+
+    /**
+     * Gets call_notifications
+     * @return \Swagger\Client\Model\CallNotifications
+     */
+    public function getCallNotifications()
+    {
+        return $this->container['call_notifications'];
+    }
+
+    /**
+     * Sets call_notifications
+     * @param \Swagger\Client\Model\CallNotifications $call_notifications Call Notifications object
+     * @return $this
+     */
+    public function setCallNotifications($call_notifications)
+    {
+        $this->container['call_notifications'] = $call_notifications;
+
+        return $this;
+    }
 
     /**
      * Gets caller_id
@@ -447,27 +444,6 @@ class CreateExtensionParams implements ArrayAccess
     }
 
     /**
-     * Gets voicemail_greeting_alternate
-     * @return object
-     */
-    public function getVoicemailGreetingAlternate()
-    {
-        return $this->container['voicemail_greeting_alternate'];
-    }
-
-    /**
-     * Sets voicemail_greeting_alternate
-     * @param object $voicemail_greeting_alternate Recording lookup object
-     * @return $this
-     */
-    public function setVoicemailGreetingAlternate($voicemail_greeting_alternate)
-    {
-        $this->container['voicemail_greeting_alternate'] = $voicemail_greeting_alternate;
-
-        return $this;
-    }
-
-    /**
      * Gets local_area_code
      * @return int
      */
@@ -484,48 +460,6 @@ class CreateExtensionParams implements ArrayAccess
     public function setLocalAreaCode($local_area_code)
     {
         $this->container['local_area_code'] = $local_area_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_greeting_enable_leave_message_prompt
-     * @return bool
-     */
-    public function getVoicemailGreetingEnableLeaveMessagePrompt()
-    {
-        return $this->container['voicemail_greeting_enable_leave_message_prompt'];
-    }
-
-    /**
-     * Sets voicemail_greeting_enable_leave_message_prompt
-     * @param bool $voicemail_greeting_enable_leave_message_prompt Enable the \"leave a message\" prompt for voicemail
-     * @return $this
-     */
-    public function setVoicemailGreetingEnableLeaveMessagePrompt($voicemail_greeting_enable_leave_message_prompt)
-    {
-        $this->container['voicemail_greeting_enable_leave_message_prompt'] = $voicemail_greeting_enable_leave_message_prompt;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_enabled
-     * @return bool
-     */
-    public function getVoicemailEnabled()
-    {
-        return $this->container['voicemail_enabled'];
-    }
-
-    /**
-     * Sets voicemail_enabled
-     * @param bool $voicemail_enabled Voicemail enabled
-     * @return $this
-     */
-    public function setVoicemailEnabled($voicemail_enabled)
-    {
-        $this->container['voicemail_enabled'] = $voicemail_enabled;
 
         return $this;
     }
@@ -568,174 +502,6 @@ class CreateExtensionParams implements ArrayAccess
     public function setEnableCallWaiting($enable_call_waiting)
     {
         $this->container['enable_call_waiting'] = $enable_call_waiting;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_password
-     * @return int
-     */
-    public function getVoicemailPassword()
-    {
-        return $this->container['voicemail_password'];
-    }
-
-    /**
-     * Sets voicemail_password
-     * @param int $voicemail_password Voicemail password
-     * @return $this
-     */
-    public function setVoicemailPassword($voicemail_password)
-    {
-        $this->container['voicemail_password'] = $voicemail_password;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_greeting_type
-     * @return string
-     */
-    public function getVoicemailGreetingType()
-    {
-        return $this->container['voicemail_greeting_type'];
-    }
-
-    /**
-     * Sets voicemail_greeting_type
-     * @param string $voicemail_greeting_type Voicemail greeting type
-     * @return $this
-     */
-    public function setVoicemailGreetingType($voicemail_greeting_type)
-    {
-        $this->container['voicemail_greeting_type'] = $voicemail_greeting_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_greeting_standard
-     * @return object
-     */
-    public function getVoicemailGreetingStandard()
-    {
-        return $this->container['voicemail_greeting_standard'];
-    }
-
-    /**
-     * Sets voicemail_greeting_standard
-     * @param object $voicemail_greeting_standard Recording lookup object
-     * @return $this
-     */
-    public function setVoicemailGreetingStandard($voicemail_greeting_standard)
-    {
-        $this->container['voicemail_greeting_standard'] = $voicemail_greeting_standard;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_transcription
-     * @return string
-     */
-    public function getVoicemailTranscription()
-    {
-        return $this->container['voicemail_transcription'];
-    }
-
-    /**
-     * Sets voicemail_transcription
-     * @param string $voicemail_transcription Voicemail transcription type
-     * @return $this
-     */
-    public function setVoicemailTranscription($voicemail_transcription)
-    {
-        $this->container['voicemail_transcription'] = $voicemail_transcription;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_notifications_emails
-     * @return string[]
-     */
-    public function getVoicemailNotificationsEmails()
-    {
-        return $this->container['voicemail_notifications_emails'];
-    }
-
-    /**
-     * Sets voicemail_notifications_emails
-     * @param string[] $voicemail_notifications_emails Email notifications for voicemails. Can be a single email or an array of emails
-     * @return $this
-     */
-    public function setVoicemailNotificationsEmails($voicemail_notifications_emails)
-    {
-        $this->container['voicemail_notifications_emails'] = $voicemail_notifications_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets voicemail_notifications_sms
-     * @return string
-     */
-    public function getVoicemailNotificationsSms()
-    {
-        return $this->container['voicemail_notifications_sms'];
-    }
-
-    /**
-     * Sets voicemail_notifications_sms
-     * @param string $voicemail_notifications_sms SMS notifications for voicemails
-     * @return $this
-     */
-    public function setVoicemailNotificationsSms($voicemail_notifications_sms)
-    {
-        $this->container['voicemail_notifications_sms'] = $voicemail_notifications_sms;
-
-        return $this;
-    }
-
-    /**
-     * Gets call_notifications_emails
-     * @return string[]
-     */
-    public function getCallNotificationsEmails()
-    {
-        return $this->container['call_notifications_emails'];
-    }
-
-    /**
-     * Sets call_notifications_emails
-     * @param string[] $call_notifications_emails Email notifications for calls. Can be a single email or an array of emails
-     * @return $this
-     */
-    public function setCallNotificationsEmails($call_notifications_emails)
-    {
-        $this->container['call_notifications_emails'] = $call_notifications_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets call_notifications_sms
-     * @return string
-     */
-    public function getCallNotificationsSms()
-    {
-        return $this->container['call_notifications_sms'];
-    }
-
-    /**
-     * Sets call_notifications_sms
-     * @param string $call_notifications_sms SMS notifications for calls
-     * @return $this
-     */
-    public function setCallNotificationsSms($call_notifications_sms)
-    {
-        $this->container['call_notifications_sms'] = $call_notifications_sms;
 
         return $this;
     }

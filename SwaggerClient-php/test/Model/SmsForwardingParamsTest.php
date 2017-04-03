@@ -1,6 +1,6 @@
 <?php
 /**
- * CreatePhoneNumberParamsTest
+ * SmsForwardingParamsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * CreatePhoneNumberParamsTest Class Doc Comment
+ * SmsForwardingParamsTest Class Doc Comment
  *
  * @category    Class */
-// * @description CreatePhoneNumberParams
+// * @description SMS Forwarding Object, or NULL
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreatePhoneNumberParamsTest extends \PHPUnit_Framework_TestCase
+class SmsForwardingParamsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,73 +75,33 @@ class CreatePhoneNumberParamsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreatePhoneNumberParams"
+     * Test "SmsForwardingParams"
      */
-    public function testCreatePhoneNumberParams()
+    public function testSmsForwardingParams()
     {
 
     }
 
     /**
-     * Test attribute "phone_number"
+     * Test attribute "type"
      */
-    public function testPropertyPhoneNumber()
+    public function testPropertyType()
     {
 
     }
 
     /**
-     * Test attribute "route"
+     * Test attribute "extension"
      */
-    public function testPropertyRoute()
+    public function testPropertyExtension()
     {
 
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "application"
      */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "block_incoming"
-     */
-    public function testPropertyBlockIncoming()
-    {
-
-    }
-
-    /**
-     * Test attribute "block_anonymous"
-     */
-    public function testPropertyBlockAnonymous()
-    {
-
-    }
-
-    /**
-     * Test attribute "caller_id"
-     */
-    public function testPropertyCallerId()
-    {
-
-    }
-
-    /**
-     * Test attribute "sms_forwarding"
-     */
-    public function testPropertySmsForwarding()
-    {
-
-    }
-
-    /**
-     * Test attribute "call_notifications"
-     */
-    public function testPropertyCallNotifications()
+    public function testPropertyApplication()
     {
 
     }
