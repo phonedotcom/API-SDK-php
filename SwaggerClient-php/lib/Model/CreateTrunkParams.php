@@ -63,9 +63,28 @@ class CreateTrunkParams implements ArrayAccess
         'codecs' => 'object[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'uri' => null,
+        'max_concurrent_calls' => null,
+        'max_minutes_per_month' => null,
+        'greeting' => null,
+        'error_message' => null,
+        'codecs' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

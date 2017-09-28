@@ -49,7 +49,6 @@ class ExtensionsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class ExtensionsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class ExtensionsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,51 +70,45 @@ class ExtensionsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountExtension
      *
-     * Create an individual extension.
+     * Create an individual extension..
      *
      */
     public function testCreateAccountExtension()
     {
-
     }
 
     /**
      * Test case for getAccountExtension
      *
-     * Show details of an individual extension.
+     * Show details of an individual extension..
      *
      */
     public function testGetAccountExtension()
     {
-
     }
 
     /**
      * Test case for listAccountExtensions
      *
-     * Get a list of extensions visible to the authenticated user or client.
+     * Get a list of extensions visible to the authenticated user or client..
      *
      */
     public function testListAccountExtensions()
     {
-
     }
 
     /**
      * Test case for replaceAccountExtension
      *
-     * Replace an individual extension.
+     * Replace an individual extension..
      *
      */
     public function testReplaceAccountExtension()
     {
-
     }
-
 }

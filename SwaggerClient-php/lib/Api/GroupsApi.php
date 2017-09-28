@@ -90,11 +90,11 @@ class GroupsApi
     /**
      * Operation createAccountExtensionContactGroup
      *
-     * 
+     * Add a new contact group to an account extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
-     * @param \Swagger\Client\Model\CreateGroupParams $data Group name (required)
+     * @param \Swagger\Client\Model\CreateGroupParams $data Group data (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\GroupFull
      */
@@ -107,11 +107,11 @@ class GroupsApi
     /**
      * Operation createAccountExtensionContactGroupWithHttpInfo
      *
-     * 
+     * Add a new contact group to an account extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
-     * @param \Swagger\Client\Model\CreateGroupParams $data Group name (required)
+     * @param \Swagger\Client\Model\CreateGroupParams $data Group data (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\GroupFull, HTTP status code, HTTP response headers (array of strings)
      */
@@ -157,9 +157,6 @@ class GroupsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -205,13 +202,13 @@ class GroupsApi
     /**
      * Operation deleteAccountExtensionContactGroup
      *
-     * Delete an addressbook group
+     * Delete a contact group from the address book.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
      * @param int $group_id Group ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteGroup
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountExtensionContactGroup($account_id, $extension_id, $group_id)
     {
@@ -222,13 +219,13 @@ class GroupsApi
     /**
      * Operation deleteAccountExtensionContactGroupWithHttpInfo
      *
-     * Delete an addressbook group
+     * Delete a contact group from the address book.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
      * @param int $group_id Group ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteGroup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountExtensionContactGroupWithHttpInfo($account_id, $extension_id, $group_id)
     {
@@ -280,10 +277,7 @@ class GroupsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -303,15 +297,15 @@ class GroupsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteGroup',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteGroup', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteGroup', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -323,7 +317,7 @@ class GroupsApi
     /**
      * Operation getAccountExtensionContactGroup
      *
-     * 
+     * Retrieve the information of a contact group.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -340,7 +334,7 @@ class GroupsApi
     /**
      * Operation getAccountExtensionContactGroupWithHttpInfo
      *
-     * 
+     * Retrieve the information of a contact group.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -398,10 +392,7 @@ class GroupsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -441,7 +432,7 @@ class GroupsApi
     /**
      * Operation listAccountExtensionContactGroups
      *
-     * Show a list of contact groups belonging to an extension
+     * Show a list of contact groups belonging to an extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -464,7 +455,7 @@ class GroupsApi
     /**
      * Operation listAccountExtensionContactGroupsWithHttpInfo
      *
-     * Show a list of contact groups belonging to an extension
+     * Show a list of contact groups belonging to an extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -558,10 +549,7 @@ class GroupsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -601,12 +589,12 @@ class GroupsApi
     /**
      * Operation replaceAccountExtensionContactGroup
      *
-     * 
+     * Update the information of a contact group.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
      * @param int $group_id Group ID (required)
-     * @param \Swagger\Client\Model\CreateGroupParams $data Group name (required)
+     * @param \Swagger\Client\Model\CreateGroupParams $data Group data (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\GroupFull
      */
@@ -619,12 +607,12 @@ class GroupsApi
     /**
      * Operation replaceAccountExtensionContactGroupWithHttpInfo
      *
-     * 
+     * Update the information of a contact group.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
      * @param int $group_id Group ID (required)
-     * @param \Swagger\Client\Model\CreateGroupParams $data Group name (required)
+     * @param \Swagger\Client\Model\CreateGroupParams $data Group data (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\GroupFull, HTTP status code, HTTP response headers (array of strings)
      */
@@ -682,9 +670,6 @@ class GroupsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

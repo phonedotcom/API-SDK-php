@@ -54,25 +54,49 @@ class CreateExtensionParams implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'voicemail' => '\Swagger\Client\Model\Voicemail',
+        'voicemail' => '\Swagger\Client\Model\VoicemailInput',
         'call_notifications' => '\Swagger\Client\Model\CallNotifications',
         'caller_id' => 'string',
         'usage_type' => 'string',
-        'allows_call_waiting' => 'bool',
         'extension' => 'int',
-        'include_in_directory' => 'bool',
+        'include_in_directory' => 'string',
         'name' => 'string',
         'full_name' => 'string',
         'timezone' => 'string',
         'name_greeting' => 'object',
-        'local_area_code' => 'int',
-        'enable_outbound_calls' => 'bool',
-        'enable_call_waiting' => 'bool'
+        'local_area_code' => 'string',
+        'enable_outbound_calls' => 'string',
+        'enable_call_waiting' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'voicemail' => null,
+        'call_notifications' => null,
+        'caller_id' => null,
+        'usage_type' => null,
+        'extension' => null,
+        'include_in_directory' => null,
+        'name' => null,
+        'full_name' => null,
+        'timezone' => null,
+        'name_greeting' => null,
+        'local_area_code' => null,
+        'enable_outbound_calls' => null,
+        'enable_call_waiting' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -84,7 +108,6 @@ class CreateExtensionParams implements ArrayAccess
         'call_notifications' => 'call_notifications',
         'caller_id' => 'caller_id',
         'usage_type' => 'usage_type',
-        'allows_call_waiting' => 'allows_call_waiting',
         'extension' => 'extension',
         'include_in_directory' => 'include_in_directory',
         'name' => 'name',
@@ -106,7 +129,6 @@ class CreateExtensionParams implements ArrayAccess
         'call_notifications' => 'setCallNotifications',
         'caller_id' => 'setCallerId',
         'usage_type' => 'setUsageType',
-        'allows_call_waiting' => 'setAllowsCallWaiting',
         'extension' => 'setExtension',
         'include_in_directory' => 'setIncludeInDirectory',
         'name' => 'setName',
@@ -128,7 +150,6 @@ class CreateExtensionParams implements ArrayAccess
         'call_notifications' => 'getCallNotifications',
         'caller_id' => 'getCallerId',
         'usage_type' => 'getUsageType',
-        'allows_call_waiting' => 'getAllowsCallWaiting',
         'extension' => 'getExtension',
         'include_in_directory' => 'getIncludeInDirectory',
         'name' => 'getName',
@@ -175,7 +196,6 @@ class CreateExtensionParams implements ArrayAccess
         $this->container['call_notifications'] = isset($data['call_notifications']) ? $data['call_notifications'] : null;
         $this->container['caller_id'] = isset($data['caller_id']) ? $data['caller_id'] : null;
         $this->container['usage_type'] = isset($data['usage_type']) ? $data['usage_type'] : null;
-        $this->container['allows_call_waiting'] = isset($data['allows_call_waiting']) ? $data['allows_call_waiting'] : null;
         $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
         $this->container['include_in_directory'] = isset($data['include_in_directory']) ? $data['include_in_directory'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
@@ -214,7 +234,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Gets voicemail
-     * @return \Swagger\Client\Model\Voicemail
+     * @return \Swagger\Client\Model\VoicemailInput
      */
     public function getVoicemail()
     {
@@ -223,7 +243,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Sets voicemail
-     * @param \Swagger\Client\Model\Voicemail $voicemail Voicemail object
+     * @param \Swagger\Client\Model\VoicemailInput $voicemail
      * @return $this
      */
     public function setVoicemail($voicemail)
@@ -244,7 +264,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Sets call_notifications
-     * @param \Swagger\Client\Model\CallNotifications $call_notifications Call Notifications object
+     * @param \Swagger\Client\Model\CallNotifications $call_notifications
      * @return $this
      */
     public function setCallNotifications($call_notifications)
@@ -297,27 +317,6 @@ class CreateExtensionParams implements ArrayAccess
     }
 
     /**
-     * Gets allows_call_waiting
-     * @return bool
-     */
-    public function getAllowsCallWaiting()
-    {
-        return $this->container['allows_call_waiting'];
-    }
-
-    /**
-     * Sets allows_call_waiting
-     * @param bool $allows_call_waiting Allows call waiting
-     * @return $this
-     */
-    public function setAllowsCallWaiting($allows_call_waiting)
-    {
-        $this->container['allows_call_waiting'] = $allows_call_waiting;
-
-        return $this;
-    }
-
-    /**
      * Gets extension
      * @return int
      */
@@ -340,7 +339,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Gets include_in_directory
-     * @return bool
+     * @return string
      */
     public function getIncludeInDirectory()
     {
@@ -349,7 +348,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Sets include_in_directory
-     * @param bool $include_in_directory Include in dial-by-name directory
+     * @param string $include_in_directory Include in dial-by-name directory
      * @return $this
      */
     public function setIncludeInDirectory($include_in_directory)
@@ -445,7 +444,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Gets local_area_code
-     * @return int
+     * @return string
      */
     public function getLocalAreaCode()
     {
@@ -454,7 +453,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Sets local_area_code
-     * @param int $local_area_code Local area code
+     * @param string $local_area_code Local area code
      * @return $this
      */
     public function setLocalAreaCode($local_area_code)
@@ -466,7 +465,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Gets enable_outbound_calls
-     * @return bool
+     * @return string
      */
     public function getEnableOutboundCalls()
     {
@@ -475,7 +474,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Sets enable_outbound_calls
-     * @param bool $enable_outbound_calls Enable outgoing calls
+     * @param string $enable_outbound_calls Enable outgoing calls
      * @return $this
      */
     public function setEnableOutboundCalls($enable_outbound_calls)
@@ -487,7 +486,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Gets enable_call_waiting
-     * @return bool
+     * @return string
      */
     public function getEnableCallWaiting()
     {
@@ -496,7 +495,7 @@ class CreateExtensionParams implements ArrayAccess
 
     /**
      * Sets enable_call_waiting
-     * @param bool $enable_call_waiting Enable Call Waiting
+     * @param string $enable_call_waiting Enable Call Waiting
      * @return $this
      */
     public function setEnableCallWaiting($enable_call_waiting)

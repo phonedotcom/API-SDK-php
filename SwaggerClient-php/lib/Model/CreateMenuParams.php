@@ -55,17 +55,36 @@ class CreateMenuParams implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'main_message' => 'object',
-        'invalid_keypress_message' => 'object',
-        'allow_extension_dial' => 'bool',
+        'greeting' => 'object',
+        'keypress_error' => 'object',
+        'allow_extension_dial' => 'string',
         'keypress_wait_time' => 'int',
         'timeout_handler' => 'object',
         'options' => 'object[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'greeting' => null,
+        'keypress_error' => null,
+        'allow_extension_dial' => null,
+        'keypress_wait_time' => null,
+        'timeout_handler' => null,
+        'options' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -74,8 +93,8 @@ class CreateMenuParams implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'main_message' => 'main_message',
-        'invalid_keypress_message' => 'invalid_keypress_message',
+        'greeting' => 'greeting',
+        'keypress_error' => 'keypress_error',
         'allow_extension_dial' => 'allow_extension_dial',
         'keypress_wait_time' => 'keypress_wait_time',
         'timeout_handler' => 'timeout_handler',
@@ -89,8 +108,8 @@ class CreateMenuParams implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'main_message' => 'setMainMessage',
-        'invalid_keypress_message' => 'setInvalidKeypressMessage',
+        'greeting' => 'setGreeting',
+        'keypress_error' => 'setKeypressError',
         'allow_extension_dial' => 'setAllowExtensionDial',
         'keypress_wait_time' => 'setKeypressWaitTime',
         'timeout_handler' => 'setTimeoutHandler',
@@ -104,8 +123,8 @@ class CreateMenuParams implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'main_message' => 'getMainMessage',
-        'invalid_keypress_message' => 'getInvalidKeypressMessage',
+        'greeting' => 'getGreeting',
+        'keypress_error' => 'getKeypressError',
         'allow_extension_dial' => 'getAllowExtensionDial',
         'keypress_wait_time' => 'getKeypressWaitTime',
         'timeout_handler' => 'getTimeoutHandler',
@@ -144,8 +163,8 @@ class CreateMenuParams implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['main_message'] = isset($data['main_message']) ? $data['main_message'] : null;
-        $this->container['invalid_keypress_message'] = isset($data['invalid_keypress_message']) ? $data['invalid_keypress_message'] : null;
+        $this->container['greeting'] = isset($data['greeting']) ? $data['greeting'] : null;
+        $this->container['keypress_error'] = isset($data['keypress_error']) ? $data['keypress_error'] : null;
         $this->container['allow_extension_dial'] = isset($data['allow_extension_dial']) ? $data['allow_extension_dial'] : null;
         $this->container['keypress_wait_time'] = isset($data['keypress_wait_time']) ? $data['keypress_wait_time'] : null;
         $this->container['timeout_handler'] = isset($data['timeout_handler']) ? $data['timeout_handler'] : null;
@@ -199,50 +218,50 @@ class CreateMenuParams implements ArrayAccess
     }
 
     /**
-     * Gets main_message
+     * Gets greeting
      * @return object
      */
-    public function getMainMessage()
+    public function getGreeting()
     {
-        return $this->container['main_message'];
+        return $this->container['greeting'];
     }
 
     /**
-     * Sets main_message
-     * @param object $main_message
+     * Sets greeting
+     * @param object $greeting
      * @return $this
      */
-    public function setMainMessage($main_message)
+    public function setGreeting($greeting)
     {
-        $this->container['main_message'] = $main_message;
+        $this->container['greeting'] = $greeting;
 
         return $this;
     }
 
     /**
-     * Gets invalid_keypress_message
+     * Gets keypress_error
      * @return object
      */
-    public function getInvalidKeypressMessage()
+    public function getKeypressError()
     {
-        return $this->container['invalid_keypress_message'];
+        return $this->container['keypress_error'];
     }
 
     /**
-     * Sets invalid_keypress_message
-     * @param object $invalid_keypress_message
+     * Sets keypress_error
+     * @param object $keypress_error
      * @return $this
      */
-    public function setInvalidKeypressMessage($invalid_keypress_message)
+    public function setKeypressError($keypress_error)
     {
-        $this->container['invalid_keypress_message'] = $invalid_keypress_message;
+        $this->container['keypress_error'] = $keypress_error;
 
         return $this;
     }
 
     /**
      * Gets allow_extension_dial
-     * @return bool
+     * @return string
      */
     public function getAllowExtensionDial()
     {
@@ -251,7 +270,7 @@ class CreateMenuParams implements ArrayAccess
 
     /**
      * Sets allow_extension_dial
-     * @param bool $allow_extension_dial
+     * @param string $allow_extension_dial
      * @return $this
      */
     public function setAllowExtensionDial($allow_extension_dial)

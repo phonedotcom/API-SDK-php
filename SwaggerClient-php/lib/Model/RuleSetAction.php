@@ -67,9 +67,31 @@ class RuleSetAction implements ArrayAccess
         'trunk' => '\Swagger\Client\Model\TrunkSummary'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'action' => null,
+        'extension' => null,
+        'items' => null,
+        'timeout' => null,
+        'hold_music' => null,
+        'greeting' => null,
+        'duration' => null,
+        'menu' => null,
+        'queue' => null,
+        'trunk' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

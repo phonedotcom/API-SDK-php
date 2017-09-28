@@ -141,9 +141,6 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // form params
         if ($json !== null) {
             $formParams['json'] = $this->apiClient->getSerializer()->toFormValue($json);
@@ -158,7 +155,7 @@ class MediaApi
                 $formParams['file'] = '@' . $this->apiClient->getSerializer()->toFormValue($file);
             }
         }
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -247,9 +244,6 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -300,7 +294,7 @@ class MediaApi
      * @param int $account_id Account ID (required)
      * @param int $media_id Media ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteMedia
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountMedia($account_id, $media_id)
     {
@@ -316,7 +310,7 @@ class MediaApi
      * @param int $account_id Account ID (required)
      * @param int $media_id Media ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteMedia, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountMediaWithHttpInfo($account_id, $media_id)
     {
@@ -356,10 +350,7 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -379,15 +370,15 @@ class MediaApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteMedia',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/media/{media_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteMedia', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteMedia', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -460,10 +451,7 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -503,7 +491,7 @@ class MediaApi
     /**
      * Operation listAccountMedia
      *
-     * Get a list of media recordings for an account
+     * Get a list of media recordings for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -525,7 +513,7 @@ class MediaApi
     /**
      * Operation listAccountMediaWithHttpInfo
      *
-     * Get a list of media recordings for an account
+     * Get a list of media recordings for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -606,10 +594,7 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -696,7 +681,7 @@ class MediaApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data']);
 
         // path params
         if ($account_id !== null) {
@@ -714,9 +699,6 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // form params
         if ($json !== null) {
             $formParams['json'] = $this->apiClient->getSerializer()->toFormValue($json);
@@ -731,7 +713,7 @@ class MediaApi
                 $formParams['file'] = '@' . $this->apiClient->getSerializer()->toFormValue($file);
             }
         }
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -771,7 +753,7 @@ class MediaApi
     /**
      * Operation replaceAccountMediaTts
      *
-     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     * Update a media object to your account.
      *
      * @param int $account_id Account ID (required)
      * @param int $media_id Media ID (required)
@@ -788,7 +770,7 @@ class MediaApi
     /**
      * Operation replaceAccountMediaTtsWithHttpInfo
      *
-     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     * Update a media object to your account.
      *
      * @param int $account_id Account ID (required)
      * @param int $media_id Media ID (required)
@@ -834,9 +816,6 @@ class MediaApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

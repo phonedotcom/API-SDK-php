@@ -57,16 +57,36 @@ class CreateCallParams implements ArrayAccess
         'caller_phone_number' => 'string',
         'caller_extension' => 'int',
         'caller_caller_id' => 'string',
-        'caller_private' => 'bool',
+        'caller_private' => 'string',
         'callee_phone_number' => 'string',
         'callee_extension' => 'int',
         'callee_caller_id' => 'string',
-        'callee_private' => 'bool'
+        'callee_private' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'caller_phone_number' => null,
+        'caller_extension' => null,
+        'caller_caller_id' => null,
+        'caller_private' => null,
+        'callee_phone_number' => null,
+        'callee_extension' => null,
+        'callee_caller_id' => null,
+        'callee_private' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -247,7 +267,7 @@ class CreateCallParams implements ArrayAccess
 
     /**
      * Gets caller_private
-     * @return bool
+     * @return string
      */
     public function getCallerPrivate()
     {
@@ -256,7 +276,7 @@ class CreateCallParams implements ArrayAccess
 
     /**
      * Sets caller_private
-     * @param bool $caller_private Flag to set caller ID to private
+     * @param string $caller_private Flag to set caller ID to private
      * @return $this
      */
     public function setCallerPrivate($caller_private)
@@ -331,7 +351,7 @@ class CreateCallParams implements ArrayAccess
 
     /**
      * Gets callee_private
-     * @return bool
+     * @return string
      */
     public function getCalleePrivate()
     {
@@ -340,7 +360,7 @@ class CreateCallParams implements ArrayAccess
 
     /**
      * Sets callee_private
-     * @param bool $callee_private Flag to set callee ID to private
+     * @param string $callee_private Flag to set callee ID to private
      * @return $this
      */
     public function setCalleePrivate($callee_private)

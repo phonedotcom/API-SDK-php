@@ -56,16 +56,35 @@ class ReplaceMenuParams implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'greeting' => 'object',
-        'invalid_keypress' => 'object',
-        'allow_extension_dial' => 'bool',
+        'keypress_error' => 'object',
+        'allow_extension_dial' => 'string',
         'keypress_wait_time' => 'int',
         'timeout_handler' => 'object',
         'options' => 'object[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'greeting' => null,
+        'keypress_error' => null,
+        'allow_extension_dial' => null,
+        'keypress_wait_time' => null,
+        'timeout_handler' => null,
+        'options' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -75,7 +94,7 @@ class ReplaceMenuParams implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'greeting' => 'greeting',
-        'invalid_keypress' => 'invalid_keypress',
+        'keypress_error' => 'keypress_error',
         'allow_extension_dial' => 'allow_extension_dial',
         'keypress_wait_time' => 'keypress_wait_time',
         'timeout_handler' => 'timeout_handler',
@@ -90,7 +109,7 @@ class ReplaceMenuParams implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'greeting' => 'setGreeting',
-        'invalid_keypress' => 'setInvalidKeypress',
+        'keypress_error' => 'setKeypressError',
         'allow_extension_dial' => 'setAllowExtensionDial',
         'keypress_wait_time' => 'setKeypressWaitTime',
         'timeout_handler' => 'setTimeoutHandler',
@@ -105,7 +124,7 @@ class ReplaceMenuParams implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'greeting' => 'getGreeting',
-        'invalid_keypress' => 'getInvalidKeypress',
+        'keypress_error' => 'getKeypressError',
         'allow_extension_dial' => 'getAllowExtensionDial',
         'keypress_wait_time' => 'getKeypressWaitTime',
         'timeout_handler' => 'getTimeoutHandler',
@@ -145,7 +164,7 @@ class ReplaceMenuParams implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['greeting'] = isset($data['greeting']) ? $data['greeting'] : null;
-        $this->container['invalid_keypress'] = isset($data['invalid_keypress']) ? $data['invalid_keypress'] : null;
+        $this->container['keypress_error'] = isset($data['keypress_error']) ? $data['keypress_error'] : null;
         $this->container['allow_extension_dial'] = isset($data['allow_extension_dial']) ? $data['allow_extension_dial'] : null;
         $this->container['keypress_wait_time'] = isset($data['keypress_wait_time']) ? $data['keypress_wait_time'] : null;
         $this->container['timeout_handler'] = isset($data['timeout_handler']) ? $data['timeout_handler'] : null;
@@ -220,29 +239,29 @@ class ReplaceMenuParams implements ArrayAccess
     }
 
     /**
-     * Gets invalid_keypress
+     * Gets keypress_error
      * @return object
      */
-    public function getInvalidKeypress()
+    public function getKeypressError()
     {
-        return $this->container['invalid_keypress'];
+        return $this->container['keypress_error'];
     }
 
     /**
-     * Sets invalid_keypress
-     * @param object $invalid_keypress
+     * Sets keypress_error
+     * @param object $keypress_error
      * @return $this
      */
-    public function setInvalidKeypress($invalid_keypress)
+    public function setKeypressError($keypress_error)
     {
-        $this->container['invalid_keypress'] = $invalid_keypress;
+        $this->container['keypress_error'] = $keypress_error;
 
         return $this;
     }
 
     /**
      * Gets allow_extension_dial
-     * @return bool
+     * @return string
      */
     public function getAllowExtensionDial()
     {
@@ -251,7 +270,7 @@ class ReplaceMenuParams implements ArrayAccess
 
     /**
      * Sets allow_extension_dial
-     * @param bool $allow_extension_dial
+     * @param string $allow_extension_dial
      * @return $this
      */
     public function setAllowExtensionDial($allow_extension_dial)

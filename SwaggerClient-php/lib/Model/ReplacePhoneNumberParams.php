@@ -56,17 +56,37 @@ class ReplacePhoneNumberParams implements ArrayAccess
     protected static $swaggerTypes = [
         'route' => 'object',
         'name' => 'string',
-        'block_incoming' => 'bool',
-        'block_anonymous' => 'bool',
+        'block_incoming' => 'string',
+        'block_anonymous' => 'string',
         'caller_id' => '\Swagger\Client\Model\CallerIdPhoneNumber',
         'sms_forwarding' => '\Swagger\Client\Model\SmsForwardingParams',
         'pool_item' => 'object',
         'call_notifications' => '\Swagger\Client\Model\CallNotifications'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'route' => null,
+        'name' => null,
+        'block_incoming' => null,
+        'block_anonymous' => null,
+        'caller_id' => null,
+        'sms_forwarding' => null,
+        'pool_item' => null,
+        'call_notifications' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -226,7 +246,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Gets block_incoming
-     * @return bool
+     * @return string
      */
     public function getBlockIncoming()
     {
@@ -235,7 +255,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Sets block_incoming
-     * @param bool $block_incoming Block incoming calls
+     * @param string $block_incoming Block incoming calls
      * @return $this
      */
     public function setBlockIncoming($block_incoming)
@@ -247,7 +267,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Gets block_anonymous
-     * @return bool
+     * @return string
      */
     public function getBlockAnonymous()
     {
@@ -256,7 +276,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Sets block_anonymous
-     * @param bool $block_anonymous Block anonymous calls
+     * @param string $block_anonymous Block anonymous calls
      * @return $this
      */
     public function setBlockAnonymous($block_anonymous)
@@ -277,7 +297,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Sets caller_id
-     * @param \Swagger\Client\Model\CallerIdPhoneNumber $caller_id Caller ID object
+     * @param \Swagger\Client\Model\CallerIdPhoneNumber $caller_id
      * @return $this
      */
     public function setCallerId($caller_id)
@@ -298,7 +318,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Sets sms_forwarding
-     * @param \Swagger\Client\Model\SmsForwardingParams $sms_forwarding SMS Forwarding Object, or NULL
+     * @param \Swagger\Client\Model\SmsForwardingParams $sms_forwarding
      * @return $this
      */
     public function setSmsForwarding($sms_forwarding)
@@ -340,7 +360,7 @@ class ReplacePhoneNumberParams implements ArrayAccess
 
     /**
      * Sets call_notifications
-     * @param \Swagger\Client\Model\CallNotifications $call_notifications Call Notifications object
+     * @param \Swagger\Client\Model\CallNotifications $call_notifications
      * @return $this
      */
     public function setCallNotifications($call_notifications)

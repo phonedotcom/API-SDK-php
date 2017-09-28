@@ -68,9 +68,32 @@ class AvailableNumbersFull implements ArrayAccess
         'country' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'phone_number' => null,
+        'formatted' => null,
+        'price' => null,
+        'is_toll_free' => null,
+        'country_code' => null,
+        'npa' => null,
+        'nxx' => null,
+        'xxxx' => null,
+        'city' => null,
+        'province' => null,
+        'country' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

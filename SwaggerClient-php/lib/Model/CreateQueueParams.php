@@ -63,9 +63,28 @@ class CreateQueueParams implements ArrayAccess
         'members' => 'object[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'greeting' => null,
+        'hold_music' => null,
+        'max_hold_time' => null,
+        'caller_id_type' => null,
+        'ring_time' => null,
+        'members' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

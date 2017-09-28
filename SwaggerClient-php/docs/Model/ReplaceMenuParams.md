@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
 **greeting** | **object** |  | [optional] 
-**invalid_keypress** | **object** |  | [optional] 
-**allow_extension_dial** | **bool** |  | [optional] 
+**keypress_error** | **object** |  | [optional] 
+**allow_extension_dial** | **string** |  | [optional] 
 **keypress_wait_time** | **int** |  | [optional] 
 **timeout_handler** | **object** |  | [optional] 
 **options** | **object[]** |  | [optional] 

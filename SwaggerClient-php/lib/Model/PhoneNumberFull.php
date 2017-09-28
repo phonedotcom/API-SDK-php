@@ -66,9 +66,30 @@ class PhoneNumberFull implements ArrayAccess
         'call_notifications' => '\Swagger\Client\Model\CallNotifications'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'phone_number' => null,
+        'block_incoming' => null,
+        'block_anonymous' => null,
+        'route' => null,
+        'caller_id' => null,
+        'sms_forwarding' => null,
+        'call_notifications' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -325,7 +346,7 @@ class PhoneNumberFull implements ArrayAccess
 
     /**
      * Sets caller_id
-     * @param \Swagger\Client\Model\CallerIdPhoneNumber $caller_id Caller ID Object, or NULL
+     * @param \Swagger\Client\Model\CallerIdPhoneNumber $caller_id
      * @return $this
      */
     public function setCallerId($caller_id)
@@ -346,7 +367,7 @@ class PhoneNumberFull implements ArrayAccess
 
     /**
      * Sets sms_forwarding
-     * @param \Swagger\Client\Model\SmsForwarding $sms_forwarding SMS Forwarding Object, or NULL
+     * @param \Swagger\Client\Model\SmsForwarding $sms_forwarding
      * @return $this
      */
     public function setSmsForwarding($sms_forwarding)

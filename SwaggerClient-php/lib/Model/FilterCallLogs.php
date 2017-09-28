@@ -62,9 +62,27 @@ class FilterCallLogs implements ArrayAccess
         'type' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'start_time' => null,
+        'created_at' => null,
+        'direction' => null,
+        'called_number' => null,
+        'type' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

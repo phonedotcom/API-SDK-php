@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * SmsFullTest Class Doc Comment
  *
  * @category    Class */
-// * @description The Full SMS Object is identical to the SMS Summary Object. See above for details.
+// * @description The Full SMS Object includes all of the properties in the SMS Summary Object.
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -47,7 +47,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testSmsFull()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFrom()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTo()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDirection()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreatedEpoch()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreatedAt()
     {
-
     }
 
     /**
@@ -135,7 +124,12 @@ class SmsFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyText()
     {
-
     }
 
+    /**
+     * Test attribute "is_new"
+     */
+    public function testPropertyIsNew()
+    {
+    }
 }

@@ -49,7 +49,6 @@ class ExpressservicecodesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class ExpressservicecodesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class ExpressservicecodesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class ExpressservicecodesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,18 +80,15 @@ class ExpressservicecodesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAccountExpressSrvCode()
     {
-
     }
 
     /**
      * Test case for listAccountExpressSrvCodes
      *
-     * Get the Express Service Code associated with your account in list format.
+     * Get the Express Service Code associated with your account in list format..
      *
      */
     public function testListAccountExpressSrvCodes()
     {
-
     }
-
 }

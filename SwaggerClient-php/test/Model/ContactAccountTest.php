@@ -47,7 +47,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testContactAccount()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCompany()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhone()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFax()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPrimaryEmail()
     {
-
     }
 
     /**
@@ -135,7 +124,5 @@ class ContactAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAlternateEmail()
     {
-
     }
-
 }

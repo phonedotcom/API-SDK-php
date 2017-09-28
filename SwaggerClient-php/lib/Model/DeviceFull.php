@@ -61,9 +61,25 @@ class DeviceFull implements ArrayAccess
         'lines' => '\Swagger\Client\Model\Line[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'sip_authentication' => null,
+        'lines' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

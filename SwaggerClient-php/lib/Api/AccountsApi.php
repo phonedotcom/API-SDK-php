@@ -137,10 +137,7 @@ class AccountsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -180,7 +177,7 @@ class AccountsApi
     /**
      * Operation listAccounts
      *
-     * Get a list of accounts visible to the authenticated user or client
+     * Get a list of accounts visible to the authenticated user or client.
      *
      * @param string[] $filters_id ID filter (optional)
      * @param string $sort_id ID sorting (optional)
@@ -199,7 +196,7 @@ class AccountsApi
     /**
      * Operation listAccountsWithHttpInfo
      *
-     * Get a list of accounts visible to the authenticated user or client
+     * Get a list of accounts visible to the authenticated user or client.
      *
      * @param string[] $filters_id ID filter (optional)
      * @param string $sort_id ID sorting (optional)
@@ -250,10 +247,7 @@ class AccountsApi
         if ($fields !== null) {
             $queryParams['fields'] = $this->apiClient->getSerializer()->toQueryValue($fields);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present

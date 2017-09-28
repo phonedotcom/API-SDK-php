@@ -66,15 +66,43 @@ class CreateContactParams implements ArrayAccess
         'company' => 'string',
         'department' => 'string',
         'job_title' => 'string',
-        'emails' => 'object[]',
-        'phone_numbers' => 'object[]',
-        'addresses' => 'object[]',
+        'emails' => '\Swagger\Client\Model\Email[]',
+        'phone_numbers' => '\Swagger\Client\Model\PhoneNumberContact[]',
+        'addresses' => '\Swagger\Client\Model\AddressListContacts[]',
         'group' => 'object'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'first_name' => null,
+        'middle_name' => null,
+        'last_name' => null,
+        'prefix' => null,
+        'phonetic_first_name' => null,
+        'phonetic_middle_name' => null,
+        'phonetic_last_name' => null,
+        'suffix' => null,
+        'nickname' => null,
+        'company' => null,
+        'department' => null,
+        'job_title' => null,
+        'emails' => null,
+        'phone_numbers' => null,
+        'addresses' => null,
+        'group' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -476,7 +504,7 @@ class CreateContactParams implements ArrayAccess
 
     /**
      * Gets emails
-     * @return object[]
+     * @return \Swagger\Client\Model\Email[]
      */
     public function getEmails()
     {
@@ -485,7 +513,7 @@ class CreateContactParams implements ArrayAccess
 
     /**
      * Sets emails
-     * @param object[] $emails Email Addresses
+     * @param \Swagger\Client\Model\Email[] $emails Email Addresses
      * @return $this
      */
     public function setEmails($emails)
@@ -497,7 +525,7 @@ class CreateContactParams implements ArrayAccess
 
     /**
      * Gets phone_numbers
-     * @return object[]
+     * @return \Swagger\Client\Model\PhoneNumberContact[]
      */
     public function getPhoneNumbers()
     {
@@ -506,7 +534,7 @@ class CreateContactParams implements ArrayAccess
 
     /**
      * Sets phone_numbers
-     * @param object[] $phone_numbers Phone Numbers
+     * @param \Swagger\Client\Model\PhoneNumberContact[] $phone_numbers Phone Numbers
      * @return $this
      */
     public function setPhoneNumbers($phone_numbers)
@@ -518,7 +546,7 @@ class CreateContactParams implements ArrayAccess
 
     /**
      * Gets addresses
-     * @return object[]
+     * @return \Swagger\Client\Model\AddressListContacts[]
      */
     public function getAddresses()
     {
@@ -527,7 +555,7 @@ class CreateContactParams implements ArrayAccess
 
     /**
      * Sets addresses
-     * @param object[] $addresses Addresses
+     * @param \Swagger\Client\Model\AddressListContacts[] $addresses Addresses
      * @return $this
      */
     public function setAddresses($addresses)

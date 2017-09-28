@@ -64,9 +64,28 @@ class RuleSetForwardItem implements ArrayAccess
         'distinctive_ring' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'type' => null,
+        'extension' => null,
+        'number' => null,
+        'screening' => null,
+        'caller_id' => null,
+        'voice_tag' => null,
+        'distinctive_ring' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

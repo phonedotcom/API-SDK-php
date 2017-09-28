@@ -90,7 +90,7 @@ class PhonenumbersApi
     /**
      * Operation createAccountPhoneNumber
      *
-     * Add a phone number to an account
+     * Add a phone number to an account.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreatePhoneNumberParams $data Phone Number data (optional)
@@ -106,7 +106,7 @@ class PhonenumbersApi
     /**
      * Operation createAccountPhoneNumberWithHttpInfo
      *
-     * Add a phone number to an account
+     * Add a phone number to an account.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreatePhoneNumberParams $data Phone Number data (optional)
@@ -139,9 +139,6 @@ class PhonenumbersApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -187,7 +184,7 @@ class PhonenumbersApi
     /**
      * Operation getAccountPhoneNumber
      *
-     * Show details of an individual phone number
+     * Show details of an individual phone number.
      *
      * @param int $account_id Account ID (required)
      * @param int $number_id Number ID (required)
@@ -203,7 +200,7 @@ class PhonenumbersApi
     /**
      * Operation getAccountPhoneNumberWithHttpInfo
      *
-     * Show details of an individual phone number
+     * Show details of an individual phone number.
      *
      * @param int $account_id Account ID (required)
      * @param int $number_id Number ID (required)
@@ -248,10 +245,7 @@ class PhonenumbersApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -291,7 +285,7 @@ class PhonenumbersApi
     /**
      * Operation listAccountPhoneNumbers
      *
-     * Get a list of phone numbers registered to an account
+     * Get a list of phone numbers registered to an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -315,7 +309,7 @@ class PhonenumbersApi
     /**
      * Operation listAccountPhoneNumbersWithHttpInfo
      *
-     * Get a list of phone numbers registered to an account
+     * Get a list of phone numbers registered to an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -413,10 +407,7 @@ class PhonenumbersApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -456,7 +447,7 @@ class PhonenumbersApi
     /**
      * Operation replaceAccountPhoneNumber
      *
-     * Update the settings for an existing phone number on your account
+     * Update the settings for an existing phone number on your account.
      *
      * @param int $account_id Account ID (required)
      * @param int $number_id Number ID (required)
@@ -473,7 +464,7 @@ class PhonenumbersApi
     /**
      * Operation replaceAccountPhoneNumberWithHttpInfo
      *
-     * Update the settings for an existing phone number on your account
+     * Update the settings for an existing phone number on your account.
      *
      * @param int $account_id Account ID (required)
      * @param int $number_id Number ID (required)
@@ -519,9 +510,6 @@ class PhonenumbersApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

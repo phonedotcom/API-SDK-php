@@ -90,7 +90,7 @@ class SmsApi
     /**
      * Operation createAccountSms
      *
-     * Send a SMS to one or a group of recipients
+     * Send a SMS to one or a group of recipients.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateSmsParams $data SMS data (required)
@@ -106,7 +106,7 @@ class SmsApi
     /**
      * Operation createAccountSmsWithHttpInfo
      *
-     * Send a SMS to one or a group of recipients
+     * Send a SMS to one or a group of recipients.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateSmsParams $data SMS data (required)
@@ -143,9 +143,6 @@ class SmsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -191,7 +188,7 @@ class SmsApi
     /**
      * Operation getAccountSms
      *
-     * Show details of an individual SMS
+     * This service shows the details of an individual SMS.
      *
      * @param int $account_id Account ID (required)
      * @param string $sms_id SMS ID (required)
@@ -207,7 +204,7 @@ class SmsApi
     /**
      * Operation getAccountSmsWithHttpInfo
      *
-     * Show details of an individual SMS
+     * This service shows the details of an individual SMS.
      *
      * @param int $account_id Account ID (required)
      * @param string $sms_id SMS ID (required)
@@ -252,10 +249,7 @@ class SmsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -295,12 +289,15 @@ class SmsApi
     /**
      * Operation listAccountSms
      *
-     * Get a list of SMS messages for an account
+     * Get a list of SMS messages for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
-     * @param string $filters_direction Direction filter (optional)
      * @param string $filters_from Caller ID filter (optional)
+     * @param string $filters_to Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B (optional)
+     * @param string $filters_direction Direction filter (optional)
+     * @param string[] $filters_extension Extension filter (optional)
+     * @param string $filters_created_at Date string representing the UTC time that sms was created (optional)
      * @param string $sort_id ID sorting (optional)
      * @param string $sort_created_at Sort by created time of message (optional)
      * @param int $limit Max results (optional)
@@ -309,21 +306,24 @@ class SmsApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\ListSms
      */
-    public function listAccountSms($account_id, $filters_id = null, $filters_direction = null, $filters_from = null, $sort_id = null, $sort_created_at = null, $limit = null, $offset = null, $fields = null)
+    public function listAccountSms($account_id, $filters_id = null, $filters_from = null, $filters_to = null, $filters_direction = null, $filters_extension = null, $filters_created_at = null, $sort_id = null, $sort_created_at = null, $limit = null, $offset = null, $fields = null)
     {
-        list($response) = $this->listAccountSmsWithHttpInfo($account_id, $filters_id, $filters_direction, $filters_from, $sort_id, $sort_created_at, $limit, $offset, $fields);
+        list($response) = $this->listAccountSmsWithHttpInfo($account_id, $filters_id, $filters_from, $filters_to, $filters_direction, $filters_extension, $filters_created_at, $sort_id, $sort_created_at, $limit, $offset, $fields);
         return $response;
     }
 
     /**
      * Operation listAccountSmsWithHttpInfo
      *
-     * Get a list of SMS messages for an account
+     * Get a list of SMS messages for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
-     * @param string $filters_direction Direction filter (optional)
      * @param string $filters_from Caller ID filter (optional)
+     * @param string $filters_to Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B (optional)
+     * @param string $filters_direction Direction filter (optional)
+     * @param string[] $filters_extension Extension filter (optional)
+     * @param string $filters_created_at Date string representing the UTC time that sms was created (optional)
      * @param string $sort_id ID sorting (optional)
      * @param string $sort_created_at Sort by created time of message (optional)
      * @param int $limit Max results (optional)
@@ -332,18 +332,26 @@ class SmsApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\ListSms, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAccountSmsWithHttpInfo($account_id, $filters_id = null, $filters_direction = null, $filters_from = null, $sort_id = null, $sort_created_at = null, $limit = null, $offset = null, $fields = null)
+    public function listAccountSmsWithHttpInfo($account_id, $filters_id = null, $filters_from = null, $filters_to = null, $filters_direction = null, $filters_extension = null, $filters_created_at = null, $sort_id = null, $sort_created_at = null, $limit = null, $offset = null, $fields = null)
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $account_id when calling listAccountSms');
         }
-        if (!is_null($filters_direction) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/", $filters_direction)) {
-            throw new \InvalidArgumentException("invalid value for \"filters_direction\" when calling SmsApi.listAccountSms, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/.");
+        if (!is_null($filters_from) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_from)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_from\" when calling SmsApi.listAccountSms, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
         }
 
-        if (!is_null($filters_from) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/", $filters_from)) {
-            throw new \InvalidArgumentException("invalid value for \"filters_from\" when calling SmsApi.listAccountSms, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/.");
+        if (!is_null($filters_to) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_to)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_to\" when calling SmsApi.listAccountSms, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
+        }
+
+        if (!is_null($filters_direction) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_direction)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_direction\" when calling SmsApi.listAccountSms, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
+        }
+
+        if (!is_null($filters_created_at) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_created_at)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_created_at\" when calling SmsApi.listAccountSms, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
         }
 
         if (!is_null($sort_id) && !preg_match("/asc|desc/", $sort_id)) {
@@ -374,12 +382,27 @@ class SmsApi
             $queryParams['filters[id]'] = $this->apiClient->getSerializer()->toQueryValue($filters_id);
         }
         // query params
+        if ($filters_from !== null) {
+            $queryParams['filters[from]'] = $this->apiClient->getSerializer()->toQueryValue($filters_from);
+        }
+        // query params
+        if ($filters_to !== null) {
+            $queryParams['filters[to]'] = $this->apiClient->getSerializer()->toQueryValue($filters_to);
+        }
+        // query params
         if ($filters_direction !== null) {
             $queryParams['filters[direction]'] = $this->apiClient->getSerializer()->toQueryValue($filters_direction);
         }
         // query params
-        if ($filters_from !== null) {
-            $queryParams['filters[from]'] = $this->apiClient->getSerializer()->toQueryValue($filters_from);
+        if (is_array($filters_extension)) {
+            $filters_extension = $this->apiClient->getSerializer()->serializeCollection($filters_extension, 'multi', true);
+        }
+        if ($filters_extension !== null) {
+            $queryParams['filters[extension]'] = $this->apiClient->getSerializer()->toQueryValue($filters_extension);
+        }
+        // query params
+        if ($filters_created_at !== null) {
+            $queryParams['filters[created_at]'] = $this->apiClient->getSerializer()->toQueryValue($filters_created_at);
         }
         // query params
         if ($sort_id !== null) {
@@ -409,10 +432,7 @@ class SmsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -441,6 +461,114 @@ class SmsApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ListSms', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation patchAccountSms
+     *
+     * Update the is_new parameter in a sms record.
+     *
+     * @param int $account_id Account ID (required)
+     * @param string $sms_id SMS ID (required)
+     * @param \Swagger\Client\Model\PatchSmsParams $data Sms data (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\SmsFull
+     */
+    public function patchAccountSms($account_id, $sms_id, $data = null)
+    {
+        list($response) = $this->patchAccountSmsWithHttpInfo($account_id, $sms_id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation patchAccountSmsWithHttpInfo
+     *
+     * Update the is_new parameter in a sms record.
+     *
+     * @param int $account_id Account ID (required)
+     * @param string $sms_id SMS ID (required)
+     * @param \Swagger\Client\Model\PatchSmsParams $data Sms data (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\SmsFull, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function patchAccountSmsWithHttpInfo($account_id, $sms_id, $data = null)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling patchAccountSms');
+        }
+        // verify the required parameter 'sms_id' is set
+        if ($sms_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sms_id when calling patchAccountSms');
+        }
+        // parse inputs
+        $resourcePath = "/accounts/{account_id}/sms/{sms_id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "account_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sms_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "sms_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($sms_id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['Authorization'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\SmsFull',
+                '/accounts/{account_id}/sms/{sms_id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SmsFull', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SmsFull', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

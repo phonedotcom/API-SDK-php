@@ -47,7 +47,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPhoneNumbersRegionFull()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCountryCode()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNpa()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNxx()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIsTollFree()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCity()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyProvincePostalCode()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCountryPostalCode()
     {
-
     }
 
     /**
@@ -143,7 +131,5 @@ class PhoneNumbersRegionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
-
 }

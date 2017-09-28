@@ -66,9 +66,31 @@ class CreateMediaParams implements ArrayAccess
         'randomized' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'origin' => null,
+        'type' => null,
+        'tts_voice' => null,
+        'tts_text' => null,
+        'is_temparary' => null,
+        'expiration_date' => null,
+        'duration' => null,
+        'notes' => null,
+        'randomized' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

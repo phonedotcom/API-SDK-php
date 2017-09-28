@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountPhoneNumber**](PhonenumbersApi.md#createAccountPhoneNumber) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account
-[**getAccountPhoneNumber**](PhonenumbersApi.md#getAccountPhoneNumber) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number
-[**listAccountPhoneNumbers**](PhonenumbersApi.md#listAccountPhoneNumbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account
-[**replaceAccountPhoneNumber**](PhonenumbersApi.md#replaceAccountPhoneNumber) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account
+[**createAccountPhoneNumber**](PhonenumbersApi.md#createAccountPhoneNumber) | **POST** /accounts/{account_id}/phone-numbers | Add a phone number to an account.
+[**getAccountPhoneNumber**](PhonenumbersApi.md#getAccountPhoneNumber) | **GET** /accounts/{account_id}/phone-numbers/{number_id} | Show details of an individual phone number.
+[**listAccountPhoneNumbers**](PhonenumbersApi.md#listAccountPhoneNumbers) | **GET** /accounts/{account_id}/phone-numbers | Get a list of phone numbers registered to an account.
+[**replaceAccountPhoneNumber**](PhonenumbersApi.md#replaceAccountPhoneNumber) | **PUT** /accounts/{account_id}/phone-numbers/{number_id} | Update the settings for an existing phone number on your account.
 
 
 # **createAccountPhoneNumber**
 > \Swagger\Client\Model\PhoneNumberFull createAccountPhoneNumber($account_id, $data)
 
-Add a phone number to an account
+Add a phone number to an account.
 
-See Intro to Account Phone Numbers for more info on the properties to use.
+Add a phone number to an account. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```php
@@ -45,7 +45,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreatePhoneNumberParams**](../Model/\Swagger\Client\Model\CreatePhoneNumberParams.md)| Phone Number data | [optional]
+ **data** | [**\Swagger\Client\Model\CreatePhoneNumberParams**](../Model/CreatePhoneNumberParams.md)| Phone Number data | [optional]
 
 ### Return type
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 # **getAccountPhoneNumber**
 > \Swagger\Client\Model\PhoneNumberFull getAccountPhoneNumber($account_id, $number_id)
 
-Show details of an individual phone number
+Show details of an individual phone number.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Show details of an individual phone number. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```php
@@ -117,9 +117,9 @@ Name | Type | Description  | Notes
 # **listAccountPhoneNumbers**
 > \Swagger\Client\Model\ListPhoneNumbers listAccountPhoneNumbers($account_id, $filters_id, $filters_name, $filters_phone_number, $sort_id, $sort_name, $sort_phone_number, $limit, $offset, $fields)
 
-Get a list of phone numbers registered to an account
+Get a list of phone numbers registered to an account.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Get a list of phone numbers registered to an account. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```php
@@ -185,9 +185,9 @@ Name | Type | Description  | Notes
 # **replaceAccountPhoneNumber**
 > \Swagger\Client\Model\PhoneNumberFull replaceAccountPhoneNumber($account_id, $number_id, $data)
 
-Update the settings for an existing phone number on your account
+Update the settings for an existing phone number on your account.
 
-See Intro to Account Phone Numbers for more info on the properties.
+Update the settings for an existing phone number on your account. See Account Phone Numbers for more info on the properties.
 
 ### Example
 ```php
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **number_id** | **int**| Number ID |
- **data** | [**\Swagger\Client\Model\ReplacePhoneNumberParams**](../Model/\Swagger\Client\Model\ReplacePhoneNumberParams.md)| Phone Number data | [optional]
+ **data** | [**\Swagger\Client\Model\ReplacePhoneNumberParams**](../Model/ReplacePhoneNumberParams.md)| Phone Number data | [optional]
 
 ### Return type
 

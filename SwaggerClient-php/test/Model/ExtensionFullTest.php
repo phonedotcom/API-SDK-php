@@ -47,7 +47,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testExtensionFull()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -103,7 +96,13 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExtension()
     {
+    }
 
+    /**
+     * Test attribute "voip_id"
+     */
+    public function testPropertyVoipId()
+    {
     }
 
     /**
@@ -111,7 +110,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFullName()
     {
-
     }
 
     /**
@@ -119,7 +117,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUsageType()
     {
-
     }
 
     /**
@@ -127,7 +124,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDeviceMembership()
     {
-
     }
 
     /**
@@ -135,7 +131,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimezone()
     {
-
     }
 
     /**
@@ -143,7 +138,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNameGreeting()
     {
-
     }
 
     /**
@@ -151,7 +145,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIncludeInDirectory()
     {
-
     }
 
     /**
@@ -159,7 +152,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallerId()
     {
-
     }
 
     /**
@@ -167,7 +159,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLocalAreaCode()
     {
-
     }
 
     /**
@@ -175,7 +166,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEnableCallWaiting()
     {
-
     }
 
     /**
@@ -183,7 +173,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEnableOutboundCalls()
     {
-
     }
 
     /**
@@ -191,7 +180,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVoicemail()
     {
-
     }
 
     /**
@@ -199,7 +187,6 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallNotifications()
     {
-
     }
 
     /**
@@ -207,7 +194,5 @@ class ExtensionFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRoute()
     {
-
     }
-
 }

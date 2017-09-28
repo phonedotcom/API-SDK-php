@@ -47,7 +47,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testReplaceMenuParams()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -95,15 +89,13 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGreeting()
     {
-
     }
 
     /**
-     * Test attribute "invalid_keypress"
+     * Test attribute "keypress_error"
      */
-    public function testPropertyInvalidKeypress()
+    public function testPropertyKeypressError()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAllowExtensionDial()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyKeypressWaitTime()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimeoutHandler()
     {
-
     }
 
     /**
@@ -135,7 +124,5 @@ class ReplaceMenuParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOptions()
     {
-
     }
-
 }

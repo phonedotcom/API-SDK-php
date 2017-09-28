@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Add a subaccount for the authenticated user or client
 
-This service shows the details of an individual Subaccount.
+Add a subaccount for the authenticated user or client
 
 ### Example
 ```php
@@ -27,7 +27,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorizatio
 
 $api_instance = new Swagger\Client\Api\SubaccountsApi();
 $account_id = 56; // int | Account ID
-$data = new \Swagger\Client\Model\CreateSubaccountParams(); // \Swagger\Client\Model\CreateSubaccountParams | SMS data
+$data = new \Swagger\Client\Model\CreateSubaccountParams(); // \Swagger\Client\Model\CreateSubaccountParams | Subaccount data
 
 try {
     $result = $api_instance->createAccountSubaccount($account_id, $data);
@@ -43,7 +43,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreateSubaccountParams**](../Model/\Swagger\Client\Model\CreateSubaccountParams.md)| SMS data |
+ **data** | [**\Swagger\Client\Model\CreateSubaccountParams**](../Model/CreateSubaccountParams.md)| Subaccount data |
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 Get a list of subaccounts for the authenticated user or client
 
-This service lists the Subaccount of the authenticated client. In most cases, there will not be any.
+Get a list of subaccounts for the authenticated user or client
 
 ### Example
 ```php

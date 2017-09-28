@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountQueue**](QueuesApi.md#createAccountQueue) | **POST** /accounts/{account_id}/queues | Create a queue
-[**deleteAccountQueue**](QueuesApi.md#deleteAccountQueue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue
-[**getAccountQueue**](QueuesApi.md#getAccountQueue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue
-[**listAccountQueues**](QueuesApi.md#listAccountQueues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account
-[**replaceAccountQueue**](QueuesApi.md#replaceAccountQueue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue
+[**createAccountQueue**](QueuesApi.md#createAccountQueue) | **POST** /accounts/{account_id}/queues | Create a queue.
+[**deleteAccountQueue**](QueuesApi.md#deleteAccountQueue) | **DELETE** /accounts/{account_id}/queues/{queue_id} | Delete a queue.
+[**getAccountQueue**](QueuesApi.md#getAccountQueue) | **GET** /accounts/{account_id}/queues/{queue_id} | Show details of an individual queue.
+[**listAccountQueues**](QueuesApi.md#listAccountQueues) | **GET** /accounts/{account_id}/queues | Get a list of queues for an account.
+[**replaceAccountQueue**](QueuesApi.md#replaceAccountQueue) | **PUT** /accounts/{account_id}/queues/{queue_id} | Replace a queue.
 
 
 # **createAccountQueue**
 > \Swagger\Client\Model\QueueFull createAccountQueue($account_id, $data)
 
-Create a queue
+Create a queue.
 
-For more on the input fields, see Account Queues.
+Create a queue. See Account Queues for more info on the properties.
 
 ### Example
 ```php
@@ -46,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreateQueueParams**](../Model/\Swagger\Client\Model\CreateQueueParams.md)| Queue data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateQueueParams**](../Model/CreateQueueParams.md)| Queue data | [optional]
 
 ### Return type
 
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccountQueue**
-> \Swagger\Client\Model\DeleteQueue deleteAccountQueue($account_id, $queue_id)
+> \Swagger\Client\Model\DeleteEntry deleteAccountQueue($account_id, $queue_id)
 
-Delete a queue
+Delete a queue.
 
-This service a queue from the account. For more information on queue properties, see Account Queues.
+Delete a queue. See Account Queues for more info on the properties.
 
 ### Example
 ```php
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DeleteQueue**](../Model/DeleteQueue.md)
+[**\Swagger\Client\Model\DeleteEntry**](../Model/DeleteEntry.md)
 
 ### Authorization
 
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 # **getAccountQueue**
 > \Swagger\Client\Model\QueueFull getAccountQueue($account_id, $queue_id)
 
-Show details of an individual queue
+Show details of an individual queue.
 
-This service shows the details of an individual queue. For more on the input fields, see Account Queues.
+Show details of an individual queue. See Account Queues for more info on the properties.
 
 ### Example
 ```php
@@ -170,9 +170,9 @@ Name | Type | Description  | Notes
 # **listAccountQueues**
 > \Swagger\Client\Model\ListQueues listAccountQueues($account_id, $filters_id, $filters_name, $sort_id, $sort_name, $limit, $offset, $fields)
 
-Get a list of queues for an account
+Get a list of queues for an account.
 
-The List Queues service lists all the queues belong to the account. See Account Queues for more info on the properties.
+Get a list of queues for an account. See Account Queues for more info on the properties.
 
 ### Example
 ```php
@@ -234,9 +234,9 @@ Name | Type | Description  | Notes
 # **replaceAccountQueue**
 > \Swagger\Client\Model\QueueFull replaceAccountQueue($account_id, $queue_id, $data)
 
-Replace a queue
+Replace a queue.
 
-The Replace Queue service replaces the parameters of a queue. For more on the input fields, see Account Queues.
+Replace a queue. See Account Queues for more info on the properties.
 
 ### Example
 ```php
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **queue_id** | **int**| Queue ID |
- **data** | [**\Swagger\Client\Model\CreateQueueParams**](../Model/\Swagger\Client\Model\CreateQueueParams.md)| Queue data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateQueueParams**](../Model/CreateQueueParams.md)| Queue data | [optional]
 
 ### Return type
 

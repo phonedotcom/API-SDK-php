@@ -151,10 +151,7 @@ class ExpressservicecodesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -194,7 +191,7 @@ class ExpressservicecodesApi
     /**
      * Operation listAccountExpressSrvCodes
      *
-     * Get the Express Service Code associated with your account in list format
+     * Get the Express Service Code associated with your account in list format.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -210,7 +207,7 @@ class ExpressservicecodesApi
     /**
      * Operation listAccountExpressSrvCodesWithHttpInfo
      *
-     * Get the Express Service Code associated with your account in list format
+     * Get the Express Service Code associated with your account in list format.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -250,10 +247,7 @@ class ExpressservicecodesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present

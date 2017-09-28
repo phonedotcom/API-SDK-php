@@ -90,7 +90,7 @@ class QueuesApi
     /**
      * Operation createAccountQueue
      *
-     * Create a queue
+     * Create a queue.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateQueueParams $data Queue data (optional)
@@ -106,7 +106,7 @@ class QueuesApi
     /**
      * Operation createAccountQueueWithHttpInfo
      *
-     * Create a queue
+     * Create a queue.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateQueueParams $data Queue data (optional)
@@ -139,9 +139,6 @@ class QueuesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -187,12 +184,12 @@ class QueuesApi
     /**
      * Operation deleteAccountQueue
      *
-     * Delete a queue
+     * Delete a queue.
      *
      * @param int $account_id Account ID (required)
      * @param int $queue_id Queue ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteQueue
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountQueue($account_id, $queue_id)
     {
@@ -203,12 +200,12 @@ class QueuesApi
     /**
      * Operation deleteAccountQueueWithHttpInfo
      *
-     * Delete a queue
+     * Delete a queue.
      *
      * @param int $account_id Account ID (required)
      * @param int $queue_id Queue ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteQueue, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountQueueWithHttpInfo($account_id, $queue_id)
     {
@@ -248,10 +245,7 @@ class QueuesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -271,15 +265,15 @@ class QueuesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteQueue',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/queues/{queue_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteQueue', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteQueue', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -291,7 +285,7 @@ class QueuesApi
     /**
      * Operation getAccountQueue
      *
-     * Show details of an individual queue
+     * Show details of an individual queue.
      *
      * @param int $account_id Account ID (required)
      * @param int $queue_id Queue ID (required)
@@ -307,7 +301,7 @@ class QueuesApi
     /**
      * Operation getAccountQueueWithHttpInfo
      *
-     * Show details of an individual queue
+     * Show details of an individual queue.
      *
      * @param int $account_id Account ID (required)
      * @param int $queue_id Queue ID (required)
@@ -352,10 +346,7 @@ class QueuesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -395,7 +386,7 @@ class QueuesApi
     /**
      * Operation listAccountQueues
      *
-     * Get a list of queues for an account
+     * Get a list of queues for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -417,7 +408,7 @@ class QueuesApi
     /**
      * Operation listAccountQueuesWithHttpInfo
      *
-     * Get a list of queues for an account
+     * Get a list of queues for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -498,10 +489,7 @@ class QueuesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -541,7 +529,7 @@ class QueuesApi
     /**
      * Operation replaceAccountQueue
      *
-     * Replace a queue
+     * Replace a queue.
      *
      * @param int $account_id Account ID (required)
      * @param int $queue_id Queue ID (required)
@@ -558,7 +546,7 @@ class QueuesApi
     /**
      * Operation replaceAccountQueueWithHttpInfo
      *
-     * Replace a queue
+     * Replace a queue.
      *
      * @param int $account_id Account ID (required)
      * @param int $queue_id Queue ID (required)
@@ -604,9 +592,6 @@ class QueuesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

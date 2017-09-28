@@ -90,7 +90,7 @@ class DevicesApi
     /**
      * Operation createAccountDevice
      *
-     * Register a generic VoIP device
+     * Register a generic VoIP device.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateDeviceParams $data Device data (optional)
@@ -106,7 +106,7 @@ class DevicesApi
     /**
      * Operation createAccountDeviceWithHttpInfo
      *
-     * Register a generic VoIP device
+     * Register a generic VoIP device.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateDeviceParams $data Device data (optional)
@@ -139,9 +139,6 @@ class DevicesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -185,9 +182,110 @@ class DevicesApi
     }
 
     /**
+     * Operation deleteAccountDevice
+     *
+     * Delete a VoIP device.
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $device_id Device ID (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\DeleteEntry
+     */
+    public function deleteAccountDevice($account_id, $device_id)
+    {
+        list($response) = $this->deleteAccountDeviceWithHttpInfo($account_id, $device_id);
+        return $response;
+    }
+
+    /**
+     * Operation deleteAccountDeviceWithHttpInfo
+     *
+     * Delete a VoIP device.
+     *
+     * @param int $account_id Account ID (required)
+     * @param int $device_id Device ID (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteAccountDeviceWithHttpInfo($account_id, $device_id)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling deleteAccountDevice');
+        }
+        // verify the required parameter 'device_id' is set
+        if ($device_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $device_id when calling deleteAccountDevice');
+        }
+        // parse inputs
+        $resourcePath = "/accounts/{account_id}/devices/{device_id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "account_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($account_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($device_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "device_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($device_id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['Authorization'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\DeleteEntry',
+                '/accounts/{account_id}/devices/{device_id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getAccountDevice
      *
-     * Show details of an individual VoIP device
+     * Show details of an individual VoIP device.
      *
      * @param int $account_id Account ID (required)
      * @param int $device_id Device ID (required)
@@ -203,7 +301,7 @@ class DevicesApi
     /**
      * Operation getAccountDeviceWithHttpInfo
      *
-     * Show details of an individual VoIP device
+     * Show details of an individual VoIP device.
      *
      * @param int $account_id Account ID (required)
      * @param int $device_id Device ID (required)
@@ -248,10 +346,7 @@ class DevicesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -291,7 +386,7 @@ class DevicesApi
     /**
      * Operation listAccountDevices
      *
-     * Get a list of VoIP devices associated with your account
+     * Get a list of VoIP devices associated with your account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -313,7 +408,7 @@ class DevicesApi
     /**
      * Operation listAccountDevicesWithHttpInfo
      *
-     * Get a list of VoIP devices associated with your account
+     * Get a list of VoIP devices associated with your account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -394,10 +489,7 @@ class DevicesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -437,7 +529,7 @@ class DevicesApi
     /**
      * Operation replaceAccountDevice
      *
-     * Update the settings for an individual VoIP device
+     * Update the details of an individual VoIP device.
      *
      * @param int $account_id Account ID (required)
      * @param int $device_id Device ID (required)
@@ -454,7 +546,7 @@ class DevicesApi
     /**
      * Operation replaceAccountDeviceWithHttpInfo
      *
-     * Update the settings for an individual VoIP device
+     * Update the details of an individual VoIP device.
      *
      * @param int $account_id Account ID (required)
      * @param int $device_id Device ID (required)
@@ -500,9 +592,6 @@ class DevicesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

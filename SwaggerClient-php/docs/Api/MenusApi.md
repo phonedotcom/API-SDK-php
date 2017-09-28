@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountMenu**](MenusApi.md#createAccountMenu) | **POST** /accounts/{account_id}/menus | Create an individual menu
-[**deleteAccountMenu**](MenusApi.md#deleteAccountMenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu
-[**getAccountMenu**](MenusApi.md#getAccountMenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu
-[**listAccountMenus**](MenusApi.md#listAccountMenus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account
-[**replaceAccountMenu**](MenusApi.md#replaceAccountMenu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu
+[**createAccountMenu**](MenusApi.md#createAccountMenu) | **POST** /accounts/{account_id}/menus | Create an individual menu.
+[**deleteAccountMenu**](MenusApi.md#deleteAccountMenu) | **DELETE** /accounts/{account_id}/menus/{menu_id} | Delete an individual menu.
+[**getAccountMenu**](MenusApi.md#getAccountMenu) | **GET** /accounts/{account_id}/menus/{menu_id} | Show details of an individual menu.
+[**listAccountMenus**](MenusApi.md#listAccountMenus) | **GET** /accounts/{account_id}/menus | Get a list of menus for an account.
+[**replaceAccountMenu**](MenusApi.md#replaceAccountMenu) | **PUT** /accounts/{account_id}/menus/{menu_id} | Replace an individual menu.
 
 
 # **createAccountMenu**
 > \Swagger\Client\Model\MenuFull createAccountMenu($account_id, $data)
 
-Create an individual menu
+Create an individual menu.
 
-This service creates an individual menu. See Account Menus for more info on the properties.
+Create an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```php
@@ -46,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreateMenuParams**](../Model/\Swagger\Client\Model\CreateMenuParams.md)| Menu data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateMenuParams**](../Model/CreateMenuParams.md)| Menu data | [optional]
 
 ### Return type
 
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccountMenu**
-> \Swagger\Client\Model\DeleteMenu deleteAccountMenu($account_id, $menu_id)
+> \Swagger\Client\Model\DeleteEntry deleteAccountMenu($account_id, $menu_id)
 
-Delete an individual menu
+Delete an individual menu.
 
-See Account Menus for more info on the properties.
+Delete an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```php
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DeleteMenu**](../Model/DeleteMenu.md)
+[**\Swagger\Client\Model\DeleteEntry**](../Model/DeleteEntry.md)
 
 ### Authorization
 
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 # **getAccountMenu**
 > \Swagger\Client\Model\MenuFull getAccountMenu($account_id, $menu_id)
 
-Show details of an individual menu
+Show details of an individual menu.
 
-This service shows the details of an individual Menu.
+Show details of an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```php
@@ -170,9 +170,9 @@ Name | Type | Description  | Notes
 # **listAccountMenus**
 > \Swagger\Client\Model\ListMenus listAccountMenus($account_id, $filters_id, $filters_name, $sort_id, $sort_name, $limit, $offset, $fields)
 
-Get a list of menus for an account
+Get a list of menus for an account.
 
-See Account Menus for more info on the properties.
+Get a list of menus for an account. See Account Menus for more info on the properties.
 
 ### Example
 ```php
@@ -234,9 +234,9 @@ Name | Type | Description  | Notes
 # **replaceAccountMenu**
 > \Swagger\Client\Model\MenuFull replaceAccountMenu($account_id, $menu_id, $data)
 
-Replace an individual menu
+Replace an individual menu.
 
-See Account Menus for more info on the properties.
+Replace an individual menu. See Account Menus for more info on the properties.
 
 ### Example
 ```php
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **menu_id** | **int**| Menu ID |
- **data** | [**\Swagger\Client\Model\ReplaceMenuParams**](../Model/\Swagger\Client\Model\ReplaceMenuParams.md)| Menu data | [optional]
+ **data** | [**\Swagger\Client\Model\ReplaceMenuParams**](../Model/ReplaceMenuParams.md)| Menu data | [optional]
 
 ### Return type
 

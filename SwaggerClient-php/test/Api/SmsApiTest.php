@@ -49,7 +49,6 @@ class SmsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class SmsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class SmsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,40 +70,45 @@ class SmsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountSms
      *
-     * Send a SMS to one or a group of recipients.
+     * Send a SMS to one or a group of recipients..
      *
      */
     public function testCreateAccountSms()
     {
-
     }
 
     /**
      * Test case for getAccountSms
      *
-     * Show details of an individual SMS.
+     * This service shows the details of an individual SMS..
      *
      */
     public function testGetAccountSms()
     {
-
     }
 
     /**
      * Test case for listAccountSms
      *
-     * Get a list of SMS messages for an account.
+     * Get a list of SMS messages for an account..
      *
      */
     public function testListAccountSms()
     {
-
     }
 
+    /**
+     * Test case for patchAccountSms
+     *
+     * Update the is_new parameter in a sms record..
+     *
+     */
+    public function testPatchAccountSms()
+    {
+    }
 }

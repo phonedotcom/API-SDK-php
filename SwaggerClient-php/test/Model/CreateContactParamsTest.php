@@ -47,7 +47,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateContactParams()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFirstName()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMiddleName()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastName()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPrefix()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhoneticFirstName()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhoneticMiddleName()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhoneticLastName()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySuffix()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNickname()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCompany()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDepartment()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyJobTitle()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEmails()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhoneNumbers()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddresses()
     {
-
     }
 
     /**
@@ -207,7 +187,5 @@ class CreateContactParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGroup()
     {
-
     }
-
 }

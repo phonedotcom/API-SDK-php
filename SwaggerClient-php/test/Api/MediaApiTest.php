@@ -49,7 +49,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateAccountMediaFiles()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateAccountMediaTts()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteAccountMedia()
     {
-
     }
 
     /**
@@ -117,18 +110,16 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAccountMedia()
     {
-
     }
 
     /**
      * Test case for listAccountMedia
      *
-     * Get a list of media recordings for an account.
+     * Get a list of media recordings for an account..
      *
      */
     public function testListAccountMedia()
     {
-
     }
 
     /**
@@ -139,18 +130,15 @@ class MediaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testReplaceAccountMediaFiles()
     {
-
     }
 
     /**
      * Test case for replaceAccountMediaTts
      *
-     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB..
+     * Update a media object to your account..
      *
      */
     public function testReplaceAccountMediaTts()
     {
-
     }
-
 }

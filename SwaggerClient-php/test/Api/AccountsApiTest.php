@@ -49,7 +49,6 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,18 +80,15 @@ class AccountsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAccount()
     {
-
     }
 
     /**
      * Test case for listAccounts
      *
-     * Get a list of accounts visible to the authenticated user or client.
+     * Get a list of accounts visible to the authenticated user or client..
      *
      */
     public function testListAccounts()
     {
-
     }
-
 }

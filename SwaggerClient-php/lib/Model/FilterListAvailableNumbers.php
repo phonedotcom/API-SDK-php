@@ -66,9 +66,31 @@ class FilterListAvailableNumbers implements ArrayAccess
         'category' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'phone_number' => null,
+        'country_code' => null,
+        'npa' => null,
+        'nxx' => null,
+        'xxxx' => null,
+        'city' => null,
+        'province' => null,
+        'country' => null,
+        'price' => null,
+        'category' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

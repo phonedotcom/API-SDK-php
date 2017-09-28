@@ -90,7 +90,7 @@ class MenusApi
     /**
      * Operation createAccountMenu
      *
-     * Create an individual menu
+     * Create an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateMenuParams $data Menu data (optional)
@@ -106,7 +106,7 @@ class MenusApi
     /**
      * Operation createAccountMenuWithHttpInfo
      *
-     * Create an individual menu
+     * Create an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateMenuParams $data Menu data (optional)
@@ -139,9 +139,6 @@ class MenusApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -187,12 +184,12 @@ class MenusApi
     /**
      * Operation deleteAccountMenu
      *
-     * Delete an individual menu
+     * Delete an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param int $menu_id Menu ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteMenu
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountMenu($account_id, $menu_id)
     {
@@ -203,12 +200,12 @@ class MenusApi
     /**
      * Operation deleteAccountMenuWithHttpInfo
      *
-     * Delete an individual menu
+     * Delete an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param int $menu_id Menu ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteMenu, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountMenuWithHttpInfo($account_id, $menu_id)
     {
@@ -248,10 +245,7 @@ class MenusApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -271,15 +265,15 @@ class MenusApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteMenu',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/menus/{menu_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteMenu', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteMenu', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -291,7 +285,7 @@ class MenusApi
     /**
      * Operation getAccountMenu
      *
-     * Show details of an individual menu
+     * Show details of an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param int $menu_id Menu ID (required)
@@ -307,7 +301,7 @@ class MenusApi
     /**
      * Operation getAccountMenuWithHttpInfo
      *
-     * Show details of an individual menu
+     * Show details of an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param int $menu_id Menu ID (required)
@@ -352,10 +346,7 @@ class MenusApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -395,7 +386,7 @@ class MenusApi
     /**
      * Operation listAccountMenus
      *
-     * Get a list of menus for an account
+     * Get a list of menus for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -417,7 +408,7 @@ class MenusApi
     /**
      * Operation listAccountMenusWithHttpInfo
      *
-     * Get a list of menus for an account
+     * Get a list of menus for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -498,10 +489,7 @@ class MenusApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -541,7 +529,7 @@ class MenusApi
     /**
      * Operation replaceAccountMenu
      *
-     * Replace an individual menu
+     * Replace an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param int $menu_id Menu ID (required)
@@ -558,7 +546,7 @@ class MenusApi
     /**
      * Operation replaceAccountMenuWithHttpInfo
      *
-     * Replace an individual menu
+     * Replace an individual menu.
      *
      * @param int $account_id Account ID (required)
      * @param int $menu_id Menu ID (required)
@@ -604,9 +592,6 @@ class MenusApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

@@ -49,7 +49,6 @@ class TrunksApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class TrunksApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class TrunksApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,62 +70,55 @@ class TrunksApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountTrunk
      *
-     * Add a trunk record with SIP information.
+     * Add a trunk record with SIP information..
      *
      */
     public function testCreateAccountTrunk()
     {
-
     }
 
     /**
      * Test case for deleteAccountTrunk
      *
-     * Delete a trunk from account.
+     * Delete a trunk from account..
      *
      */
     public function testDeleteAccountTrunk()
     {
-
     }
 
     /**
      * Test case for getAccountTrunk
      *
-     * Show details of an individual trunk.
+     * Show details of an individual trunk..
      *
      */
     public function testGetAccountTrunk()
     {
-
     }
 
     /**
      * Test case for listAccountTrunks
      *
-     * Get a list of trunks for an account.
+     * Get a list of trunks for an account..
      *
      */
     public function testListAccountTrunks()
     {
-
     }
 
     /**
      * Test case for replaceAccountTrunk
      *
-     * Replace parameters in a trunk.
+     * Replace parameters in a trunk..
      *
      */
     public function testReplaceAccountTrunk()
     {
-
     }
-
 }

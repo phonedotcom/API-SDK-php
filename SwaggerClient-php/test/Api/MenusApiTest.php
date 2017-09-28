@@ -49,7 +49,6 @@ class MenusApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class MenusApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class MenusApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,62 +70,55 @@ class MenusApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountMenu
      *
-     * Create an individual menu.
+     * Create an individual menu..
      *
      */
     public function testCreateAccountMenu()
     {
-
     }
 
     /**
      * Test case for deleteAccountMenu
      *
-     * Delete an individual menu.
+     * Delete an individual menu..
      *
      */
     public function testDeleteAccountMenu()
     {
-
     }
 
     /**
      * Test case for getAccountMenu
      *
-     * Show details of an individual menu.
+     * Show details of an individual menu..
      *
      */
     public function testGetAccountMenu()
     {
-
     }
 
     /**
      * Test case for listAccountMenus
      *
-     * Get a list of menus for an account.
+     * Get a list of menus for an account..
      *
      */
     public function testListAccountMenus()
     {
-
     }
 
     /**
      * Test case for replaceAccountMenu
      *
-     * Replace an individual menu.
+     * Replace an individual menu..
      *
      */
     public function testReplaceAccountMenu()
     {
-
     }
-
 }

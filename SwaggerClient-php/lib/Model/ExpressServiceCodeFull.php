@@ -57,12 +57,27 @@ class ExpressServiceCodeFull implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'express_service_code' => 'string',
-        'expire_date' => 'int'
+        'expire_date' => 'int[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'express_service_code' => null,
+        'expire_date' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -202,7 +217,7 @@ class ExpressServiceCodeFull implements ArrayAccess
 
     /**
      * Gets expire_date
-     * @return int
+     * @return int[]
      */
     public function getExpireDate()
     {
@@ -211,7 +226,7 @@ class ExpressServiceCodeFull implements ArrayAccess
 
     /**
      * Sets expire_date
-     * @param int $expire_date UNIX time stamp representing the UTC time that the Express Service Code expires. Please note that every time this service is executed, the expire_date is set to now + 24 hours.
+     * @param int[] $expire_date UNIX time stamp representing the UTC time that the Express Service Code expires. Please note that every time this service is executed, the expire_date is set to now + 24 hours.
      * @return $this
      */
     public function setExpireDate($expire_date)

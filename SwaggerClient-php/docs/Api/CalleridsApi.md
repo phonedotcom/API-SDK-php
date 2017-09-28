@@ -4,15 +4,15 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCallerIds**](CalleridsApi.md#getCallerIds) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use
+[**getCallerIds**](CalleridsApi.md#getCallerIds) | **GET** /accounts/{account_id}/extensions/{extension_id}/caller-ids | Show the Caller ID options a given extension can use.
 
 
 # **getCallerIds**
 > \Swagger\Client\Model\ListCallerIds getCallerIds($account_id, $extension_id, $filters_number, $filters_name, $sort_number, $sort_name, $limit, $offset, $fields)
 
-Show the Caller ID options a given extension can use
+Show the Caller ID options a given extension can use.
 
-Get Caller ID
+Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 
 ### Example
 ```php

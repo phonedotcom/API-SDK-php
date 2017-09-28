@@ -49,7 +49,6 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,62 +70,55 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountExtensionContact
      *
-     * Add a new address book contact for an extension.
+     * Add a new address book contact for an extension..
      *
      */
     public function testCreateAccountExtensionContact()
     {
-
     }
 
     /**
      * Test case for deleteAccountExtensionContact
      *
-     * .
+     * Delete a contact from the address book..
      *
      */
     public function testDeleteAccountExtensionContact()
     {
-
     }
 
     /**
      * Test case for getAccountExtensionContact
      *
-     * Retrieve the details of an address book contact.
+     * Retrieve the details of an address book contact..
      *
      */
     public function testGetAccountExtensionContact()
     {
-
     }
 
     /**
      * Test case for listAccountExtensionContacts
      *
-     * Show a list of address book contacts.
+     * Show the Caller ID options a given extension can use..
      *
      */
     public function testListAccountExtensionContacts()
     {
-
     }
 
     /**
      * Test case for replaceAccountExtensionContact
      *
-     * .
+     * Update the info of a contact in the address book..
      *
      */
     public function testReplaceAccountExtensionContact()
     {
-
     }
-
 }

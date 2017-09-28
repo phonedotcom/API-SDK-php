@@ -47,7 +47,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function testGreeting()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAlternate()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStandard()
     {
-
     }
 
     /**
@@ -111,7 +103,5 @@ class GreetingTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEnableLeaveMessagePrompt()
     {
-
     }
-
 }

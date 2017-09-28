@@ -54,25 +54,51 @@ class ReplaceExtensionParams implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'voicemail' => '\Swagger\Client\Model\Voicemail',
+        'voicemail' => '\Swagger\Client\Model\VoicemailInput',
         'call_notifications' => '\Swagger\Client\Model\CallNotifications',
         'name_greeting' => 'object',
         'name' => 'string',
         'timezone' => 'string',
-        'include_in_directory' => 'bool',
+        'include_in_directory' => 'string',
         'extension' => 'int',
-        'enable_outbound_calls' => 'bool',
+        'enable_outbound_calls' => 'string',
         'usage_type' => 'string',
         'full_name' => 'string',
-        'enable_call_waiting' => 'bool',
+        'enable_call_waiting' => 'string',
         'caller_id' => 'string',
-        'local_area_code' => 'int',
+        'local_area_code' => 'string',
         'route' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'voicemail' => null,
+        'call_notifications' => null,
+        'name_greeting' => null,
+        'name' => null,
+        'timezone' => null,
+        'include_in_directory' => null,
+        'extension' => null,
+        'enable_outbound_calls' => null,
+        'usage_type' => null,
+        'full_name' => null,
+        'enable_call_waiting' => null,
+        'caller_id' => null,
+        'local_area_code' => null,
+        'route' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -214,7 +240,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Gets voicemail
-     * @return \Swagger\Client\Model\Voicemail
+     * @return \Swagger\Client\Model\VoicemailInput
      */
     public function getVoicemail()
     {
@@ -223,7 +249,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets voicemail
-     * @param \Swagger\Client\Model\Voicemail $voicemail Voicemail object
+     * @param \Swagger\Client\Model\VoicemailInput $voicemail
      * @return $this
      */
     public function setVoicemail($voicemail)
@@ -244,7 +270,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets call_notifications
-     * @param \Swagger\Client\Model\CallNotifications $call_notifications Call Notifications object
+     * @param \Swagger\Client\Model\CallNotifications $call_notifications
      * @return $this
      */
     public function setCallNotifications($call_notifications)
@@ -319,7 +345,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Gets include_in_directory
-     * @return bool
+     * @return string
      */
     public function getIncludeInDirectory()
     {
@@ -328,7 +354,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets include_in_directory
-     * @param bool $include_in_directory Include in dial-by-name directory
+     * @param string $include_in_directory Include in dial-by-name directory
      * @return $this
      */
     public function setIncludeInDirectory($include_in_directory)
@@ -361,7 +387,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Gets enable_outbound_calls
-     * @return bool
+     * @return string
      */
     public function getEnableOutboundCalls()
     {
@@ -370,7 +396,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets enable_outbound_calls
-     * @param bool $enable_outbound_calls Enable outgoing calls
+     * @param string $enable_outbound_calls Enable outgoing calls
      * @return $this
      */
     public function setEnableOutboundCalls($enable_outbound_calls)
@@ -424,7 +450,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Gets enable_call_waiting
-     * @return bool
+     * @return string
      */
     public function getEnableCallWaiting()
     {
@@ -433,7 +459,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets enable_call_waiting
-     * @param bool $enable_call_waiting Enable Call Waiting
+     * @param string $enable_call_waiting Enable Call Waiting
      * @return $this
      */
     public function setEnableCallWaiting($enable_call_waiting)
@@ -466,7 +492,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Gets local_area_code
-     * @return int
+     * @return string
      */
     public function getLocalAreaCode()
     {
@@ -475,7 +501,7 @@ class ReplaceExtensionParams implements ArrayAccess
 
     /**
      * Sets local_area_code
-     * @param int $local_area_code Local area code
+     * @param string $local_area_code Local area code
      * @return $this
      */
     public function setLocalAreaCode($local_area_code)

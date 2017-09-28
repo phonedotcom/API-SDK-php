@@ -59,9 +59,23 @@ class DeviceMembership implements ArrayAccess
         'device' => '\Swagger\Client\Model\DeviceSummary'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'line' => null,
+        'device' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

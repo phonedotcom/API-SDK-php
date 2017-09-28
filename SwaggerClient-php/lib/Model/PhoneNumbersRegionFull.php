@@ -65,9 +65,29 @@ class PhoneNumbersRegionFull implements ArrayAccess
         'quantity' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'country_code' => null,
+        'npa' => null,
+        'nxx' => null,
+        'is_toll_free' => null,
+        'city' => null,
+        'province_postal_code' => null,
+        'country_postal_code' => null,
+        'quantity' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

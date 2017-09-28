@@ -61,9 +61,25 @@ class Greeting implements ArrayAccess
         'enable_leave_message_prompt' => 'bool'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'type' => null,
+        'alternate' => null,
+        'standard' => null,
+        'enable_leave_message_prompt' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

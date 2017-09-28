@@ -56,13 +56,29 @@ class CreateSubaccountParams implements ArrayAccess
     protected static $swaggerTypes = [
         'username' => 'string',
         'password' => 'string',
-        'contact' => '\Swagger\Client\Model\ContactSubaccount',
-        'billing_contact' => '\Swagger\Client\Model\ContactSubaccount'
+        'contact' => '\Swagger\Client\Model\ContactResponse',
+        'billing_contact' => '\Swagger\Client\Model\ContactResponse'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'username' => null,
+        'password' => null,
+        'contact' => null,
+        'billing_contact' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -218,7 +234,7 @@ class CreateSubaccountParams implements ArrayAccess
 
     /**
      * Gets contact
-     * @return \Swagger\Client\Model\ContactSubaccount
+     * @return \Swagger\Client\Model\ContactResponse
      */
     public function getContact()
     {
@@ -227,7 +243,7 @@ class CreateSubaccountParams implements ArrayAccess
 
     /**
      * Sets contact
-     * @param \Swagger\Client\Model\ContactSubaccount $contact Contact Object. See below for details.
+     * @param \Swagger\Client\Model\ContactResponse $contact Contact Object. See below for details.
      * @return $this
      */
     public function setContact($contact)
@@ -239,7 +255,7 @@ class CreateSubaccountParams implements ArrayAccess
 
     /**
      * Gets billing_contact
-     * @return \Swagger\Client\Model\ContactSubaccount
+     * @return \Swagger\Client\Model\ContactResponse
      */
     public function getBillingContact()
     {
@@ -248,7 +264,7 @@ class CreateSubaccountParams implements ArrayAccess
 
     /**
      * Sets billing_contact
-     * @param \Swagger\Client\Model\ContactSubaccount $billing_contact Contact Object for billing purposes. See below for details.
+     * @param \Swagger\Client\Model\ContactResponse $billing_contact Contact Object for billing purposes. See below for details.
      * @return $this
      */
     public function setBillingContact($billing_contact)

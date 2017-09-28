@@ -49,7 +49,6 @@ class GroupsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class GroupsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class GroupsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,62 +70,55 @@ class GroupsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountExtensionContactGroup
      *
-     * .
+     * Add a new contact group to an account extension..
      *
      */
     public function testCreateAccountExtensionContactGroup()
     {
-
     }
 
     /**
      * Test case for deleteAccountExtensionContactGroup
      *
-     * Delete an addressbook group.
+     * Delete a contact group from the address book..
      *
      */
     public function testDeleteAccountExtensionContactGroup()
     {
-
     }
 
     /**
      * Test case for getAccountExtensionContactGroup
      *
-     * .
+     * Retrieve the information of a contact group..
      *
      */
     public function testGetAccountExtensionContactGroup()
     {
-
     }
 
     /**
      * Test case for listAccountExtensionContactGroups
      *
-     * Show a list of contact groups belonging to an extension.
+     * Show a list of contact groups belonging to an extension..
      *
      */
     public function testListAccountExtensionContactGroups()
     {
-
     }
 
     /**
      * Test case for replaceAccountExtensionContactGroup
      *
-     * .
+     * Update the information of a contact group..
      *
      */
     public function testReplaceAccountExtensionContactGroup()
     {
-
     }
-
 }

@@ -35,7 +35,7 @@ use \ArrayAccess;
  * MediaFull Class Doc Comment
  *
  * @category    Class
- * @description The Full Recording Object includes all of the properties from the Recording Summary Object, along with the following:
+ * @description The Full Recording Object and the Summary Recording Object are the same.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -60,9 +60,24 @@ class MediaFull implements ArrayAccess
         'type' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'type' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

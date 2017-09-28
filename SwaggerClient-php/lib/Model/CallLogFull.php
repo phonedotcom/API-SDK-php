@@ -68,14 +68,50 @@ class CallLogFull implements ArrayAccess
         'is_monitored' => 'string',
         'call_number' => 'string',
         'final_action' => 'string',
-        'call_recording' => 'string',
+        'voicemail_url' => 'string',
+        'voicemail_cp_url' => 'string',
+        'voicemail_transcript' => 'string',
+        'call_recording_url' => 'string',
+        'call_recording_cp_url' => 'string',
         'details' => '\Swagger\Client\Model\CallDetails[]',
         'caller_cnam' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'uuid' => null,
+        'extension' => null,
+        'caller_id' => null,
+        'called_number' => null,
+        'start_time' => null,
+        'created_at' => null,
+        'direction' => null,
+        'type' => null,
+        'call_duration' => null,
+        'is_monitored' => null,
+        'call_number' => null,
+        'final_action' => null,
+        'voicemail_url' => null,
+        'voicemail_cp_url' => null,
+        'voicemail_transcript' => null,
+        'call_recording_url' => null,
+        'call_recording_cp_url' => null,
+        'details' => null,
+        'caller_cnam' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -96,7 +132,11 @@ class CallLogFull implements ArrayAccess
         'is_monitored' => 'is_monitored',
         'call_number' => 'call_number',
         'final_action' => 'final_action',
-        'call_recording' => 'call_recording',
+        'voicemail_url' => 'voicemail_url',
+        'voicemail_cp_url' => 'voicemail_cp_url',
+        'voicemail_transcript' => 'voicemail_transcript',
+        'call_recording_url' => 'call_recording_url',
+        'call_recording_cp_url' => 'call_recording_cp_url',
         'details' => 'details',
         'caller_cnam' => 'caller_cnam'
     ];
@@ -120,7 +160,11 @@ class CallLogFull implements ArrayAccess
         'is_monitored' => 'setIsMonitored',
         'call_number' => 'setCallNumber',
         'final_action' => 'setFinalAction',
-        'call_recording' => 'setCallRecording',
+        'voicemail_url' => 'setVoicemailUrl',
+        'voicemail_cp_url' => 'setVoicemailCpUrl',
+        'voicemail_transcript' => 'setVoicemailTranscript',
+        'call_recording_url' => 'setCallRecordingUrl',
+        'call_recording_cp_url' => 'setCallRecordingCpUrl',
         'details' => 'setDetails',
         'caller_cnam' => 'setCallerCnam'
     ];
@@ -144,7 +188,11 @@ class CallLogFull implements ArrayAccess
         'is_monitored' => 'getIsMonitored',
         'call_number' => 'getCallNumber',
         'final_action' => 'getFinalAction',
-        'call_recording' => 'getCallRecording',
+        'voicemail_url' => 'getVoicemailUrl',
+        'voicemail_cp_url' => 'getVoicemailCpUrl',
+        'voicemail_transcript' => 'getVoicemailTranscript',
+        'call_recording_url' => 'getCallRecordingUrl',
+        'call_recording_cp_url' => 'getCallRecordingCpUrl',
         'details' => 'getDetails',
         'caller_cnam' => 'getCallerCnam'
     ];
@@ -193,7 +241,11 @@ class CallLogFull implements ArrayAccess
         $this->container['is_monitored'] = isset($data['is_monitored']) ? $data['is_monitored'] : null;
         $this->container['call_number'] = isset($data['call_number']) ? $data['call_number'] : null;
         $this->container['final_action'] = isset($data['final_action']) ? $data['final_action'] : null;
-        $this->container['call_recording'] = isset($data['call_recording']) ? $data['call_recording'] : null;
+        $this->container['voicemail_url'] = isset($data['voicemail_url']) ? $data['voicemail_url'] : null;
+        $this->container['voicemail_cp_url'] = isset($data['voicemail_cp_url']) ? $data['voicemail_cp_url'] : null;
+        $this->container['voicemail_transcript'] = isset($data['voicemail_transcript']) ? $data['voicemail_transcript'] : null;
+        $this->container['call_recording_url'] = isset($data['call_recording_url']) ? $data['call_recording_url'] : null;
+        $this->container['call_recording_cp_url'] = isset($data['call_recording_cp_url']) ? $data['call_recording_cp_url'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
         $this->container['caller_cnam'] = isset($data['caller_cnam']) ? $data['caller_cnam'] : null;
     }
@@ -497,22 +549,106 @@ class CallLogFull implements ArrayAccess
     }
 
     /**
-     * Gets call_recording
+     * Gets voicemail_url
      * @return string
      */
-    public function getCallRecording()
+    public function getVoicemailUrl()
     {
-        return $this->container['call_recording'];
+        return $this->container['voicemail_url'];
     }
 
     /**
-     * Sets call_recording
-     * @param string $call_recording URL of call recording if available. Empty string if call recording does not exist
+     * Sets voicemail_url
+     * @param string $voicemail_url URL of voicemail if available. User may download the audio via this URL. Empty string if voicemail does not exist
      * @return $this
      */
-    public function setCallRecording($call_recording)
+    public function setVoicemailUrl($voicemail_url)
     {
-        $this->container['call_recording'] = $call_recording;
+        $this->container['voicemail_url'] = $voicemail_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets voicemail_cp_url
+     * @return string
+     */
+    public function getVoicemailCpUrl()
+    {
+        return $this->container['voicemail_cp_url'];
+    }
+
+    /**
+     * Sets voicemail_cp_url
+     * @param string $voicemail_cp_url URL of voicemail if available. User may listen to the audio online via this URL. Empty string if voicemail does not exist
+     * @return $this
+     */
+    public function setVoicemailCpUrl($voicemail_cp_url)
+    {
+        $this->container['voicemail_cp_url'] = $voicemail_cp_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets voicemail_transcript
+     * @return string
+     */
+    public function getVoicemailTranscript()
+    {
+        return $this->container['voicemail_transcript'];
+    }
+
+    /**
+     * Sets voicemail_transcript
+     * @param string $voicemail_transcript Transcript of voicemail if enabled and available
+     * @return $this
+     */
+    public function setVoicemailTranscript($voicemail_transcript)
+    {
+        $this->container['voicemail_transcript'] = $voicemail_transcript;
+
+        return $this;
+    }
+
+    /**
+     * Gets call_recording_url
+     * @return string
+     */
+    public function getCallRecordingUrl()
+    {
+        return $this->container['call_recording_url'];
+    }
+
+    /**
+     * Sets call_recording_url
+     * @param string $call_recording_url URL of call recording if available. User may download the audio via this URL. Empty string if call recording does not exist
+     * @return $this
+     */
+    public function setCallRecordingUrl($call_recording_url)
+    {
+        $this->container['call_recording_url'] = $call_recording_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets call_recording_cp_url
+     * @return string
+     */
+    public function getCallRecordingCpUrl()
+    {
+        return $this->container['call_recording_cp_url'];
+    }
+
+    /**
+     * Sets call_recording_cp_url
+     * @param string $call_recording_cp_url URL of call recording if available. User may listen to the audio online via this URL. Empty string if call recording does not exist
+     * @return $this
+     */
+    public function setCallRecordingCpUrl($call_recording_cp_url)
+    {
+        $this->container['call_recording_cp_url'] = $call_recording_cp_url;
 
         return $this;
     }

@@ -49,7 +49,6 @@ class QueuesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class QueuesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class QueuesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,62 +70,55 @@ class QueuesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountQueue
      *
-     * Create a queue.
+     * Create a queue..
      *
      */
     public function testCreateAccountQueue()
     {
-
     }
 
     /**
      * Test case for deleteAccountQueue
      *
-     * Delete a queue.
+     * Delete a queue..
      *
      */
     public function testDeleteAccountQueue()
     {
-
     }
 
     /**
      * Test case for getAccountQueue
      *
-     * Show details of an individual queue.
+     * Show details of an individual queue..
      *
      */
     public function testGetAccountQueue()
     {
-
     }
 
     /**
      * Test case for listAccountQueues
      *
-     * Get a list of queues for an account.
+     * Get a list of queues for an account..
      *
      */
     public function testListAccountQueues()
     {
-
     }
 
     /**
      * Test case for replaceAccountQueue
      *
-     * Replace a queue.
+     * Replace a queue..
      *
      */
     public function testReplaceAccountQueue()
     {
-
     }
-
 }

@@ -76,9 +76,40 @@ class ContactFull implements ArrayAccess
         'updated_at' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'prefix' => null,
+        'first_name' => null,
+        'middle_name' => null,
+        'last_name' => null,
+        'suffix' => null,
+        'nickname' => null,
+        'company' => null,
+        'phonetic_first_name' => null,
+        'phonetic_middle_name' => null,
+        'phonetic_last_name' => null,
+        'department' => null,
+        'job_title' => null,
+        'emails' => null,
+        'phone_numbers' => null,
+        'addresses' => null,
+        'group' => null,
+        'created_at' => null,
+        'updated_at' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

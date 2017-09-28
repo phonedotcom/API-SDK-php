@@ -16,7 +16,11 @@ Name | Type | Description | Notes
 **is_monitored** | **string** | Was call being monitored? | [optional] 
 **call_number** | **string** | Internal system call reference number | [optional] 
 **final_action** | **string** | Last action of call flow | [optional] 
-**call_recording** | **string** | URL of call recording if available. Empty string if call recording does not exist | [optional] 
+**voicemail_url** | **string** | URL of voicemail if available. User may download the audio via this URL. Empty string if voicemail does not exist | [optional] 
+**voicemail_cp_url** | **string** | URL of voicemail if available. User may listen to the audio online via this URL. Empty string if voicemail does not exist | [optional] 
+**voicemail_transcript** | **string** | Transcript of voicemail if enabled and available | [optional] 
+**call_recording_url** | **string** | URL of call recording if available. User may download the audio via this URL. Empty string if call recording does not exist | [optional] 
+**call_recording_cp_url** | **string** | URL of call recording if available. User may listen to the audio online via this URL. Empty string if call recording does not exist | [optional] 
 **details** | [**\Swagger\Client\Model\CallDetails[]**](CallDetails.md) | A list of call flows from beginning of call to end of call. | [optional] 
 **caller_cnam** | **string** | Internal system caller id / name | [optional] 
 

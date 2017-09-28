@@ -49,7 +49,6 @@ class RoutesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class RoutesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class RoutesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,62 +70,55 @@ class RoutesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createRoute
      *
-     * Add a new address book contact for an extension.
+     * Add a new route to the account..
      *
      */
     public function testCreateRoute()
     {
-
     }
 
     /**
      * Test case for deleteAccountRoute
      *
-     * .
+     * Delete a route from the account..
      *
      */
     public function testDeleteAccountRoute()
     {
-
     }
 
     /**
      * Test case for getAccountRoute
      *
-     * Show details of an individual route.
+     * Show details of an individual route..
      *
      */
     public function testGetAccountRoute()
     {
-
     }
 
     /**
      * Test case for listAccountRoutes
      *
-     * Get a list of routes for an account.
+     * Get a list of routes for an account..
      *
      */
     public function testListAccountRoutes()
     {
-
     }
 
     /**
      * Test case for replaceAccountRoute
      *
-     * .
+     * Update the information of a route..
      *
      */
     public function testReplaceAccountRoute()
     {
-
     }
-
 }

@@ -65,9 +65,29 @@ class ContactSummary implements ArrayAccess
         'company' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'prefix' => null,
+        'first_name' => null,
+        'middle_name' => null,
+        'last_name' => null,
+        'suffix' => null,
+        'nickname' => null,
+        'company' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

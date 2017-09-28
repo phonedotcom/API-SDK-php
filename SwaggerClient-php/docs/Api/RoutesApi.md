@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRoute**](RoutesApi.md#createRoute) | **POST** /accounts/{account_id}/routes | Add a new address book contact for an extension
-[**deleteAccountRoute**](RoutesApi.md#deleteAccountRoute) | **DELETE** /accounts/{account_id}/routes/{route_id} | 
-[**getAccountRoute**](RoutesApi.md#getAccountRoute) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route
-[**listAccountRoutes**](RoutesApi.md#listAccountRoutes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account
-[**replaceAccountRoute**](RoutesApi.md#replaceAccountRoute) | **PUT** /accounts/{account_id}/routes/{route_id} | 
+[**createRoute**](RoutesApi.md#createRoute) | **POST** /accounts/{account_id}/routes | Add a new route to the account.
+[**deleteAccountRoute**](RoutesApi.md#deleteAccountRoute) | **DELETE** /accounts/{account_id}/routes/{route_id} | Delete a route from the account.
+[**getAccountRoute**](RoutesApi.md#getAccountRoute) | **GET** /accounts/{account_id}/routes/{route_id} | Show details of an individual route.
+[**listAccountRoutes**](RoutesApi.md#listAccountRoutes) | **GET** /accounts/{account_id}/routes | Get a list of routes for an account.
+[**replaceAccountRoute**](RoutesApi.md#replaceAccountRoute) | **PUT** /accounts/{account_id}/routes/{route_id} | Update the information of a route.
 
 
 # **createRoute**
 > \Swagger\Client\Model\RouteFull createRoute($account_id, $data)
 
-Add a new address book contact for an extension
+Add a new route to the account.
 
-For more on the input fields, see Intro to Routes.
+Add a new route to the account. See Intro to Routes for more info on the properties.
 
 ### Example
 ```php
@@ -46,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreateRouteParams**](../Model/\Swagger\Client\Model\CreateRouteParams.md)| Route data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateRouteParams**](../Model/CreateRouteParams.md)| Route data | [optional]
 
 ### Return type
 
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccountRoute**
-> \Swagger\Client\Model\DeleteRoute deleteAccountRoute($account_id, $route_id)
+> \Swagger\Client\Model\DeleteEntry deleteAccountRoute($account_id, $route_id)
 
+Delete a route from the account.
 
-
-
+Delete a route from the account. See Intro to Routes for more info on the properties.
 
 ### Example
 ```php
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DeleteRoute**](../Model/DeleteRoute.md)
+[**\Swagger\Client\Model\DeleteEntry**](../Model/DeleteEntry.md)
 
 ### Authorization
 
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 # **getAccountRoute**
 > \Swagger\Client\Model\RouteFull getAccountRoute($account_id, $route_id)
 
-Show details of an individual route
+Show details of an individual route.
 
-This service shows the details of an individual route.
+Show details of an individual route. See Intro to Routes for more info on the properties.
 
 ### Example
 ```php
@@ -170,9 +170,9 @@ Name | Type | Description  | Notes
 # **listAccountRoutes**
 > \Swagger\Client\Model\ListRoutes listAccountRoutes($account_id, $filters_id, $filters_name, $sort_id, $sort_name, $limit, $offset, $fields)
 
-Get a list of routes for an account
+Get a list of routes for an account.
 
-See Intro to Routes for more info on the properties.
+Get a list of routes for an account. See Intro to Routes for more info on the properties.
 
 ### Example
 ```php
@@ -234,9 +234,9 @@ Name | Type | Description  | Notes
 # **replaceAccountRoute**
 > \Swagger\Client\Model\RouteFull replaceAccountRoute($account_id, $route_id, $data)
 
+Update the information of a route.
 
-
-For more on the input fields, see Intro to Routes.
+Update the information of a route. See Intro to Routes for more info on the properties.
 
 ### Example
 ```php
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **route_id** | **int**| Route ID |
- **data** | [**\Swagger\Client\Model\CreateRouteParams**](../Model/\Swagger\Client\Model\CreateRouteParams.md)| Route data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateRouteParams**](../Model/CreateRouteParams.md)| Route data | [optional]
 
 ### Return type
 

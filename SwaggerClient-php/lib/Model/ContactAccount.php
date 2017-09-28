@@ -63,9 +63,28 @@ class ContactAccount implements ArrayAccess
         'alternate_email' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'company' => null,
+        'address' => null,
+        'phone' => null,
+        'fax' => null,
+        'primary_email' => null,
+        'alternate_email' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

@@ -35,6 +35,7 @@ use \ArrayAccess;
  * Notification Class Doc Comment
  *
  * @category    Class
+ * @description The Call Notifications object configures the recipient(s) of notifications when calls are received to this extension.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -58,9 +59,23 @@ class Notification implements ArrayAccess
         'sms' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'emails' => null,
+        'sms' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

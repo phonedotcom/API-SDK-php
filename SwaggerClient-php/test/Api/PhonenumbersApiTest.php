@@ -49,7 +49,6 @@ class PhonenumbersApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class PhonenumbersApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class PhonenumbersApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,51 +70,45 @@ class PhonenumbersApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountPhoneNumber
      *
-     * Add a phone number to an account.
+     * Add a phone number to an account..
      *
      */
     public function testCreateAccountPhoneNumber()
     {
-
     }
 
     /**
      * Test case for getAccountPhoneNumber
      *
-     * Show details of an individual phone number.
+     * Show details of an individual phone number..
      *
      */
     public function testGetAccountPhoneNumber()
     {
-
     }
 
     /**
      * Test case for listAccountPhoneNumbers
      *
-     * Get a list of phone numbers registered to an account.
+     * Get a list of phone numbers registered to an account..
      *
      */
     public function testListAccountPhoneNumbers()
     {
-
     }
 
     /**
      * Test case for replaceAccountPhoneNumber
      *
-     * Update the settings for an existing phone number on your account.
+     * Update the settings for an existing phone number on your account..
      *
      */
     public function testReplaceAccountPhoneNumber()
     {
-
     }
-
 }

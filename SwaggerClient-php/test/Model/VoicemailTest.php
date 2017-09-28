@@ -47,7 +47,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testVoicemail()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEnabled()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPassword()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGreeting()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAttachments()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNotifications()
     {
-
     }
 
     /**
@@ -127,7 +117,5 @@ class VoicemailTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTranscription()
     {
-
     }
-
 }

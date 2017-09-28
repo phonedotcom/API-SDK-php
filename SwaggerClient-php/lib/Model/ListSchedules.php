@@ -62,9 +62,27 @@ class ListSchedules implements ArrayAccess
         'items' => '\Swagger\Client\Model\ScheduleFull[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'filters' => null,
+        'sort' => null,
+        'total' => null,
+        'offset' => null,
+        'limit' => null,
+        'items' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

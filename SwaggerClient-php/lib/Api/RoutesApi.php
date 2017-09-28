@@ -90,7 +90,7 @@ class RoutesApi
     /**
      * Operation createRoute
      *
-     * Add a new address book contact for an extension
+     * Add a new route to the account.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateRouteParams $data Route data (optional)
@@ -106,7 +106,7 @@ class RoutesApi
     /**
      * Operation createRouteWithHttpInfo
      *
-     * Add a new address book contact for an extension
+     * Add a new route to the account.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateRouteParams $data Route data (optional)
@@ -139,9 +139,6 @@ class RoutesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -187,12 +184,12 @@ class RoutesApi
     /**
      * Operation deleteAccountRoute
      *
-     * 
+     * Delete a route from the account.
      *
      * @param int $account_id Account ID (required)
      * @param int $route_id Route ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteRoute
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountRoute($account_id, $route_id)
     {
@@ -203,12 +200,12 @@ class RoutesApi
     /**
      * Operation deleteAccountRouteWithHttpInfo
      *
-     * 
+     * Delete a route from the account.
      *
      * @param int $account_id Account ID (required)
      * @param int $route_id Route ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteRoute, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountRouteWithHttpInfo($account_id, $route_id)
     {
@@ -248,10 +245,7 @@ class RoutesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -271,15 +265,15 @@ class RoutesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteRoute',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/routes/{route_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteRoute', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteRoute', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -291,7 +285,7 @@ class RoutesApi
     /**
      * Operation getAccountRoute
      *
-     * Show details of an individual route
+     * Show details of an individual route.
      *
      * @param int $account_id Account ID (required)
      * @param int $route_id Route ID (required)
@@ -307,7 +301,7 @@ class RoutesApi
     /**
      * Operation getAccountRouteWithHttpInfo
      *
-     * Show details of an individual route
+     * Show details of an individual route.
      *
      * @param int $account_id Account ID (required)
      * @param int $route_id Route ID (required)
@@ -352,10 +346,7 @@ class RoutesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -395,7 +386,7 @@ class RoutesApi
     /**
      * Operation listAccountRoutes
      *
-     * Get a list of routes for an account
+     * Get a list of routes for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -417,7 +408,7 @@ class RoutesApi
     /**
      * Operation listAccountRoutesWithHttpInfo
      *
-     * Get a list of routes for an account
+     * Get a list of routes for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -498,10 +489,7 @@ class RoutesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -541,7 +529,7 @@ class RoutesApi
     /**
      * Operation replaceAccountRoute
      *
-     * 
+     * Update the information of a route.
      *
      * @param int $account_id Account ID (required)
      * @param int $route_id Route ID (required)
@@ -558,7 +546,7 @@ class RoutesApi
     /**
      * Operation replaceAccountRouteWithHttpInfo
      *
-     * 
+     * Update the information of a route.
      *
      * @param int $account_id Account ID (required)
      * @param int $route_id Route ID (required)
@@ -604,9 +592,6 @@ class RoutesApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

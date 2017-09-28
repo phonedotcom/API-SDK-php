@@ -93,7 +93,7 @@ class SubaccountsApi
      * Add a subaccount for the authenticated user or client
      *
      * @param int $account_id Account ID (required)
-     * @param \Swagger\Client\Model\CreateSubaccountParams $data SMS data (required)
+     * @param \Swagger\Client\Model\CreateSubaccountParams $data Subaccount data (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\AccountFull
      */
@@ -109,7 +109,7 @@ class SubaccountsApi
      * Add a subaccount for the authenticated user or client
      *
      * @param int $account_id Account ID (required)
-     * @param \Swagger\Client\Model\CreateSubaccountParams $data SMS data (required)
+     * @param \Swagger\Client\Model\CreateSubaccountParams $data Subaccount data (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\AccountFull, HTTP status code, HTTP response headers (array of strings)
      */
@@ -143,9 +143,6 @@ class SubaccountsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -275,10 +272,7 @@ class SubaccountsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present

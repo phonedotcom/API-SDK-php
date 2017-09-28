@@ -47,7 +47,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testCallLogFull()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUuid()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExtension()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallerId()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCalledNumber()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStartTime()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreatedAt()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDirection()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallDuration()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIsMonitored()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallNumber()
     {
-
     }
 
     /**
@@ -183,15 +166,41 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFinalAction()
     {
-
     }
 
     /**
-     * Test attribute "call_recording"
+     * Test attribute "voicemail_url"
      */
-    public function testPropertyCallRecording()
+    public function testPropertyVoicemailUrl()
     {
+    }
 
+    /**
+     * Test attribute "voicemail_cp_url"
+     */
+    public function testPropertyVoicemailCpUrl()
+    {
+    }
+
+    /**
+     * Test attribute "voicemail_transcript"
+     */
+    public function testPropertyVoicemailTranscript()
+    {
+    }
+
+    /**
+     * Test attribute "call_recording_url"
+     */
+    public function testPropertyCallRecordingUrl()
+    {
+    }
+
+    /**
+     * Test attribute "call_recording_cp_url"
+     */
+    public function testPropertyCallRecordingCpUrl()
+    {
     }
 
     /**
@@ -199,7 +208,6 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDetails()
     {
-
     }
 
     /**
@@ -207,7 +215,5 @@ class CallLogFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallerCnam()
     {
-
     }
-
 }

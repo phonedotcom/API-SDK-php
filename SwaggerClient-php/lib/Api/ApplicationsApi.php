@@ -90,7 +90,7 @@ class ApplicationsApi
     /**
      * Operation getAccountApplication
      *
-     * Show details of an individual application
+     * Show details of an individual Application on a given account.
      *
      * @param int $account_id Account ID (required)
      * @param int $application_id Application ID (required)
@@ -106,7 +106,7 @@ class ApplicationsApi
     /**
      * Operation getAccountApplicationWithHttpInfo
      *
-     * Show details of an individual application
+     * Show details of an individual Application on a given account.
      *
      * @param int $account_id Account ID (required)
      * @param int $application_id Application ID (required)
@@ -151,10 +151,7 @@ class ApplicationsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -194,7 +191,7 @@ class ApplicationsApi
     /**
      * Operation listAccountApplications
      *
-     * Get a list of applications you have defined
+     * This service lists the Applications on a given account
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -216,7 +213,7 @@ class ApplicationsApi
     /**
      * Operation listAccountApplicationsWithHttpInfo
      *
-     * Get a list of applications you have defined
+     * This service lists the Applications on a given account
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -297,10 +294,7 @@ class ApplicationsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present

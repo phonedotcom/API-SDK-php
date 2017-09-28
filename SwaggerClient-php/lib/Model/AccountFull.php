@@ -64,9 +64,28 @@ class AccountFull implements ArrayAccess
         'billing_contact' => '\Swagger\Client\Model\ContactAccount'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'username' => null,
+        'password' => null,
+        'master_account' => null,
+        'contact' => null,
+        'billing_contact' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

@@ -58,6 +58,7 @@ class ExtensionFull implements ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'extension' => 'int',
+        'voip_id' => 'int',
         'full_name' => 'string',
         'usage_type' => 'string',
         'device_membership' => '\Swagger\Client\Model\DeviceMembership',
@@ -73,9 +74,38 @@ class ExtensionFull implements ArrayAccess
         'route' => '\Swagger\Client\Model\RouteSummary'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'extension' => null,
+        'voip_id' => null,
+        'full_name' => null,
+        'usage_type' => null,
+        'device_membership' => null,
+        'timezone' => null,
+        'name_greeting' => null,
+        'include_in_directory' => null,
+        'caller_id' => null,
+        'local_area_code' => null,
+        'enable_call_waiting' => null,
+        'enable_outbound_calls' => null,
+        'voicemail' => null,
+        'call_notifications' => null,
+        'route' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -86,6 +116,7 @@ class ExtensionFull implements ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'extension' => 'extension',
+        'voip_id' => 'voip_id',
         'full_name' => 'full_name',
         'usage_type' => 'usage_type',
         'device_membership' => 'device_membership',
@@ -110,6 +141,7 @@ class ExtensionFull implements ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'extension' => 'setExtension',
+        'voip_id' => 'setVoipId',
         'full_name' => 'setFullName',
         'usage_type' => 'setUsageType',
         'device_membership' => 'setDeviceMembership',
@@ -134,6 +166,7 @@ class ExtensionFull implements ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'extension' => 'getExtension',
+        'voip_id' => 'getVoipId',
         'full_name' => 'getFullName',
         'usage_type' => 'getUsageType',
         'device_membership' => 'getDeviceMembership',
@@ -183,6 +216,7 @@ class ExtensionFull implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
+        $this->container['voip_id'] = isset($data['voip_id']) ? $data['voip_id'] : null;
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
         $this->container['usage_type'] = isset($data['usage_type']) ? $data['usage_type'] : null;
         $this->container['device_membership'] = isset($data['device_membership']) ? $data['device_membership'] : null;
@@ -282,6 +316,27 @@ class ExtensionFull implements ArrayAccess
     public function setExtension($extension)
     {
         $this->container['extension'] = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Gets voip_id
+     * @return int
+     */
+    public function getVoipId()
+    {
+        return $this->container['voip_id'];
+    }
+
+    /**
+     * Sets voip_id
+     * @param int $voip_id API Account ID. Optional, object may return the voip_id.
+     * @return $this
+     */
+    public function setVoipId($voip_id)
+    {
+        $this->container['voip_id'] = $voip_id;
 
         return $this;
     }
@@ -528,7 +583,7 @@ class ExtensionFull implements ArrayAccess
 
     /**
      * Sets call_notifications
-     * @param \Swagger\Client\Model\Notification $call_notifications Call Notifications Object. See below for details.
+     * @param \Swagger\Client\Model\Notification $call_notifications
      * @return $this
      */
     public function setCallNotifications($call_notifications)

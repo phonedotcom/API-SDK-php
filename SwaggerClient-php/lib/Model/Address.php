@@ -63,9 +63,27 @@ class Address implements ArrayAccess
         'country' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'line_1' => null,
+        'line_2' => null,
+        'city' => null,
+        'province' => null,
+        'postal_code' => null,
+        'country' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

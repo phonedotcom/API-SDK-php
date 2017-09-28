@@ -90,7 +90,7 @@ class ExtensionsApi
     /**
      * Operation createAccountExtension
      *
-     * Create an individual extension
+     * Create an individual extension.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateExtensionParams $data Account Extensions Data (optional)
@@ -106,7 +106,7 @@ class ExtensionsApi
     /**
      * Operation createAccountExtensionWithHttpInfo
      *
-     * Create an individual extension
+     * Create an individual extension.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateExtensionParams $data Account Extensions Data (optional)
@@ -139,9 +139,6 @@ class ExtensionsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -187,7 +184,7 @@ class ExtensionsApi
     /**
      * Operation getAccountExtension
      *
-     * Show details of an individual extension
+     * Show details of an individual extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -203,7 +200,7 @@ class ExtensionsApi
     /**
      * Operation getAccountExtensionWithHttpInfo
      *
-     * Show details of an individual extension
+     * Show details of an individual extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -248,10 +245,7 @@ class ExtensionsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -291,7 +285,7 @@ class ExtensionsApi
     /**
      * Operation listAccountExtensions
      *
-     * Get a list of extensions visible to the authenticated user or client
+     * Get a list of extensions visible to the authenticated user or client.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -315,7 +309,7 @@ class ExtensionsApi
     /**
      * Operation listAccountExtensionsWithHttpInfo
      *
-     * Get a list of extensions visible to the authenticated user or client
+     * Get a list of extensions visible to the authenticated user or client.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -413,10 +407,7 @@ class ExtensionsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -456,7 +447,7 @@ class ExtensionsApi
     /**
      * Operation replaceAccountExtension
      *
-     * Replace an individual extension
+     * Replace an individual extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -473,7 +464,7 @@ class ExtensionsApi
     /**
      * Operation replaceAccountExtensionWithHttpInfo
      *
-     * Replace an individual extension
+     * Replace an individual extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -519,9 +510,6 @@ class ExtensionsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

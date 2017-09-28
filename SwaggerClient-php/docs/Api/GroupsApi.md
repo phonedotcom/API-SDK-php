@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountExtensionContactGroup**](GroupsApi.md#createAccountExtensionContactGroup) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | 
-[**deleteAccountExtensionContactGroup**](GroupsApi.md#deleteAccountExtensionContactGroup) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete an addressbook group
-[**getAccountExtensionContactGroup**](GroupsApi.md#getAccountExtensionContactGroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
-[**listAccountExtensionContactGroups**](GroupsApi.md#listAccountExtensionContactGroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension
-[**replaceAccountExtensionContactGroup**](GroupsApi.md#replaceAccountExtensionContactGroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | 
+[**createAccountExtensionContactGroup**](GroupsApi.md#createAccountExtensionContactGroup) | **POST** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Add a new contact group to an account extension.
+[**deleteAccountExtensionContactGroup**](GroupsApi.md#deleteAccountExtensionContactGroup) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Delete a contact group from the address book.
+[**getAccountExtensionContactGroup**](GroupsApi.md#getAccountExtensionContactGroup) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Retrieve the information of a contact group.
+[**listAccountExtensionContactGroups**](GroupsApi.md#listAccountExtensionContactGroups) | **GET** /accounts/{account_id}/extensions/{extension_id}/contact-groups | Show a list of contact groups belonging to an extension.
+[**replaceAccountExtensionContactGroup**](GroupsApi.md#replaceAccountExtensionContactGroup) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contact-groups/{group_id} | Update the information of a contact group.
 
 
 # **createAccountExtensionContactGroup**
 > \Swagger\Client\Model\GroupFull createAccountExtensionContactGroup($account_id, $extension_id, $data)
 
+Add a new contact group to an account extension.
 
-
-See Account Contact Groups for more info on the properties.
+Add a new contact group to an account extension. See Account Contact Groups for details on the properties.
 
 ### Example
 ```php
@@ -31,7 +31,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorizatio
 $api_instance = new Swagger\Client\Api\GroupsApi();
 $account_id = 56; // int | Account ID
 $extension_id = 56; // int | Extension ID
-$data = new \Swagger\Client\Model\CreateGroupParams(); // \Swagger\Client\Model\CreateGroupParams | Group name
+$data = new \Swagger\Client\Model\CreateGroupParams(); // \Swagger\Client\Model\CreateGroupParams | Group data
 
 try {
     $result = $api_instance->createAccountExtensionContactGroup($account_id, $extension_id, $data);
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **extension_id** | **int**| Extension ID |
- **data** | [**\Swagger\Client\Model\CreateGroupParams**](../Model/\Swagger\Client\Model\CreateGroupParams.md)| Group name |
+ **data** | [**\Swagger\Client\Model\CreateGroupParams**](../Model/CreateGroupParams.md)| Group data |
 
 ### Return type
 
@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccountExtensionContactGroup**
-> \Swagger\Client\Model\DeleteGroup deleteAccountExtensionContactGroup($account_id, $extension_id, $group_id)
+> \Swagger\Client\Model\DeleteEntry deleteAccountExtensionContactGroup($account_id, $extension_id, $group_id)
 
-Delete an addressbook group
+Delete a contact group from the address book.
 
-
+Delete a contact group from the address book. See Account Contact Groups for details on the properties.
 
 ### Example
 ```php
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DeleteGroup**](../Model/DeleteGroup.md)
+[**\Swagger\Client\Model\DeleteEntry**](../Model/DeleteEntry.md)
 
 ### Authorization
 
@@ -122,9 +122,9 @@ Name | Type | Description  | Notes
 # **getAccountExtensionContactGroup**
 > \Swagger\Client\Model\GroupFull getAccountExtensionContactGroup($account_id, $extension_id, $group_id)
 
+Retrieve the information of a contact group.
 
-
-See Account Contact Groups for more info on the properties.
+Retrieve the information of a contact group. See Account Contact Groups for details on the properties.
 
 ### Example
 ```php
@@ -176,9 +176,9 @@ Name | Type | Description  | Notes
 # **listAccountExtensionContactGroups**
 > \Swagger\Client\Model\ListGroups listAccountExtensionContactGroups($account_id, $extension_id, $filters_id, $filters_name, $sort_id, $sort_name, $limit, $offset, $fields)
 
-Show a list of contact groups belonging to an extension
+Show a list of contact groups belonging to an extension.
 
-See Account Contact Groups for details on the properties.
+Show a list of contact groups belonging to an extension. See Account Contact Groups for details on the properties.
 
 ### Example
 ```php
@@ -242,9 +242,9 @@ Name | Type | Description  | Notes
 # **replaceAccountExtensionContactGroup**
 > \Swagger\Client\Model\GroupFull replaceAccountExtensionContactGroup($account_id, $extension_id, $group_id, $data)
 
+Update the information of a contact group.
 
-
-See Account Contact Groups for more info on the properties.
+Update the information of a contact group. See Account Contact Groups for details on the properties.
 
 ### Example
 ```php
@@ -260,7 +260,7 @@ $api_instance = new Swagger\Client\Api\GroupsApi();
 $account_id = 56; // int | Account ID
 $extension_id = 56; // int | Extension ID
 $group_id = 56; // int | Group ID
-$data = new \Swagger\Client\Model\CreateGroupParams(); // \Swagger\Client\Model\CreateGroupParams | Group name
+$data = new \Swagger\Client\Model\CreateGroupParams(); // \Swagger\Client\Model\CreateGroupParams | Group data
 
 try {
     $result = $api_instance->replaceAccountExtensionContactGroup($account_id, $extension_id, $group_id, $data);
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
  **account_id** | **int**| Account ID |
  **extension_id** | **int**| Extension ID |
  **group_id** | **int**| Group ID |
- **data** | [**\Swagger\Client\Model\CreateGroupParams**](../Model/\Swagger\Client\Model\CreateGroupParams.md)| Group name |
+ **data** | [**\Swagger\Client\Model\CreateGroupParams**](../Model/CreateGroupParams.md)| Group data |
 
 ### Return type
 

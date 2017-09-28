@@ -47,7 +47,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateExtensionParams()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVoicemail()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallNotifications()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallerId()
     {
-
     }
 
     /**
@@ -111,15 +103,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUsageType()
     {
-
-    }
-
-    /**
-     * Test attribute "allows_call_waiting"
-     */
-    public function testPropertyAllowsCallWaiting()
-    {
-
     }
 
     /**
@@ -127,7 +110,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExtension()
     {
-
     }
 
     /**
@@ -135,7 +117,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIncludeInDirectory()
     {
-
     }
 
     /**
@@ -143,7 +124,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -151,7 +131,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFullName()
     {
-
     }
 
     /**
@@ -159,7 +138,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimezone()
     {
-
     }
 
     /**
@@ -167,7 +145,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNameGreeting()
     {
-
     }
 
     /**
@@ -175,7 +152,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLocalAreaCode()
     {
-
     }
 
     /**
@@ -183,7 +159,6 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEnableOutboundCalls()
     {
-
     }
 
     /**
@@ -191,7 +166,5 @@ class CreateExtensionParamsTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEnableCallWaiting()
     {
-
     }
-
 }

@@ -4,18 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountDevice**](DevicesApi.md#createAccountDevice) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device
-[**getAccountDevice**](DevicesApi.md#getAccountDevice) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device
-[**listAccountDevices**](DevicesApi.md#listAccountDevices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account
-[**replaceAccountDevice**](DevicesApi.md#replaceAccountDevice) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the settings for an individual VoIP device
+[**createAccountDevice**](DevicesApi.md#createAccountDevice) | **POST** /accounts/{account_id}/devices | Register a generic VoIP device.
+[**deleteAccountDevice**](DevicesApi.md#deleteAccountDevice) | **DELETE** /accounts/{account_id}/devices/{device_id} | Delete a VoIP device.
+[**getAccountDevice**](DevicesApi.md#getAccountDevice) | **GET** /accounts/{account_id}/devices/{device_id} | Show details of an individual VoIP device.
+[**listAccountDevices**](DevicesApi.md#listAccountDevices) | **GET** /accounts/{account_id}/devices | Get a list of VoIP devices associated with your account.
+[**replaceAccountDevice**](DevicesApi.md#replaceAccountDevice) | **PUT** /accounts/{account_id}/devices/{device_id} | Update the details of an individual VoIP device.
 
 
 # **createAccountDevice**
 > \Swagger\Client\Model\DeviceFull createAccountDevice($account_id, $data)
 
-Register a generic VoIP device
+Register a generic VoIP device.
 
-
+Register a generic VoIP device. See Devices for more detail.
 
 ### Example
 ```php
@@ -45,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreateDeviceParams**](../Model/\Swagger\Client\Model\CreateDeviceParams.md)| Device data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateDeviceParams**](../Model/CreateDeviceParams.md)| Device data | [optional]
 
 ### Return type
 
@@ -62,12 +63,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **deleteAccountDevice**
+> \Swagger\Client\Model\DeleteEntry deleteAccountDevice($account_id, $device_id)
+
+Delete a VoIP device.
+
+Delete a VoIP device. See Devices for more detail.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\DevicesApi();
+$account_id = 56; // int | Account ID
+$device_id = 56; // int | Device ID
+
+try {
+    $result = $api_instance->deleteAccountDevice($account_id, $device_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DevicesApi->deleteAccountDevice: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **int**| Account ID |
+ **device_id** | **int**| Device ID |
+
+### Return type
+
+[**\Swagger\Client\Model\DeleteEntry**](../Model/DeleteEntry.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getAccountDevice**
 > \Swagger\Client\Model\DeviceFull getAccountDevice($account_id, $device_id)
 
-Show details of an individual VoIP device
+Show details of an individual VoIP device.
 
-
+Show details of an individual VoIP device. See Devices for more detail.
 
 ### Example
 ```php
@@ -117,9 +170,9 @@ Name | Type | Description  | Notes
 # **listAccountDevices**
 > \Swagger\Client\Model\ListDevices listAccountDevices($account_id, $filters_id, $filters_name, $sort_id, $sort_name, $limit, $offset, $fields)
 
-Get a list of VoIP devices associated with your account
+Get a list of VoIP devices associated with your account.
 
-
+Get a list of VoIP devices associated with your account. See Devices for more detail.
 
 ### Example
 ```php
@@ -181,9 +234,9 @@ Name | Type | Description  | Notes
 # **replaceAccountDevice**
 > \Swagger\Client\Model\DeviceFull replaceAccountDevice($account_id, $device_id, $data)
 
-Update the settings for an individual VoIP device
+Update the details of an individual VoIP device.
 
-
+Update the details of an individual VoIP device. See Devices for more detail.
 
 ### Example
 ```php
@@ -215,7 +268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **device_id** | **int**| Device ID |
- **data** | [**\Swagger\Client\Model\CreateDeviceParams**](../Model/\Swagger\Client\Model\CreateDeviceParams.md)| Device data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateDeviceParams**](../Model/CreateDeviceParams.md)| Device data | [optional]
 
 ### Return type
 

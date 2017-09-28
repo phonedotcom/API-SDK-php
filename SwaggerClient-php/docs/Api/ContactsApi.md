@@ -4,19 +4,19 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountExtensionContact**](ContactsApi.md#createAccountExtensionContact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension
-[**deleteAccountExtensionContact**](ContactsApi.md#deleteAccountExtensionContact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
-[**getAccountExtensionContact**](ContactsApi.md#getAccountExtensionContact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact
-[**listAccountExtensionContacts**](ContactsApi.md#listAccountExtensionContacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show a list of address book contacts
-[**replaceAccountExtensionContact**](ContactsApi.md#replaceAccountExtensionContact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | 
+[**createAccountExtensionContact**](ContactsApi.md#createAccountExtensionContact) | **POST** /accounts/{account_id}/extensions/{extension_id}/contacts | Add a new address book contact for an extension.
+[**deleteAccountExtensionContact**](ContactsApi.md#deleteAccountExtensionContact) | **DELETE** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Delete a contact from the address book.
+[**getAccountExtensionContact**](ContactsApi.md#getAccountExtensionContact) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Retrieve the details of an address book contact.
+[**listAccountExtensionContacts**](ContactsApi.md#listAccountExtensionContacts) | **GET** /accounts/{account_id}/extensions/{extension_id}/contacts | Show the Caller ID options a given extension can use.
+[**replaceAccountExtensionContact**](ContactsApi.md#replaceAccountExtensionContact) | **PUT** /accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id} | Update the info of a contact in the address book.
 
 
 # **createAccountExtensionContact**
 > \Swagger\Client\Model\ContactFull createAccountExtensionContact($account_id, $extension_id, $data)
 
-Add a new address book contact for an extension
+Add a new address book contact for an extension.
 
-For more on the input fields, see Account Contacts.
+Add a new address book contact for an extension. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```php
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **extension_id** | **int**| Extension ID |
- **data** | [**\Swagger\Client\Model\CreateContactParams**](../Model/\Swagger\Client\Model\CreateContactParams.md)| Contact data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateContactParams**](../Model/CreateContactParams.md)| Contact data | [optional]
 
 ### Return type
 
@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccountExtensionContact**
-> \Swagger\Client\Model\DeleteContact deleteAccountExtensionContact($account_id, $extension_id, $contact_id)
+> \Swagger\Client\Model\DeleteEntry deleteAccountExtensionContact($account_id, $extension_id, $contact_id)
 
+Delete a contact from the address book.
 
-
-
+Delete a contact from the address book. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```php
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DeleteContact**](../Model/DeleteContact.md)
+[**\Swagger\Client\Model\DeleteEntry**](../Model/DeleteEntry.md)
 
 ### Authorization
 
@@ -122,9 +122,9 @@ Name | Type | Description  | Notes
 # **getAccountExtensionContact**
 > \Swagger\Client\Model\ContactFull getAccountExtensionContact($account_id, $extension_id, $contact_id)
 
-Retrieve the details of an address book contact
+Retrieve the details of an address book contact.
 
-For more info on the fields shown, see Account Contacts.
+Retrieve the details of an address book contact. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```php
@@ -176,9 +176,9 @@ Name | Type | Description  | Notes
 # **listAccountExtensionContacts**
 > \Swagger\Client\Model\ListContacts listAccountExtensionContacts($account_id, $extension_id, $filters_id, $filters_group_id, $filters_updated_at, $sort_id, $sort_updated_at, $limit, $offset, $fields)
 
-Show a list of address book contacts
+Show the Caller ID options a given extension can use.
 
-See Account Contacts for more info on the fields in each item.
+Show the Caller ID options a given extension can use. See Intro to Caller IDs for more on the properties.
 
 ### Example
 ```php
@@ -244,9 +244,9 @@ Name | Type | Description  | Notes
 # **replaceAccountExtensionContact**
 > \Swagger\Client\Model\ContactFull replaceAccountExtensionContact($account_id, $extension_id, $contact_id, $data)
 
+Update the info of a contact in the address book.
 
-
-For more on the input fields, see Account Contacts.
+Update the info of a contact in the address book. See Account Contacts for more info on the fields in each item.
 
 ### Example
 ```php
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
  **account_id** | **int**| Account ID |
  **extension_id** | **int**| Extension ID |
  **contact_id** | **int**| Contact ID |
- **data** | [**\Swagger\Client\Model\CreateContactParams**](../Model/\Swagger\Client\Model\CreateContactParams.md)| Contact data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateContactParams**](../Model/CreateContactParams.md)| Contact data | [optional]
 
 ### Return type
 

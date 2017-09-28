@@ -60,9 +60,25 @@ class CreateSmsParams implements ArrayAccess
         'extension_id' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'from' => null,
+        'to' => null,
+        'text' => null,
+        'extension_id' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

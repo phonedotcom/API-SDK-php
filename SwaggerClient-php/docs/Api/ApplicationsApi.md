@@ -4,16 +4,16 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAccountApplication**](ApplicationsApi.md#getAccountApplication) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual application
-[**listAccountApplications**](ApplicationsApi.md#listAccountApplications) | **GET** /accounts/{account_id}/applications | Get a list of applications you have defined
+[**getAccountApplication**](ApplicationsApi.md#getAccountApplication) | **GET** /accounts/{account_id}/applications/{application_id} | Show details of an individual Application on a given account.
+[**listAccountApplications**](ApplicationsApi.md#listAccountApplications) | **GET** /accounts/{account_id}/applications | This service lists the Applications on a given account
 
 
 # **getAccountApplication**
 > \Swagger\Client\Model\ApplicationFull getAccountApplication($account_id, $application_id)
 
-Show details of an individual application
+Show details of an individual Application on a given account.
 
-
+Show details of an individual Application on a given account.
 
 ### Example
 ```php
@@ -63,9 +63,9 @@ Name | Type | Description  | Notes
 # **listAccountApplications**
 > \Swagger\Client\Model\ListApplications listAccountApplications($account_id, $filters_id, $filters_name, $sort_id, $sort_name, $limit, $offset, $fields)
 
-Get a list of applications you have defined
+This service lists the Applications on a given account
 
-Get a list of an account available applications
+Show details of an individual Application on a given account.
 
 ### Example
 ```php

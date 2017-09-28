@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phone.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountExtension**](ExtensionsApi.md#createAccountExtension) | **POST** /accounts/{account_id}/extensions | Create an individual extension
-[**getAccountExtension**](ExtensionsApi.md#getAccountExtension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension
-[**listAccountExtensions**](ExtensionsApi.md#listAccountExtensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client
-[**replaceAccountExtension**](ExtensionsApi.md#replaceAccountExtension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension
+[**createAccountExtension**](ExtensionsApi.md#createAccountExtension) | **POST** /accounts/{account_id}/extensions | Create an individual extension.
+[**getAccountExtension**](ExtensionsApi.md#getAccountExtension) | **GET** /accounts/{account_id}/extensions/{extension_id} | Show details of an individual extension.
+[**listAccountExtensions**](ExtensionsApi.md#listAccountExtensions) | **GET** /accounts/{account_id}/extensions | Get a list of extensions visible to the authenticated user or client.
+[**replaceAccountExtension**](ExtensionsApi.md#replaceAccountExtension) | **PUT** /accounts/{account_id}/extensions/{extension_id} | Replace an individual extension.
 
 
 # **createAccountExtension**
 > \Swagger\Client\Model\ExtensionFull createAccountExtension($account_id, $data)
 
-Create an individual extension
+Create an individual extension.
 
-This service shows how to create a virtual extension.
+Create an individual extension. See extension for more details.
 
 ### Example
 ```php
@@ -45,7 +45,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
- **data** | [**\Swagger\Client\Model\CreateExtensionParams**](../Model/\Swagger\Client\Model\CreateExtensionParams.md)| Account Extensions Data | [optional]
+ **data** | [**\Swagger\Client\Model\CreateExtensionParams**](../Model/CreateExtensionParams.md)| Account Extensions Data | [optional]
 
 ### Return type
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 # **getAccountExtension**
 > \Swagger\Client\Model\ExtensionFull getAccountExtension($account_id, $extension_id)
 
-Show details of an individual extension
+Show details of an individual extension.
 
-This service shows the details of an individual Extension.
+Show details of an individual extension. See extension for more details.
 
 ### Example
 ```php
@@ -117,9 +117,9 @@ Name | Type | Description  | Notes
 # **listAccountExtensions**
 > \Swagger\Client\Model\ListExtensions listAccountExtensions($account_id, $filters_id, $filters_extension, $filters_name, $sort_id, $sort_extension, $sort_name, $limit, $offset, $fields)
 
-Get a list of extensions visible to the authenticated user or client
+Get a list of extensions visible to the authenticated user or client.
 
-This service lists the visible extensions on a given account.
+Get a list of extensions visible to the authenticated user or client. See extension for more details.
 
 ### Example
 ```php
@@ -185,9 +185,9 @@ Name | Type | Description  | Notes
 # **replaceAccountExtension**
 > \Swagger\Client\Model\ExtensionFull replaceAccountExtension($account_id, $extension_id, $data)
 
-Replace an individual extension
+Replace an individual extension.
 
-This service shows how to update an individual extension.
+Replace an individual extension. See extension for more details.
 
 ### Example
 ```php
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| Account ID |
  **extension_id** | **int**| Extension ID |
- **data** | [**\Swagger\Client\Model\ReplaceExtensionParams**](../Model/\Swagger\Client\Model\ReplaceExtensionParams.md)| Account Extensions Data | [optional]
+ **data** | [**\Swagger\Client\Model\ReplaceExtensionParams**](../Model/ReplaceExtensionParams.md)| Account Extensions Data | [optional]
 
 ### Return type
 

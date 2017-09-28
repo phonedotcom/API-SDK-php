@@ -90,7 +90,7 @@ class TrunksApi
     /**
      * Operation createAccountTrunk
      *
-     * Add a trunk record with SIP information
+     * Add a trunk record with SIP information.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateTrunkParams $data Trunk data (required)
@@ -106,7 +106,7 @@ class TrunksApi
     /**
      * Operation createAccountTrunkWithHttpInfo
      *
-     * Add a trunk record with SIP information
+     * Add a trunk record with SIP information.
      *
      * @param int $account_id Account ID (required)
      * @param \Swagger\Client\Model\CreateTrunkParams $data Trunk data (required)
@@ -143,9 +143,6 @@ class TrunksApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -191,12 +188,12 @@ class TrunksApi
     /**
      * Operation deleteAccountTrunk
      *
-     * Delete a trunk from account
+     * Delete a trunk from account.
      *
      * @param int $account_id Account ID (required)
      * @param int $trunk_id Trunk ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteTrunk
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountTrunk($account_id, $trunk_id)
     {
@@ -207,12 +204,12 @@ class TrunksApi
     /**
      * Operation deleteAccountTrunkWithHttpInfo
      *
-     * Delete a trunk from account
+     * Delete a trunk from account.
      *
      * @param int $account_id Account ID (required)
      * @param int $trunk_id Trunk ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteTrunk, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountTrunkWithHttpInfo($account_id, $trunk_id)
     {
@@ -252,10 +249,7 @@ class TrunksApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -275,15 +269,15 @@ class TrunksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteTrunk',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/trunks/{trunk_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteTrunk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteTrunk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -295,7 +289,7 @@ class TrunksApi
     /**
      * Operation getAccountTrunk
      *
-     * Show details of an individual trunk
+     * Show details of an individual trunk.
      *
      * @param int $account_id Account ID (required)
      * @param int $trunk_id Trunk ID (required)
@@ -311,7 +305,7 @@ class TrunksApi
     /**
      * Operation getAccountTrunkWithHttpInfo
      *
-     * Show details of an individual trunk
+     * Show details of an individual trunk.
      *
      * @param int $account_id Account ID (required)
      * @param int $trunk_id Trunk ID (required)
@@ -356,10 +350,7 @@ class TrunksApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -399,7 +390,7 @@ class TrunksApi
     /**
      * Operation listAccountTrunks
      *
-     * Get a list of trunks for an account
+     * Get a list of trunks for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -421,7 +412,7 @@ class TrunksApi
     /**
      * Operation listAccountTrunksWithHttpInfo
      *
-     * Get a list of trunks for an account
+     * Get a list of trunks for an account.
      *
      * @param int $account_id Account ID (required)
      * @param string[] $filters_id ID filter (optional)
@@ -502,10 +493,7 @@ class TrunksApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -545,7 +533,7 @@ class TrunksApi
     /**
      * Operation replaceAccountTrunk
      *
-     * Replace parameters in a trunk
+     * Replace parameters in a trunk.
      *
      * @param int $account_id Account ID (required)
      * @param int $trunk_id Trunk ID (required)
@@ -562,7 +550,7 @@ class TrunksApi
     /**
      * Operation replaceAccountTrunkWithHttpInfo
      *
-     * Replace parameters in a trunk
+     * Replace parameters in a trunk.
      *
      * @param int $account_id Account ID (required)
      * @param int $trunk_id Trunk ID (required)
@@ -612,9 +600,6 @@ class TrunksApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

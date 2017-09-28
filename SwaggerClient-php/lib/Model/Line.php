@@ -58,9 +58,23 @@ class Line implements ArrayAccess
         'extension' => '\Swagger\Client\Model\ExtensionSummary'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'line' => null,
+        'extension' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

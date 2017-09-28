@@ -61,9 +61,25 @@ class PingResponse implements ArrayAccess
         'user_agent' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'datetime' => null,
+        'remote_ip' => null,
+        'timestamp' => null,
+        'user_agent' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

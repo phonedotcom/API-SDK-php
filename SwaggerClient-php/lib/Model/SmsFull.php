@@ -35,7 +35,7 @@ use \ArrayAccess;
  * SmsFull Class Doc Comment
  *
  * @category    Class
- * @description The Full SMS Object is identical to the SMS Summary Object. See above for details.
+ * @description The Full SMS Object includes all of the properties in the SMS Summary Object.
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -61,12 +61,33 @@ class SmsFull implements ArrayAccess
         'direction' => 'string',
         'created_epoch' => 'int',
         'created_at' => '\DateTime',
-        'text' => 'string'
+        'text' => 'string',
+        'is_new' => 'bool'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'from' => null,
+        'to' => null,
+        'direction' => null,
+        'created_epoch' => null,
+        'created_at' => 'date-time',
+        'text' => null,
+        'is_new' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -80,7 +101,8 @@ class SmsFull implements ArrayAccess
         'direction' => 'direction',
         'created_epoch' => 'created_epoch',
         'created_at' => 'created_at',
-        'text' => 'text'
+        'text' => 'text',
+        'is_new' => 'is_new'
     ];
 
 
@@ -95,7 +117,8 @@ class SmsFull implements ArrayAccess
         'direction' => 'setDirection',
         'created_epoch' => 'setCreatedEpoch',
         'created_at' => 'setCreatedAt',
-        'text' => 'setText'
+        'text' => 'setText',
+        'is_new' => 'setIsNew'
     ];
 
 
@@ -110,7 +133,8 @@ class SmsFull implements ArrayAccess
         'direction' => 'getDirection',
         'created_epoch' => 'getCreatedEpoch',
         'created_at' => 'getCreatedAt',
-        'text' => 'getText'
+        'text' => 'getText',
+        'is_new' => 'getIsNew'
     ];
 
     public static function attributeMap()
@@ -151,6 +175,7 @@ class SmsFull implements ArrayAccess
         $this->container['created_epoch'] = isset($data['created_epoch']) ? $data['created_epoch'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['is_new'] = isset($data['is_new']) ? $data['is_new'] : null;
     }
 
     /**
@@ -162,27 +187,6 @@ class SmsFull implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['from'] === null) {
-            $invalid_properties[] = "'from' can't be null";
-        }
-        if ($this->container['to'] === null) {
-            $invalid_properties[] = "'to' can't be null";
-        }
-        if ($this->container['direction'] === null) {
-            $invalid_properties[] = "'direction' can't be null";
-        }
-        if ($this->container['created_epoch'] === null) {
-            $invalid_properties[] = "'created_epoch' can't be null";
-        }
-        if ($this->container['created_at'] === null) {
-            $invalid_properties[] = "'created_at' can't be null";
-        }
-        if ($this->container['text'] === null) {
-            $invalid_properties[] = "'text' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -195,27 +199,6 @@ class SmsFull implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
-        if ($this->container['from'] === null) {
-            return false;
-        }
-        if ($this->container['to'] === null) {
-            return false;
-        }
-        if ($this->container['direction'] === null) {
-            return false;
-        }
-        if ($this->container['created_epoch'] === null) {
-            return false;
-        }
-        if ($this->container['created_at'] === null) {
-            return false;
-        }
-        if ($this->container['text'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -363,6 +346,27 @@ class SmsFull implements ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_new
+     * @return bool
+     */
+    public function getIsNew()
+    {
+        return $this->container['is_new'];
+    }
+
+    /**
+     * Sets is_new
+     * @param bool $is_new True when SMS is new; False when SMS has been read.
+     * @return $this
+     */
+    public function setIsNew($is_new)
+    {
+        $this->container['is_new'] = $is_new;
 
         return $this;
     }

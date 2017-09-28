@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * MediaFullTest Class Doc Comment
  *
  * @category    Class */
-// * @description The Full Recording Object includes all of the properties from the Recording Summary Object, along with the following:
+// * @description The Full Recording Object and the Summary Recording Object are the same.
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -47,7 +47,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testMediaFull()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -103,7 +96,5 @@ class MediaFullTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
-
 }

@@ -49,7 +49,6 @@ class CalleridsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class CalleridsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class CalleridsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,18 +70,15 @@ class CalleridsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for getCallerIds
      *
-     * Show the Caller ID options a given extension can use.
+     * Show the Caller ID options a given extension can use..
      *
      */
     public function testGetCallerIds()
     {
-
     }
-
 }

@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
-**main_message** | **object** |  | [optional] 
-**invalid_keypress_message** | **object** |  | [optional] 
-**allow_extension_dial** | **bool** |  | [optional] 
+**greeting** | **object** |  | [optional] 
+**keypress_error** | **object** |  | [optional] 
+**allow_extension_dial** | **string** |  | [optional] 
 **keypress_wait_time** | **int** |  | [optional] 
 **timeout_handler** | **object** |  | [optional] 
 **options** | **object[]** |  | [optional] 

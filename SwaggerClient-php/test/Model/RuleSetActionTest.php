@@ -47,7 +47,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testRuleSetAction()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAction()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExtension()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyItems()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimeout()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHoldMusic()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGreeting()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDuration()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMenu()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQueue()
     {
-
     }
 
     /**
@@ -159,7 +145,5 @@ class RuleSetActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrunk()
     {
-
     }
-
 }

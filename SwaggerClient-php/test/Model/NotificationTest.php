@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * NotificationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Notification
+// * @description The Call Notifications object configures the recipient(s) of notifications when calls are received to this extension.
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -47,7 +47,6 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public function testNotification()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEmails()
     {
-
     }
 
     /**
@@ -95,7 +89,5 @@ class NotificationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySms()
     {
-
     }
-
 }

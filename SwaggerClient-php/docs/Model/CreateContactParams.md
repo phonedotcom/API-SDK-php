@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **company** | **string** | Company Name | [optional] 
 **department** | **string** | Department Name | [optional] 
 **job_title** | **string** | Job Title | [optional] 
-**emails** | **object[]** | Email Addresses | [optional] 
-**phone_numbers** | **object[]** | Phone Numbers | [optional] 
-**addresses** | **object[]** | Addresses | [optional] 
+**emails** | [**\Swagger\Client\Model\Email[]**](Email.md) | Email Addresses | [optional] 
+**phone_numbers** | [**\Swagger\Client\Model\PhoneNumberContact[]**](PhoneNumberContact.md) | Phone Numbers | [optional] 
+**addresses** | [**\Swagger\Client\Model\AddressListContacts[]**](AddressListContacts.md) | Addresses | [optional] 
 **group** | **object** | Contact Group | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

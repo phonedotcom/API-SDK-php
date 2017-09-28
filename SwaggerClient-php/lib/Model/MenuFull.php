@@ -65,9 +65,29 @@ class MenuFull implements ArrayAccess
         'options' => '\Swagger\Client\Model\Option[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'allow_extension_dial' => null,
+        'keypress_wait_time' => null,
+        'greeting' => null,
+        'keypress_error' => null,
+        'timeout_handler' => null,
+        'options' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -257,7 +277,7 @@ class MenuFull implements ArrayAccess
 
     /**
      * Sets keypress_wait_time
-     * @param int $keypress_wait_time Boolean. Determines whether a caller can enter an extension number to bypass the menu.
+     * @param int $keypress_wait_time Number of seconds to wait for the caller to choose a menu option. Must be between 1 and 5 seconds.
      * @return $this
      */
     public function setKeypressWaitTime($keypress_wait_time)

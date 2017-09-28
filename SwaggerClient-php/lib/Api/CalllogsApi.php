@@ -151,10 +151,7 @@ class CalllogsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -247,20 +244,20 @@ class CalllogsApi
         if ($account_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $account_id when calling listAccountCallLogs');
         }
-        if (!is_null($filters_created_at) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/", $filters_created_at)) {
-            throw new \InvalidArgumentException("invalid value for \"filters_created_at\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/.");
+        if (!is_null($filters_created_at) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_created_at)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_created_at\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
         }
 
-        if (!is_null($filters_direction) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/", $filters_direction)) {
-            throw new \InvalidArgumentException("invalid value for \"filters_direction\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/.");
+        if (!is_null($filters_direction) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_direction)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_direction\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
         }
 
-        if (!is_null($filters_called_number) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/", $filters_called_number)) {
-            throw new \InvalidArgumentException("invalid value for \"filters_called_number\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/.");
+        if (!is_null($filters_called_number) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_called_number)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_called_number\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
         }
 
-        if (!is_null($filters_type) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/", $filters_type)) {
-            throw new \InvalidArgumentException("invalid value for \"filters_type\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*_/.");
+        if (!is_null($filters_type) && !preg_match("/^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/", $filters_type)) {
+            throw new \InvalidArgumentException("invalid value for \"filters_type\" when calling CalllogsApi.listAccountCallLogs, must conform to the pattern /^eq:.*|^ne:.*|^lt:.*|^gt:.*|^lte:.*|^gte:.*|^starts-with:.*|^ends-with:.*|^contains:.*|^not-starts-with:.*|^not-ends-with:.*|^not-contains:.*|^between:.*,.*|^not-between:.*,.*/.");
         }
 
         if (!is_null($sort_id) && !preg_match("/asc|desc/", $sort_id)) {
@@ -356,10 +353,7 @@ class CalllogsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present

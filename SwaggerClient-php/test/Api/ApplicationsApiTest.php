@@ -49,7 +49,6 @@ class ApplicationsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class ApplicationsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class ApplicationsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,29 +70,25 @@ class ApplicationsApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for getAccountApplication
      *
-     * Show details of an individual application.
+     * Show details of an individual Application on a given account..
      *
      */
     public function testGetAccountApplication()
     {
-
     }
 
     /**
      * Test case for listAccountApplications
      *
-     * Get a list of applications you have defined.
+     * This service lists the Applications on a given account.
      *
      */
     public function testListAccountApplications()
     {
-
     }
-
 }

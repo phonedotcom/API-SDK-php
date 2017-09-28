@@ -47,7 +47,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testRuleSetForwardItem()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExtension()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNumber()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyScreening()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCallerId()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVoiceTag()
     {
-
     }
 
     /**
@@ -135,7 +124,5 @@ class RuleSetForwardItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDistinctiveRing()
     {
-
     }
-
 }

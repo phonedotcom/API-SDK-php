@@ -49,7 +49,6 @@ class DevicesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class DevicesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class DevicesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,51 +70,55 @@ class DevicesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
      * Test case for createAccountDevice
      *
-     * Register a generic VoIP device.
+     * Register a generic VoIP device..
      *
      */
     public function testCreateAccountDevice()
     {
+    }
 
+    /**
+     * Test case for deleteAccountDevice
+     *
+     * Delete a VoIP device..
+     *
+     */
+    public function testDeleteAccountDevice()
+    {
     }
 
     /**
      * Test case for getAccountDevice
      *
-     * Show details of an individual VoIP device.
+     * Show details of an individual VoIP device..
      *
      */
     public function testGetAccountDevice()
     {
-
     }
 
     /**
      * Test case for listAccountDevices
      *
-     * Get a list of VoIP devices associated with your account.
+     * Get a list of VoIP devices associated with your account..
      *
      */
     public function testListAccountDevices()
     {
-
     }
 
     /**
      * Test case for replaceAccountDevice
      *
-     * Update the settings for an individual VoIP device.
+     * Update the details of an individual VoIP device..
      *
      */
     public function testReplaceAccountDevice()
     {
-
     }
-
 }

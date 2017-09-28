@@ -62,9 +62,26 @@ class CallDetails implements ArrayAccess
         'voip_phone_id' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'start_time' => null,
+        'type' => null,
+        'id_value' => null,
+        'voip_id' => null,
+        'voip_phone_id' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

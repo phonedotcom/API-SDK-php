@@ -90,7 +90,7 @@ class ContactsApi
     /**
      * Operation createAccountExtensionContact
      *
-     * Add a new address book contact for an extension
+     * Add a new address book contact for an extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -107,7 +107,7 @@ class ContactsApi
     /**
      * Operation createAccountExtensionContactWithHttpInfo
      *
-     * Add a new address book contact for an extension
+     * Add a new address book contact for an extension.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -153,9 +153,6 @@ class ContactsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -201,13 +198,13 @@ class ContactsApi
     /**
      * Operation deleteAccountExtensionContact
      *
-     * 
+     * Delete a contact from the address book.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
      * @param int $contact_id Contact ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeleteContact
+     * @return \Swagger\Client\Model\DeleteEntry
      */
     public function deleteAccountExtensionContact($account_id, $extension_id, $contact_id)
     {
@@ -218,13 +215,13 @@ class ContactsApi
     /**
      * Operation deleteAccountExtensionContactWithHttpInfo
      *
-     * 
+     * Delete a contact from the address book.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
      * @param int $contact_id Contact ID (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeleteContact, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\DeleteEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountExtensionContactWithHttpInfo($account_id, $extension_id, $contact_id)
     {
@@ -276,10 +273,7 @@ class ContactsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -299,15 +293,15 @@ class ContactsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeleteContact',
+                '\Swagger\Client\Model\DeleteEntry',
                 '/accounts/{account_id}/extensions/{extension_id}/contacts/{contact_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteContact', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeleteEntry', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteContact', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteEntry', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -319,7 +313,7 @@ class ContactsApi
     /**
      * Operation getAccountExtensionContact
      *
-     * Retrieve the details of an address book contact
+     * Retrieve the details of an address book contact.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -336,7 +330,7 @@ class ContactsApi
     /**
      * Operation getAccountExtensionContactWithHttpInfo
      *
-     * Retrieve the details of an address book contact
+     * Retrieve the details of an address book contact.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -394,10 +388,7 @@ class ContactsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -437,7 +428,7 @@ class ContactsApi
     /**
      * Operation listAccountExtensionContacts
      *
-     * Show a list of address book contacts
+     * Show the Caller ID options a given extension can use.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -461,7 +452,7 @@ class ContactsApi
     /**
      * Operation listAccountExtensionContactsWithHttpInfo
      *
-     * Show a list of address book contacts
+     * Show the Caller ID options a given extension can use.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -563,10 +554,7 @@ class ContactsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -606,7 +594,7 @@ class ContactsApi
     /**
      * Operation replaceAccountExtensionContact
      *
-     * 
+     * Update the info of a contact in the address book.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -624,7 +612,7 @@ class ContactsApi
     /**
      * Operation replaceAccountExtensionContactWithHttpInfo
      *
-     * 
+     * Update the info of a contact in the address book.
      *
      * @param int $account_id Account ID (required)
      * @param int $extension_id Extension ID (required)
@@ -683,9 +671,6 @@ class ContactsApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

@@ -58,9 +58,23 @@ class RuleSet implements ArrayAccess
         'actions' => '\Swagger\Client\Model\RuleSetAction[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'filter' => null,
+        'actions' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
